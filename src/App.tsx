@@ -1,11 +1,14 @@
 import React from 'react';
+import GlobalStyles from './styles/GlobalStyles';
 
-function App() {
+import Home from './pages/home';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+      <>
+        <GlobalStyles />
+        <Home /> 
+      </>
   );
 }
 
