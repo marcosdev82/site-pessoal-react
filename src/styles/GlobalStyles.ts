@@ -7,8 +7,9 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html, border-style, #root{
+    html, body, #root{
         height: 100%;
+        background-color:#070c15;
     }
     *, button, input {
         border: 0;
