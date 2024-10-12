@@ -6,7 +6,6 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-
     html, body, #root{
         height: 100%;
         background-color:#070c15;
@@ -18,5 +17,8 @@ export default createGlobalStyle`
     }
     button {
         cursor: pointer;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        color: #09f0b4;
     }
 `;
