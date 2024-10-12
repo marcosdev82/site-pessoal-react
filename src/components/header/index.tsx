@@ -1,10 +1,17 @@
 import React from 'react';
-import { Container } from './styles';
+import  logotipo  from '../../assets/logotipo.png'; // Importando como componente React
+import { Container, ContentHeader, LogoImage, Span, Text, ContentNav } from './styles';
 
 const Header: React.FC = () => {
     return (
         <Container>
-            <header></header>   
+            <ContentHeader>
+                <LogoImage src={logotipo} alt="Marcos Tavares Desenvolvedor Fulstack"/>  
+                <Text>MARCOS<Span> TAVARES</Span></Text>
+            </ContentHeader>
+            <ContentNav>
+
+            </ContentNav>
         </Container>
     );
 }
