@@ -12,6 +12,8 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr repeat(6, minmax(auto, 12em)) 1fr;
     grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
+    position: relative;
+    overflow: hidden;
 
     &:before {
         content: "";

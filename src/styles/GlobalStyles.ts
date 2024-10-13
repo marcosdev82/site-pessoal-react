@@ -6,6 +6,10 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+    html {
+        scrollbar-width: thin; /* Largura fina da scrollbar */
+        scrollbar-color: #072326 ${props => props.theme.colors.tertiary};; /* Polegar (thumb) e fundo (track) */
+    }
     html, body, #root{
         height: 100%;
         background-color:#070c15;
@@ -21,4 +25,6 @@ export default createGlobalStyle`
     h1,h2,h3,h4,h5,h6 {
         color: #09f0b4;
     }
+    overflow-y: scroll;
+
 `;

@@ -30,11 +30,13 @@ export const Text = styled.h1`
     font-size: 22px;
     font-weight: 900;
     margin-top: 2px;
+    font-family: "Gugi", sans-serif;
 `;
 export const Span = styled.span`
     color: ${props => props.theme.colors.white};
     font-size: 22px;
     font-weight: 900;
+    font-family: "Gugi", sans-serif;
 `;
 export const ContentNav = styled.nav`
 `;
