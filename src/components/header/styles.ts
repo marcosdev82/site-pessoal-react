@@ -46,9 +46,11 @@ export const Span = styled.span`
     font-family: "Gugi", sans-serif;
 `;
 export const NavIcon = styled.div`
-`;
-export const Sanduich = styled.div`
     display: none;
+`;
+export const MenuIcon = styled.img`
+    width: 40px;
+    height: 40px;
 `;
 export const MenuContent = styled.nav`
     display: flex;
@@ -70,6 +72,8 @@ export const MenuContent = styled.nav`
         text-decoration: none;
         position: relative;
         padding-bottom:5px;
+        transition: color 0.3s ease; 
+        text-transform: uppercase;
     }
     ul li a::before {
         content: '';
@@ -77,19 +81,22 @@ export const MenuContent = styled.nav`
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 1px;
+        height: 2px;
         background-color: #09f0b4;
         transition: transform 0.3s ease;
         transform: scaleX(0); /* Inicialmente escondido */
         transform-origin: right;
         background: -o-linear-gradient(190deg, #6ff2cb 0%, rgba(115, 67, 210, 0) 100%);
         background: linear-gradient(260deg, #6ff2cb 0%, rgba(115, 67, 210, 0) 100%);
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
+        /* -webkit-filter: blur(1px);
+        filter: blur(1px); */
     }
-
+    ul li a:hover {
+        color:#09f0b4;
+    }
     ul li a:hover::before {
         transform: scaleX(1); /* Efeito de hover: expande o pseudo-elemento */
         transform-origin: left;
     }
+
 `;
