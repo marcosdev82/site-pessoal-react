@@ -12,11 +12,28 @@ export const Container = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .cicle {
+        display: block;
+        border: 1px solid;
+        border-radius: 50%;
+        width: 19px;
+        height: 19px;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        line-height: 17px;
+        font-weight: 400;
+        position: absolute;
+        top: -8px;
+        right: -26px;
+    }
 `;
 
 export const ContentHeader = styled.div`
     width: 100%;
-    max-width: 1100px;
+    max-width: 1160px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -38,6 +55,7 @@ export const Text = styled.h1`
     font-weight: 900;
     margin-top: 2px;
     font-family: "Gugi", sans-serif;
+    position: relative;
 `;
 export const Span = styled.span`
     color: ${props => props.theme.colors.white};

@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             <ContentHeader>
                 <LogoWrap>
                     <LogoImage src={logotipo} alt="Marcos Tavares Desenvolvedor Fulstack"/>  
-                    <Text>MARCOS<Span> TAVARES</Span></Text>
+                    <Text>MARCOS<Span> TAVARES</Span> <div className='cicle'>M</div></Text>
                 </LogoWrap>
 
                 <MenuContent>
