@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, About, Description, Portrait, Image } from './styles';
 
+import Skills from '../skills';
+
 const Content: React.FC = () => {
     return (
         <Container>
@@ -15,7 +17,9 @@ const Content: React.FC = () => {
                     <Image />
                 </Portrait>
             </About>
+            <Skills />
         </Container>
+
     );
 }
 

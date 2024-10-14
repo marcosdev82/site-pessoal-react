@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 export const About = styled.section`
     min-height: 100px;
-    margin-top: 100px;
+    margin: 60px 0 60px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -47,5 +47,8 @@ export const Portrait = styled.div`
     display: flex;
 `;
 export const Image = styled.div`
+
+`;
+export const Skills = styled.section`
 
 `;
