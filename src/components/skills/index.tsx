@@ -5,6 +5,9 @@ import typescript from '../../assets/images/ts.png';
 import node from '../../assets/images/node.png';
 import react from '../../assets/images/react.png';
 import jest from '../../assets/images/jest.png';
+import cypress from '../../assets/images/cy.png';
+import laravel from '../../assets/images/laravel.png';
+import php from '../../assets/images/php.png';
 
 const Skills: React.FC = () => {
 
@@ -17,13 +20,12 @@ const Skills: React.FC = () => {
                     <li><IconSkill src={node} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={react} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={jest} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={cypress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={laravel} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={php} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li>skill 4</li>
                     <li>skill 5</li>
                     <li>skill 6</li>
-                    <li>skill 7</li>
-                    <li>skill 8</li>
-                    <li>skill 9</li>
-                    <li>skill 10</li>
                 </ul>
             </List>
         </ListSkills>
