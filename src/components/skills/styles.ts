@@ -11,7 +11,7 @@ export const List = styled.div`
     border: 1px solid ${props => props.theme.colors.border100};
     border-radius: 5px;
     position: relative;
-    
+
     ul {
         list-style: none;
         display: flex;
@@ -27,3 +27,4 @@ export const List = styled.div`
         justify-content: center;
     }
 `;
+export const IconSkill = styled.img``;

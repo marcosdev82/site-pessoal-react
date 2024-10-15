@@ -27,7 +27,7 @@ export const Description = styled.div`
         /* background-image: linear-gradient(to right, #09f0b4 0%, #fff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
-    font-size: 65px;
+    font-size: 50px;
   color: #000;
   text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4;
   background-color: transparent; /* Fundo transparente */
