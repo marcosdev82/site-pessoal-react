@@ -8,7 +8,7 @@ const Content: React.FC = () => {
         <Container>
             <About>
                 <Description>
-                    <h1>MARCOS TAVARES</h1>
+                    {/* <h1>MARCOS TAVARES</h1> */}
                     <h2>DESENVOLVEDOR FULSTACK</h2>
                     <p>Eu destrincho problemas complexos de experiência do usuário para criar soluções 
                         focadas na integridade que conectam bilhões de pessoas. </p>

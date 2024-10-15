@@ -26,5 +26,17 @@ export const List = styled.div`
         align-items: center;
         justify-content: center;
     }
+
+    li img{
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+
+    li:hover img{
+        filter: grayscale(0%);
+    }
 `;
-export const IconSkill = styled.img``;
+export const IconSkill = styled.img`
+
+
+`;
