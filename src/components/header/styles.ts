@@ -12,6 +12,7 @@ export const Container = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 15px;
 
     .cicle {
         display: block;
@@ -28,6 +29,13 @@ export const Container = styled.header`
         position: absolute;
         top: -8px;
         right: -26px;
+        @media (max-width: 576px) {
+            font-size: 8px;
+            width: 16px;
+            height: 16px;
+            line-height: 14px;
+            right: -20px;
+        }
     }
 `;
 
@@ -56,12 +64,19 @@ export const Text = styled.h1`
     margin-top: 2px;
     font-family: "Gugi", sans-serif;
     position: relative;
+
+    @media (max-width: 576px) {
+        font-size: 18px;
+    }
 `;
 export const Span = styled.span`
     color: ${props => props.theme.colors.white};
     font-size: 22px;
     font-weight: 900;
     font-family: "Gugi", sans-serif;
+    @media (max-width: 576px) {
+        font-size: 18px;
+    }
 `;
 export const NavIcon = styled.div`
     display: none;
@@ -115,6 +130,12 @@ export const MenuContent = styled.nav`
     ul li a:hover::before {
         transform: scaleX(1); /* Efeito de hover: expande o pseudo-elemento */
         transform-origin: left;
+    }
+
+    @media (max-width: 576px) { 
+        ul {
+            display: none;
+        }
     }
 
 `;

@@ -32,4 +32,9 @@ export const Grid = styled.div`
         margin-top: -5%;
         z-index: 0;
     }
+
+    @media (max-width: 576px) {
+       display: flex;
+       flex-direction: column;
+    }
 `;
