@@ -9,7 +9,7 @@ export const List = styled.div`
     width: 100%;
     padding: 40px 20px;
     border: 1px solid ${props => props.theme.colors.border100};
-    border-radius: 5px;
+    border-radius: 6px;
     position: relative;
 
     ul {
