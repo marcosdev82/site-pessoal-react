@@ -1,8 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/marcostavaresdev/public_html/site
+    - export DEPLOYPATH=/home2/marcostavaresdev/public_html
     - /bin/cp * $DEPLOYPATH
     - cd $DEPLOYPATH
-    - npm install
-    - npm run build
