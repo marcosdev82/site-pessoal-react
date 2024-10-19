@@ -24,13 +24,13 @@ const Header: React.FC = () => {
                 </LogoWrap>
 
                 <MenuContent>
-                    <ul>
+                    {/* <ul>
                         <li><a href="https://marcostavares.dev.br/">Serviços</a></li>
                         <li><a href="https://marcostavares.dev.br/">Trabalhos</a></li>
                         <li><a href="https://marcostavares.dev.br/">Sobre mim</a></li>
                         <li><a href="https://marcostavares.dev.br/">Blog</a></li>
                         <li><a href="https://marcostavares.dev.br/">Contato</a></li>
-                    </ul>
+                    </ul> */}
                 </MenuContent>
               
                 <NavIcon>
