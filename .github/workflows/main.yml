@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-name: Deploy website on push
+name: 🚀 Deploy website on push
 
 jobs:
   web-deploy:
@@ -32,6 +32,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
           server-dir: /public_html/
-
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
       - name: Clear cache (optional)
         run: curl -X GET http://marcostavares.dev.br/?clear_cache=true
