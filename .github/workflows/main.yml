@@ -28,7 +28,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: 177.11.48.209
-          username: ${{ secrets.FTP_USERNAME }}
+          username: marcostavaresdev
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
           server-dir: /public_html/
