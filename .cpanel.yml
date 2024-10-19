@@ -1,6 +1,20 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/marcostavaresdev/public_html
-    - /bin/cp * $DEPLOYPATH
-    - cd $DEPLOYPATH
+    - export DEPLOY_PATH=/home2/marcostavaresdev/public_html
+    - /bin/echo "Iniciando o deploy do React..."
+    
+    # Instalar dependências
+    - /usr/local/bin/npm install
+    
+    # Executar o build do React
+    - /usr/local/bin/npm run build
+    
+    # Remover arquivos antigos no public_html
+    - /bin/rm -rf ${DEPLOY_PATH}/*
+    
+    # Copiar arquivos do build para o public_html
+    - /bin/cp -r build/* ${DEPLOY_PATH}/
+    
+    # Exibir mensagem de sucesso
+    - /bin/echo "Deploy concluído com sucesso!"
