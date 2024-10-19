@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
           server-dir: /public_html/
-          target: "/home2/marcostavaresdev/public_html/site"  # Diretório no servidor onde os arquivos serão enviados
+          target: "/home2/marcostavaresdev/public_html"  # Diretório no servidor onde os arquivos serão enviados
           port: 21
           exclude: |
             **/.git*
