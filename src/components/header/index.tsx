@@ -25,11 +25,11 @@ const Header: React.FC = () => {
 
                 <MenuContent>
                     <ul>
-                        <li><a href="#">Serviços</a></li>
-                        <li><a href="#">Trabalhos</a></li>
-                        <li><a href="#">Sobre mim</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="https://marcostavares.dev.br/">Serviços</a></li>
+                        <li><a href="https://marcostavares.dev.br/">Trabalhos</a></li>
+                        <li><a href="https://marcostavares.dev.br/">Sobre mim</a></li>
+                        <li><a href="https://marcostavares.dev.br/">Blog</a></li>
+                        <li><a href="https://marcostavares.dev.br/">Contato</a></li>
                     </ul>
                 </MenuContent>
               
