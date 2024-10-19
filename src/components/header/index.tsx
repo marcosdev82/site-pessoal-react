@@ -13,6 +13,15 @@ import {
     MenuContent
  } from './styles';
 
+ // Exemplo de dados para o menu
+const menuItems = [
+    { id: 1, name: 'Serviços', link: '/servicos' },
+    { id: 2, name: 'Trabalhos', link: '/trabalhos' },
+    { id: 3, name: 'Sobre min', link: '/sobre-min' },
+    { id: 4, name: 'Blog', link: '/blog' },
+    { id: 5, name: 'Contato', link: '/contato' },
+];
+
 const Header: React.FC = () => {
 
     return (
@@ -24,13 +33,15 @@ const Header: React.FC = () => {
                 </LogoWrap>
 
                 <MenuContent>
-                    {/* <ul>
-                        <li><a href="https://marcostavares.dev.br/">Serviços</a></li>
-                        <li><a href="https://marcostavares.dev.br/">Trabalhos</a></li>
-                        <li><a href="https://marcostavares.dev.br/">Sobre mim</a></li>
-                        <li><a href="https://marcostavares.dev.br/">Blog</a></li>
-                        <li><a href="https://marcostavares.dev.br/">Contato</a></li>
-                    </ul> */}
+                    <ul style={{ listStyleType: 'none', padding: 0 }}>
+                        {menuItems.map(item => (
+                        <li key={item.id}>
+                            <a href={item.link}>
+                            {item.name}
+                            </a>
+                        </li>
+                        ))}
+                    </ul>
                 </MenuContent>
               
                 <NavIcon>
