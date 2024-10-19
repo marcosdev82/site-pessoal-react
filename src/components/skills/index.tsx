@@ -14,7 +14,6 @@ import redis from '../../assets/images/redis.png';
 import wordpress from '../../assets/images/wordpress.png';
 
 const Skills: React.FC = () => {
-
     return (
         <ListSkills>
             <List>
