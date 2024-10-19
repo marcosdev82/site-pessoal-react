@@ -27,13 +27,14 @@ jobs:
       - name: Upload build files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 177.11.48.209
-          username: marcostavaresdev
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+          local-dir: ./build/
           server-dir: /public_html/
           target: "/home2/marcostavaresdev/public_html"  # Diretório no servidor onde os arquivos serão enviados
           port: 21
+          protocol: ftps
           exclude: |
             **/.git*
             **/.git*/**
