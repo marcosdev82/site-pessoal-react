@@ -28,7 +28,7 @@ const Skills: React.FC = () => {
                     <li><IconSkill src={laravel} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     {/* <li><IconSkill src={php} alt="Marcos Tavares Desenvolvedor Fulstack" /></li> */}
                     {/* <li><IconSkill src={wordpress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li> */}
-                    <li><IconSkill src={postgres} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    {/* <li><IconSkill src={postgres} alt="Marcos Tavares Desenvolvedor Fulstack" /></li> */}
                     <li><IconSkill src={docker} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={redis} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                 </ul>
