@@ -45,7 +45,7 @@ export const Description = styled.div`
     p {
         color: #dbdbdb;
         font-size: 20px;
-        margin-top: 20px;
+        margin: 20px 0 20px;
         line-height: 32px;
     }
 
@@ -81,4 +81,73 @@ export const Image = styled.div`
 `;
 export const Skills = styled.section`
 
+`;
+export const SocialMedia = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0 20px;
+    gap: 15px;
+    .social {
+        display: block;
+        border: 1px solid #08f0b4;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        position: relative;
+    }
+    .social:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #09f0b4;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    svg {
+        fill: #09f0b4;
+        z-index: 1;
+    }
+    .social:hover::before {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        z-index: 0;
+    }
+    .social:hover svg {
+        fill: #000000;
+    }
+`;
+
+export const Curriculo = styled.div`
+
+    a {
+        display: flex;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: #09f0b4;
+        border-radius: 25px;
+        border: 1px solid #09f0b4;
+        line-height: 25px;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+
+        svg {
+            fill: #09f0b4;
+        }
+    }
+    
 `;
