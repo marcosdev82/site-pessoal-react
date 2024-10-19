@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - main
+
 name: 🚀 Deploy website on push
 
 jobs:
@@ -25,19 +26,19 @@ jobs:
         run: npm run build
 
       - name: Upload build files to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_HOST }}  # Certifique-se de que este valor esteja correto
+          username: ${{ secrets.FTP_USER }} # Certifique-se de que este valor esteja correto
+          password: ${{ secrets.FTP_PASSWORD }} # Certifique-se de que este valor esteja correto
           local-dir: ./build/
           server-dir: /public_html/
-          target: "/home2/marcostavaresdev/public_html"  # Diretório no servidor onde os arquivos serão enviados
           port: 21
-          protocol: ftps
+          protocol: ftp  # Tente mudar para 'ftp' se o FTPS não funcionar
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+
       - name: Clear cache (optional)
         run: curl -X GET http://marcostavares.dev.br/?clear_cache=true
