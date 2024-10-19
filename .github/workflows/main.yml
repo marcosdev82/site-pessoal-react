@@ -42,3 +42,13 @@ jobs:
 
       - name: Clear cache (optional)
         run: curl -X GET http://marcostavares.dev.br/?clear_cache=true
+
+      - name: Test FTP Connection
+        run: |
+          apt-get update
+          apt-get install -y ftp
+          ftp -inv ${{ secrets.FTP_HOST }} <<EOF
+          user ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
+          ls
+          bye
+          EOF
