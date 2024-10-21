@@ -20,7 +20,7 @@ const Content: React.FC = () => {
 
                             <a href='http://marcostavares.dev.br/' className="social"><LinkedIn style={{ fontSize: 18 }} /></a>
                             <a href='http://marcostavares.dev.br/' className="social"><Instagram style={{ fontSize: 18 }}/></a>
-                            <a href='http://marcostavares.dev.br/' className="social"><GitHub style={{ fontSize: 18 }}/></a>
+                            <a href='http://marcostavares.dev.br/' className="social"><GitHub style={{ fontSize: 16 }}/></a>
                         </SocialMedia>
                 </Description>
                 <Portrait>
@@ -34,5 +34,4 @@ const Content: React.FC = () => {
 
     );
 }
-
 export default Content;
