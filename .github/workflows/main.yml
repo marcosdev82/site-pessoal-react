@@ -19,13 +19,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build React app
-        run: npm run build
-
-      - name: Upload build files to cPanel via FTP
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+      
+      - name: 📂 Upload build files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}  # Certifique-se de que este valor esteja correto
