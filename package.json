@@ -2,7 +2,7 @@
   "name": "site-pessoal-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marcostavares.dev.br/build/",
+  "homepage": "https://marcostavares.dev.br/public/",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -24,7 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start node server.js",
+    "predeploy": "npm run build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
