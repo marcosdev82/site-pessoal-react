@@ -135,7 +135,7 @@ export const Curriculo = styled.div`
 
     a {
         display: flex;
-        padding: 12px 20px;
+        padding: 12px 20px; 
         text-decoration: none;
         color: #09f0b4;
         border-radius: 25px;
