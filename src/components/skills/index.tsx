@@ -10,7 +10,6 @@ import laravel from '../../assets/images/laravel.png';
 import php from '../../assets/images/php.png';
 import postgres from '../../assets/images/postgres.png';
 import docker from '../../assets/images/docker.png';
-import redis from '../../assets/images/redis.png';
 import wordpress from '../../assets/images/wordpress.png';
 
 const Skills: React.FC = () => {
