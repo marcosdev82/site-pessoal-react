@@ -24,8 +24,7 @@ jobs:
           npm install
           npm run build
       
-      - name: 📂 Sync files
-      - name: Upload build files to cPanel via FTP
+      - name: 📂 Upload build files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}  # Certifique-se de que este valor esteja correto
