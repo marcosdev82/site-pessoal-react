@@ -34,7 +34,7 @@ jobs:
           local-dir: ./build/
           server-dir: /public_html/
           port: 21
-          protocol: ftp  # Tente mudar para 'ftp' se o FTPS não funcionar
+          protocol: ftp
           exclude: |
             **/.git*
             **/.git*/**
@@ -45,10 +45,10 @@ jobs:
 
       - name: Test FTP Connection
         run: |
-          apt-get update
-          apt-get install -y ftp
+          sudo apt-get update
+          sudo apt-get install -y ftp
           ftp -inv ${{ secrets.FTP_HOST }} <<EOF
-          user ${{ secrets.FTP_USER }} ${{ secrets.FTP_PASSWORD }}
+          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
           ls
           bye
           EOF
