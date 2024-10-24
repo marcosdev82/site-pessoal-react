@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/public/static/js/main.5e43d890.js",
+    "static/media/cy.png": "/public/static/media/cy.da4ea36c1f808256df66.png",
+    "index.html": "/public/index.html",
+    "static/media/sanduich.svg": "/public/static/media/sanduich.3caa8ca9aae6b88651095a951772cbf0.svg",
+    "main.5e43d890.js.map": "/public/static/js/main.5e43d890.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5e43d890.js"
+  ]
+}
