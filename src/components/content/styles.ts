@@ -127,7 +127,7 @@ export const SocialMedia = styled.div`
         z-index: 0;
     }
     .social:hover svg {
-        fill: #000000;
+        fill: #000;
     }
 `;
 
