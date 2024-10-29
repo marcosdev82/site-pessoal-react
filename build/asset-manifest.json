@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.js": "/public/static/js/main.5e43d890.js",
-    "static/media/cy.png": "/public/static/media/cy.da4ea36c1f808256df66.png",
-    "index.html": "/public/index.html",
-    "static/media/sanduich.svg": "/public/static/media/sanduich.3caa8ca9aae6b88651095a951772cbf0.svg",
-    "main.5e43d890.js.map": "/public/static/js/main.5e43d890.js.map"
+    "main.js": "/static/js/main.83bd4ca4.js",
+    "static/media/mongodb.png": "/static/media/mongodb.342c40086a83c5016090.png",
+    "static/media/cy.png": "/static/media/cy.da4ea36c1f808256df66.png",
+    "index.html": "/index.html",
+    "static/media/sanduich.svg": "/static/media/sanduich.3caa8ca9aae6b88651095a951772cbf0.svg",
+    "main.83bd4ca4.js.map": "/static/js/main.83bd4ca4.js.map"
   },
   "entrypoints": [
-    "static/js/main.5e43d890.js"
+    "static/js/main.83bd4ca4.js"
   ]
 }
