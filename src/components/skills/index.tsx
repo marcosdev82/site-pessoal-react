@@ -9,6 +9,7 @@ import cypress from '../../assets/images/cy.png';
 import laravel from '../../assets/images/laravel.png';
 import php from '../../assets/images/php.png';
 import postgres from '../../assets/images/postgres.png';
+import mongodb from '../../assets/images/mongodb.png';
 import docker from '../../assets/images/docker.png';
 import redis from '../../assets/images/redis.png';
 import wordpress from '../../assets/images/wordpress.png';
@@ -28,6 +29,7 @@ const Skills: React.FC = () => {
                     <li><IconSkill src={php} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={wordpress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li> 
                     <li><IconSkill src={postgres} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={mongodb} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={docker} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={redis} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                 </ul>
