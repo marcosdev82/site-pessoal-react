@@ -19,6 +19,7 @@ export const List = styled.div`
         width: 100%;
         justify-content: space-around;
     }
+    
     ul li {
         color: #fff;
         width: 100%;
