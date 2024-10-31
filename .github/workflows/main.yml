@@ -34,7 +34,7 @@ jobs:
           local-dir: ./build/
           server-dir: /public_html/
           port: 21
-          protocol: ftp
+          protocol: ftps
           exclude: |
             **/.git*
             **/.git*/**
