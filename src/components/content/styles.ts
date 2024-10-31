@@ -36,9 +36,9 @@ export const Description = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
     font-size: 50px;
-  color: #000;
-  text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4;
-  background-color: transparent; /* Fundo transparente */
+    color: #000;
+    text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4;
+    background-color: transparent; /* Fundo transparente */
 
     }
 
@@ -138,16 +138,42 @@ export const Curriculo = styled.div`
         padding: 12px 20px; 
         text-decoration: none;
         color: #09f0b4;
-        border-radius: 25px;
-        border: 1px solid #09f0b4;
         line-height: 25px;
         flex-direction: row;
         align-items: center;
         gap: 6px;
+        position: relative;
 
         svg {
             fill: #09f0b4;
         }
+            
+    }
+
+    a::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        background-color: #2BFDBE;
+        z-index: -2;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+    }
+
+    a::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #2BFDBE;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
     }
     
 `;
