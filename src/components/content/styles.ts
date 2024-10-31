@@ -98,6 +98,7 @@ export const SocialMedia = styled.div`
         align-items: center;
         border-radius: 25px;
         position: relative;
+       
     }
     .social:before {
         content: "";
@@ -115,6 +116,7 @@ export const SocialMedia = styled.div`
         transition: 0.3s;
         border-radius: 50%;
         z-index: -1;
+       
     }
     svg {
         fill: #09f0b4;
@@ -125,6 +127,8 @@ export const SocialMedia = styled.div`
         -ms-transform: scale(1.1);
         transform: scale(1.1);
         z-index: 0;
+        -webkit-box-shadow: 0 0 30px rgba(12, 236, 182, 0.29);
+        box-shadow: 0 0 30px rgba(12, 236, 182, 0.29);
     }
     .social:hover svg {
         fill: #000;
@@ -135,20 +139,24 @@ export const Curriculo = styled.div`
 
     a {
         display: flex;
-        padding: 12px 20px; 
+        padding: 12px 30px; 
         text-decoration: none;
-        color: #09f0b4;
+        color: #000;
         line-height: 25px;
         flex-direction: row;
         align-items: center;
         gap: 6px;
         position: relative;
-
+        animation: jumpInfinite 2s infinite;
+        bottom: -5px;
         svg {
-            fill: #09f0b4;
+            fill: #000;
+            z-index: 10;
         }
             
     }
+
+    a span { color: #000; position: relative; z-index: 2; font-weight: 600;}
 
     a::before {
         content: "";
@@ -157,8 +165,8 @@ export const Curriculo = styled.div`
         left: -1px;
         width: calc(100% + 2px);
         height: calc(100% + 2px);
-        background-color: #2BFDBE;
-        z-index: -2;
+        background-color: #09f0b4;
+        z-index: 0;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
     }
 
@@ -169,11 +177,25 @@ export const Curriculo = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #2BFDBE;
-        z-index: -1;
+        background-color: #09f0b4;
+        z-index: 0;
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+       
     }
+
+    @keyframes jumpInfinite {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Ajuste o valor de acordo com o efeito desejado */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
     
 `;

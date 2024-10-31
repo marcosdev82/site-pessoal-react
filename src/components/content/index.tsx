@@ -15,7 +15,7 @@ const Content: React.FC = () => {
                         <SocialMedia>
 
                             <Curriculo>
-                                <a href='http://marcostavares.dev.br/'>Download CV <FileDownload style={{ fontSize: 16 }}/></a>
+                                <a href='http://marcostavares.dev.br/'><span>Download CV</span> <FileDownload style={{ fontSize: 16 }}/></a>
                             </Curriculo>
 
                             <a href='http://marcostavares.dev.br/' className="social"><LinkedIn style={{ fontSize: 18 }} /></a>
