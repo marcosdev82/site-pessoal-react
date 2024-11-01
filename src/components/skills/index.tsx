@@ -22,18 +22,18 @@ const Skills: React.FC = () => {
                 <ul>
                     <li><IconSkill src={javascript} alt="Java Script Vanila" /></li>
                     <li><IconSkill src={typescript} alt="Type Script" /></li>
-                    <li><IconSkill src={node} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={react} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={jest} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={cypress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={laravel} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={php} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={wordpress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li> 
-                    <li><IconSkill src={postgres} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={node} alt="Node JS" /></li>
+                    <li><IconSkill src={react} alt="React and React Native" /></li>
+                    <li><IconSkill src={jest} alt="Jest" /></li>
+                    <li><IconSkill src={cypress} alt="Cypress" /></li>
+                    <li><IconSkill src={laravel} alt="Laravel" /></li>
+                    <li><IconSkill src={php} alt="PHP" /></li>
+                    <li><IconSkill src={wordpress} alt="Wordpress" /></li> 
+                    <li><IconSkill src={postgres} alt="Postifres" /></li>
                     <li><IconSkill src={mysql} alt="Mysql" /></li>
-                    <li><IconSkill src={mongodb} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={docker} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={redis} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={mongodb} alt="MongoDB" /></li>
+                    <li><IconSkill src={docker} alt="Docker" /></li>
+                    <li><IconSkill src={redis} alt="Redis" /></li>
                 </ul>
             </List>
         </ListSkills>
