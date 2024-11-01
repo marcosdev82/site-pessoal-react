@@ -20,8 +20,8 @@ const Skills: React.FC = () => {
         <ListSkills>
             <List>
                 <ul>
-                    <li><IconSkill src={javascript} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                    <li><IconSkill src={typescript} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={javascript} alt="Java Script Vanila" /></li>
+                    <li><IconSkill src={typescript} alt="Type Script" /></li>
                     <li><IconSkill src={node} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={react} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={jest} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
