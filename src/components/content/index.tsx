@@ -10,8 +10,7 @@ const Content: React.FC = () => {
                 <Description>
                     {/* <h1>MARCOS TAVARES</h1> */}
                     <h2>DESENVOLVEDOR FULSTACK</h2>
-                    <p>Eu destrincho problemas complexos de experiência do usuário para criar soluções 
-                        focadas na integridade que conectam bilhões de pessoas. </p>
+                    <p>Transformo ideias em realidade digital, construindo aplicações robustas e escaláveis que conectam design e funcionalidade com excelência. </p>
                         <SocialMedia>
 
                             <Curriculo>
@@ -26,10 +25,11 @@ const Content: React.FC = () => {
                 <Portrait>
                     <Image />
                 </Portrait>
-               
 
             </About>
+
             <Skills />
+
         </Container>
 
     );
