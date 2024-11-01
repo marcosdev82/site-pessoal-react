@@ -8,6 +8,7 @@ export const List = styled.div`
     display: flex;
     width: 100%;
     padding: 40px 20px;
+    margin-bottom: 40px;
     border: 1px solid ${props => props.theme.colors.border100};
     border-radius: 6px;
     position: relative;
@@ -19,7 +20,7 @@ export const List = styled.div`
         width: 100%;
         justify-content: space-around;
     }
-    
+
     ul li {
         color: #fff;
         width: 100%;
@@ -60,6 +61,4 @@ export const List = styled.div`
     }
 `;
 export const IconSkill = styled.img`
-
-
 `;
