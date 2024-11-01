@@ -30,7 +30,8 @@ jobs:
           server: ${{ secrets.FTP_HOST }}  # Certifique-se de que este valor esteja correto
           username: ${{ secrets.FTP_USERNAME }} # Certifique-se de que este valor esteja correto
           password: ${{ secrets.FTP_PASSWORD }} # Certifique-se de que este valor esteja correto
-          timeout: 300  # Aumenta o tempo limite para 60 segundos
+          log-level: verbose
+          timeout: 60000
           local-dir: ./build/
           server-dir: /public_html/
           port: 21
