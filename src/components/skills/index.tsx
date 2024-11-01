@@ -9,6 +9,7 @@ import cypress from '../../assets/images/cy.png';
 import laravel from '../../assets/images/laravel.png';
 import php from '../../assets/images/php.png';
 import postgres from '../../assets/images/postgres.png';
+import mysql from '../../assets/images/mysql.png';
 import mongodb from '../../assets/images/mongodb.png';
 import docker from '../../assets/images/docker.png';
 import redis from '../../assets/images/redis.png';
@@ -25,12 +26,11 @@ const Skills: React.FC = () => {
                     <li><IconSkill src={react} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={jest} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={cypress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
-                </ul>
-                <ul>
                     <li><IconSkill src={laravel} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={php} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={wordpress} alt="Marcos Tavares Desenvolvedor Fulstack" /></li> 
                     <li><IconSkill src={postgres} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
+                    <li><IconSkill src={mysql} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={mongodb} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={docker} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
                     <li><IconSkill src={redis} alt="Marcos Tavares Desenvolvedor Fulstack" /></li>
