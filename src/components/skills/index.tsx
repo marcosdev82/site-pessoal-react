@@ -14,14 +14,13 @@ import mongodb from '../../assets/images/mongodb.png';
 import docker from '../../assets/images/docker.png';
 import redis from '../../assets/images/redis.png';
 import wordpress from '../../assets/images/wordpress.png';
-import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 
 const Skills: React.FC = () => {
     return (
         <ListSkills>
             <List>
                 <ul>
-                    <li><Logo /></li>
+                    <li><IconSkill src={javascript} alt="Java Script Vanila" /></li>
                     <li><IconSkill src={typescript} alt="Type Script" /></li>
                     <li><IconSkill src={node} alt="Node JS" /></li>
                     <li><IconSkill src={react} alt="React and React Native" /></li>
