@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, About, Description, Portrait, Image, SocialMedia, Curriculo } from './styles';
+import { About, Description, Portrait, Image, SocialMedia, Curriculo } from './styles';
 import { Instagram, LinkedIn, GitHub, FileDownload } from '@mui/icons-material';
 import Skills from '../skills';
 
 const Content: React.FC = () => {
     return (
-        <Container>
+        <>
             <About>
                 <Description>
                     {/* <h1>MARCOS TAVARES</h1> */}
@@ -30,7 +30,7 @@ const Content: React.FC = () => {
 
             <Skills />
 
-        </Container>
+        </>
 
     );
 }

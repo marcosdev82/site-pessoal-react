@@ -11,8 +11,9 @@ export default createGlobalStyle`
         scrollbar-color: #072326 ${props => props.theme.colors.tertiary}; /* Polegar (thumb) e fundo (track) */
     }
     html, body, #root{
-        height: 100%;
+        height: 100vh;
         background-color:#070c15;
+        flex: 1;
     }
     *, button, input {
         border: 0;

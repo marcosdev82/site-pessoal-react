@@ -15,11 +15,12 @@ import {
 
  // Exemplo de dados para o menu
 const menuItems = [
-    { id: 1, name: 'Serviços', link: '/servicos' },
-    { id: 2, name: 'Trabalhos', link: '/trabalhos' },
-    { id: 3, name: 'Sobre min', link: '/sobre-min' },
-    { id: 4, name: 'Blog', link: '/blog' },
-    { id: 5, name: 'Contato', link: '/contato' },
+    { id: 1, name: 'Home', link: '/' },
+    { id: 2, name: 'Serviços', link: '/servicos' },
+    { id: 3, name: 'Trabalhos', link: '/trabalhos' },
+    { id: 4, name: 'Sobre min', link: '/sobre-min' },
+    { id: 5, name: 'Blog', link: '/blog' },
+    { id: 6, name: 'Contato', link: '/contato' },
 ];
 
 const Header: React.FC = () => {

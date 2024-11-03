@@ -1,15 +1,18 @@
-import React from 'react';
-import { Grid } from './styles';
-
+import React, { ReactNode } from 'react';
+import { Grid, Container } from './styles';
 import Header from '../header';
-import Content from '../content';
+// import Content from '../content';
 import Footer from '../footer';
 
-const Layout: React.FC = () => {
+interface LayoutProps {
+    children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <Grid>
             <Header />
-            <Content /> 
+                <Container>{ children }</Container>
             <Footer /> 
         </Grid>
     );

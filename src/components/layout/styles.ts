@@ -37,3 +37,8 @@ export const Grid = styled.div`
        flex-direction: column;
     }
 `;
+export const Container = styled.div`
+    grid-column: 8/2;
+    min-height: 600px;
+    padding: 0 15px;
+`;
