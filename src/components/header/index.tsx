@@ -1,6 +1,7 @@
 import React from 'react';
 import  logotipo  from '../../assets/logotipo.png'; 
 import sanduich from '../../assets/sanduich.svg';
+import {NavLink } from 'react-router-dom';
 import { 
     Container, 
     ContentHeader, 
@@ -36,11 +37,14 @@ const Header: React.FC = () => {
                 <MenuContent>
                     <ul style={{ listStyleType: 'none', padding: 0 }}>
                         {menuItems.map(item => (
-                        <li key={item.id}>
-                            <a href={item.link}>
-                            {item.name}
-                            </a>
-                        </li>
+                            <li key={item.id}>
+                                <NavLink 
+                                    to={item.link} 
+                                    className={({ isActive }) => (isActive ? 'active' : '')}
+                                >
+                                    {item.name}
+                                </NavLink>
+                            </li>
                         ))}
                     </ul>
                 </MenuContent>

@@ -124,6 +124,7 @@ export const MenuContent = styled.nav`
         /* -webkit-filter: blur(1px);
         filter: blur(1px); */
     }
+    ul li a.active,
     ul li a:hover {
         color:#09f0b4;
     }
