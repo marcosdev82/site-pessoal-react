@@ -45,6 +45,7 @@ export const ContentHeader = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 0 15px;
     flex-direction: row;
     justify-content: space-between;
 `;
