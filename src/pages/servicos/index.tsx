@@ -1,8 +1,12 @@
 import React from 'react';
+import { EntryTitle } from './styles';
 
 const Servicos: React.FC = () => {
     return (
-        <h1>Servicos</h1>   
+        <EntryTitle>
+            <h1>Servicos</h1>   
+        </EntryTitle>
+        
     );
 }
 
