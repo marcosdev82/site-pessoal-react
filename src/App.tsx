@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { HelmetProvider } from 'react-helmet-async';
 import GlobalStyles from './styles/GlobalStyles';
 
 import dark from './styles/themes/dark';
@@ -12,6 +13,7 @@ import Servicos from './pages/servicos';
 
 const App: React.FC = () => {
   return (
+    <HelmetProvider>
       <ThemeProvider theme={dark}>
         <GlobalStyles />
           <Router>
@@ -25,6 +27,7 @@ const App: React.FC = () => {
             </Layout>
           </Router>
       </ThemeProvider>
+    </HelmetProvider>
   );
 }
 
