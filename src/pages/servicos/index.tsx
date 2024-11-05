@@ -7,15 +7,14 @@ const Servicos: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>Home - Serviços</title>
+                <title>Home - Meus serviços</title>
                 <meta name="description" content="Meus serviços" />
             </Helmet>
-
             <EntryTitle>
-                <h1>Servicos</h1>   
+                <h1>Serviços</h1>
             </EntryTitle>
         </>
     );
-}
+};
 
 export default Servicos;
