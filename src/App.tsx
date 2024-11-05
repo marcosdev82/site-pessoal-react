@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Navigate, Routes  } from 'react-router-
 
 import Home from './pages/home';
 import Servicos from './pages/servicos';
+import Contato from './pages/contato';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/servicos" element={<Servicos />} />
+                <Route path="/contato" element={<Contato />} />
                 {/* Redireciona outras rotas inválidas para a home */}
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
