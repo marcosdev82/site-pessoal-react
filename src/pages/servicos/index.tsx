@@ -7,7 +7,7 @@ const Servicos: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>Home - Meus serviços</title>
+                <title>Serviços - Marcos Tavares Fullstack</title>
                 <meta name="description" content="Meus serviços" />
             </Helmet>
             <EntryTitle>
