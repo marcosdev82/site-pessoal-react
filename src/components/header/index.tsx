@@ -1,5 +1,6 @@
 import React from 'react';
 import  logotipo  from '../../assets/logotipo.png'; 
+import Dropdown from '../nav/index';
 import sanduich from '../../assets/sanduich.svg';
 import {NavLink } from 'react-router-dom';
 import { 
@@ -48,10 +49,12 @@ const Header: React.FC = () => {
                         ))}
                     </ul>
                 </MenuContent>
+
+                <Dropdown />
               
-                <NavIcon>
+                {/* <NavIcon>
                     <MenuIcon src={sanduich}/>
-                </NavIcon>
+                </NavIcon> */}
             </ContentHeader>
             
         </Container>

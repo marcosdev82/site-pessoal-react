@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Grid, Container } from './styles';
 import Header from '../header';
-// import Content from '../content';
 import Footer from '../footer';
 
 interface LayoutProps {

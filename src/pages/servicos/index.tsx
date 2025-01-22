@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { EntryTitle } from './styles';
+import ListarSevicos from './listar-servicos';
 
 const Servicos: React.FC = () => {
     return (
@@ -13,6 +14,9 @@ const Servicos: React.FC = () => {
             <EntryTitle>
                 <h1>Serviços</h1>
             </EntryTitle>
+
+            <ListarSevicos />
+            
         </>
     );
 };
