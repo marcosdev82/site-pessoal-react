@@ -9,11 +9,8 @@ import {
     LogoImage, 
     Span, 
     Text, 
- } from './styles';
-
-
-
-const Header: React.FC = () => {
+} from './styles';
+const Header = () => {
 
     return (
         <Container>
@@ -23,11 +20,7 @@ const Header: React.FC = () => {
                     <Text>MARCOS<Span> TAVARES</Span> <div className='cicle'>M</div></Text>
                 </LogoWrap>
                 <Menu /> 
-                {/* <NavIcon>
-                    <MenuIcon src={sanduich}/>
-                </NavIcon> */}
             </ContentHeader>
-            
         </Container>
     );
 }

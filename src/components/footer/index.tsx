@@ -2,7 +2,7 @@ import React from 'react';
 import logotipo  from '../../assets/logotipo.png'; // Importando como componente React
 import { Container, ContentFooter, LogoImageF, Copywriter } from './styles';
 
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
         <Container>
             <ContentFooter>

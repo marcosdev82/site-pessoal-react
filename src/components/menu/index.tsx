@@ -11,7 +11,6 @@ const Menu = () => {
     setIsMarked(!isMarked);
   };
 
-  // Exemplo de dados para o menu
   const menuItems = [
     { id: 1, name: "Home", link: "/" },
     { id: 2, name: "Serviços", link: "/servicos" },
@@ -23,6 +22,7 @@ const Menu = () => {
 
   return (
     <MenuContent>
+
       <DropBox
         className={isMarked ? "marked" : ""}
         onClick={handleClick}
@@ -33,10 +33,7 @@ const Menu = () => {
         <Rotate className={isMarked ? "down" : ""}>▼</Rotate>
       </DropBox>
 
-      <Ul visible={isDropdownVisible}
-        className={isDropdownVisible ? "visible" : "hidden"}
-        style={{ listStyleType: "none", padding: 0, display: isDropdownVisible ? "flex" : "none" }}
-      >
+      <Ul visible={isDropdownVisible} >
         {menuItems.map((item) => (
           <li key={item.id}>
             <NavLink
@@ -48,6 +45,7 @@ const Menu = () => {
           </li>
         ))}
       </Ul>
+
     </MenuContent>
   );
 };
