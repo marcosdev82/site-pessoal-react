@@ -15,24 +15,23 @@ export const MenuContent = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: end;
-
+    z-index: 10;
+    position: relative;
 `;
-
 export const Nav = styled.nav`
     width: 100%;
     top: 30%;
     left: 42%;
     background-color: #fefefe;
-    position: absolute;
     border-radius: 2px;
     display: inline-block;
     height: 50px;
     line-height: 50px;
     width: 300px;
-    z-index: 10;
+   
 `;
-
 export const Ul = styled.ul<UlProps>`
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -40,15 +39,20 @@ export const Ul = styled.ul<UlProps>`
   justify-content: end;
   align-items: center;
   gap: 40px;
+  z-index: 10;
   display: ${({ visible }) => (visible ? "flex" : "none")}!important;
 
   @media (max-width: 768px) {
+    position: absolute;
+    right: 0;
+    top: 60px; 
+    width: 100%;
+    background: #000;
     flex-direction: column;
     & li {
       display: flex;
     }
   }
-
   & li a {
       color: ${props => props.theme.colors.white};
       text-decoration: none;
