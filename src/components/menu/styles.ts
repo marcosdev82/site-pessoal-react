@@ -11,7 +11,7 @@ export const MenuIcon = styled.img`
     width: 40px;
     height: 40px;
 `;
-export const MenuContent = styled.nav`
+export const MenuContent = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: end;
