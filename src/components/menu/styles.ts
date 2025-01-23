@@ -16,7 +16,6 @@ export const MenuContent = styled.div`
     flex-direction: row;
     justify-content: end;
     z-index: 10;
-    position: relative;
 `;
 export const Nav = styled.nav`
     width: 100%;
