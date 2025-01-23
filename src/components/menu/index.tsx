@@ -3,19 +3,19 @@ import { NavLink } from "react-router-dom";
 import { MenuContent, Ul, DropBox, Rotate } from "./styles";
 
 const Menu = () => {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false); // Começa oculto
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false); 
   const [isMarked, setIsMarked] = useState(false);
 
-  // Detecta se o tamanho da tela é para mobile ou desktop
+
   useEffect(() => {
     const handleResize = () => {
-      const isDesktop = window.innerWidth >= 768; // Ajuste o breakpoint conforme necessário
-      setIsDropdownVisible(isDesktop); // Mostra o menu em desktops
-      setIsMarked(isDesktop); // Marca o menu como ativo em desktops
+      const isDesktop = window.innerWidth >= 768;
+      setIsDropdownVisible(isDesktop); 
+      setIsMarked(isDesktop); 
     };
 
-    handleResize(); // Define o estado inicial
-    window.addEventListener("resize", handleResize); // Adiciona o listener para mudanças no tamanho da tela
+    handleResize(); 
+    window.addEventListener("resize", handleResize); 
 
     return () => {
       window.removeEventListener("resize", handleResize); // Remove o listener ao desmontar
