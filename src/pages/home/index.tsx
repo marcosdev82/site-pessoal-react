@@ -4,7 +4,7 @@ import { About, Description, Portrait, Image, SocialMedia, Curriculo } from './s
 import { Instagram, LinkedIn, GitHub, FileDownload } from '@mui/icons-material';
 import Skills from '../../components/skills';
 
-const Home: React.FC = () => {
+const Home = () => {
     return (
         <>
             <Helmet>

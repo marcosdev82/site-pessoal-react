@@ -12,7 +12,7 @@ import Home from './pages/home';
 import Servicos from './pages/servicos';
 import Contato from './pages/contato';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <HelmetProvider>
       <ThemeProvider theme={dark}>

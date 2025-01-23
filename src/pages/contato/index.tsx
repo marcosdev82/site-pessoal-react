@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { EntryTitle } from './styles';
 
-const Contato: React.FC = () => {
+const Contato = () => {
     return (
         <>
             <Helmet>

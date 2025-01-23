@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { EntryTitle } from './styles';
 import ListarSevicos from './listar-servicos';
 
-const Servicos: React.FC = () => {
+const Servicos = () => {
     return (
         <>
             <Helmet>

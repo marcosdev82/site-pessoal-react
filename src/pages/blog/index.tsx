@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Blog: React.FC = () => {
+const Blog = () => {
     return (
         <h1>Blog</h1>   
     );

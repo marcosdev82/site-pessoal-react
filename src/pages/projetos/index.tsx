@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Projetos: React.FC = () => {
+const Projetos = () => {
     return (
         <h1>Projetos</h1>   
     );

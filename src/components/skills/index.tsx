@@ -15,7 +15,7 @@ import docker from '../../assets/images/docker.png';
 import redis from '../../assets/images/redis.png';
 import wordpress from '../../assets/images/wordpress.png';
 
-const Skills: React.FC = () => {
+const Skills = () => {
     return (
         <ListSkills>
             <List>
