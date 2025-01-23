@@ -43,11 +43,15 @@ export const Ul = styled.ul<UlProps>`
 
   @media (max-width: 768px) {
     position: absolute;
-    right: 0;
-    top: 60px; 
+    right: 0px;
+    top: 60px;
     width: 100%;
-    background: #000;
+    background: rgb(0, 0, 0);
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 15px;
+    padding: 20px;
     & li {
       display: flex;
     }
