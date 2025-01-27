@@ -9,14 +9,26 @@ const Home = () => {
         <>
             <Helmet>
                 <title>Home - Marcos Tavares Desenvolvedor Fullstack</title>
-                <meta name="description" content="Página inicial de Marcos Tavares, desenvolvedor fullstack especializado em Java Script, Type Script, React, Node.js, PHP, Laravel, Mongo DB, Postgres, Mysql, Docker e WordPress" />
+                <meta name="description" content="Marcos Tavares, desenvolvedor fullstack especializado em Java Script, Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
+                <meta name="keywords" content="desenvolvedor fullstack, desenvolvimento web, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador fullstack, Marcos Tavares" />
+                <meta property="og:locale" content="pt_BR"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:title" content="home - Marcos Tavares Fullstack"/>
+                <meta property="og:description" content="Marcos Tavares, desenvolvedor fullstack especializado em Java Script, Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados."/>
+                <meta property="og:url" content="https://marcostavares.dev"/>
+                <meta property="og:site_name" content="Marcos Tavares FullStack"/>
+                <meta property="article:publisher" content="https://www.facebook.com/marcostavares.dev"/>
+                {/* <meta property="article:modified_time" content="2025-01-27T18:36:24+00:00"/> */}
+                {/* <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:site" content="@marcostavares.dev"/> */}
+                {/* <meta name="google-site-verification" content=""/> */}
             </Helmet>
             
             <About>
                 <Description>
                     {/* <h1>MARCOS TAVARES</h1> */}
                     <h2>DESENVOLVEDOR FULLSTACK</h2>
-                    <p>Transformo ideias em realidade digital, construindo aplicações robustas e escaláveis que conectam design e funcionalidade com excelência.</p>
+                    <p>Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados..</p>
                     <SocialMedia>
                         <Curriculo>
                             <a href='http://marcostavares.dev.br/'><span>Download CV</span> <FileDownload style={{ fontSize: 16 }}/></a>

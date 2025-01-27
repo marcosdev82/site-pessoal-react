@@ -10,7 +10,7 @@ const Content = () => {
                 <Description>
                     {/* <h1>MARCOS TAVARES</h1> */}
                     <h2>DESENVOLVEDOR FULSTACK</h2>
-                    <p>Transformo ideias em realidade digital, construindo aplicações robustas e escaláveis que conectam design e funcionalidade com excelência. </p>
+                    <p>Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados. </p>
                     <SocialMedia>
                         <Curriculo>
                             <a href='http://marcostavares.dev.br/'><span>Download CV</span> <FileDownload style={{ fontSize: 16 }}/></a>
