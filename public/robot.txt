@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://www.seusite.com/sitemap.xml
+Sitemap: https://marcostavares.dev.br/sitemap.xml
