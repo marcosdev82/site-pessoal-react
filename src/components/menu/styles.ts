@@ -135,7 +135,7 @@ export const Hamburger = styled.label`
   }
 
   &.marked span:nth-child(1) {
-    transform: rotate(-45deg); /* Correção aqui */
+    transform: rotate(-45deg); 
     top: 9px;
     background-color: #09f0b4;
   }
@@ -146,7 +146,7 @@ export const Hamburger = styled.label`
   }
 
   &.marked span:nth-child(3) {
-    transform: rotate(45deg); /* Correção aqui */
+    transform: rotate(45deg); 
     top: 9px;
     background-color: #09f0b4;
   }

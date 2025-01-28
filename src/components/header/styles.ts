@@ -62,9 +62,11 @@ export const Text = styled.h1`
     color: ${props => props.theme.colors.tertiary};
     font-size: 22px;
     font-weight: 900;
-    margin-top: 2px;
-    font-family: "Gugi", sans-serif;
+    margin-top: 0;
+    font-family: 'Gugi', sans-serif;
     position: relative;
+    margin: 0;
+    line-height: 32px;
 
     @media (max-width: 576px) {
         font-size: 18px;
