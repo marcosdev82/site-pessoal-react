@@ -44,7 +44,7 @@ export const Ul = styled.ul<UlProps>`
   @media (max-width: 768px) {
     position: absolute;
     right: 0px;
-    top: 60px;
+    top: 70px;
     width: 100%;
     background: rgb(0, 0, 0);
     flex-direction: column;
@@ -101,23 +101,58 @@ export const Arrow = styled.div`
   top: -9px;
 `;
 
-export const Hamburger = styled.div`
-  margin-right: 20px;
-  margin-left: 20px;
-`;
-
-export const DropBox = styled.div`
-  &.marked {
-    background-color: #f2f2f2;
-    border-radius: 2px;
-  }
+export const Hamburger = styled.label`
+  position: relative;
+  cursor: pointer;
+  display: block;
+  height: 22px;
+  width: 30px;
 
   .drop-text.marked1 {
     color: #ffffff;
   }
 
+  & span {
+    position: absolute;
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ffffff;
+    transition: 0.25s ease-in-out;
+  }
+
+  & span:nth-child(1) {
+    top: 0;
+  }
+
+  & span:nth-child(2) {
+    top: 8px;
+  }
+
+  & span:nth-child(3) {
+    top: 16px;
+  }
+
+  &.marked span:nth-child(1) {
+    transform: rotate(-45deg); /* Correção aqui */
+    top: 9px;
+    background-color: #09f0b4;
+  }
+
+  &.marked span:nth-child(2) {
+    opacity: 0;
+    background-color: #09f0b4;
+  }
+
+  &.marked span:nth-child(3) {
+    transform: rotate(45deg); /* Correção aqui */
+    top: 9px;
+    background-color: #09f0b4;
+  }
+
   @media (min-width: 768px) {
-     display: none;
+    display: none;
   }
 `;
 

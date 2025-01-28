@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { MenuContent, Ul, DropBox, Rotate } from "./styles";
+import { MenuContent, Ul, Hamburger } from "./styles";
 
 const Menu = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false); 
@@ -38,12 +38,11 @@ const Menu = () => {
 
   return (
     <MenuContent>
-      <DropBox className={isMarked ? "marked" : ""} onClick={handleClick}>
-        <span className={`drop-text ${isMarked ? "marked1" : ""}`}>
-          Opções
-        </span>
-        <Rotate className={isMarked ? "down" : ""}>▼</Rotate>
-      </DropBox>
+      <Hamburger className={isMarked ? "marked" : ""} onClick={handleClick}>
+          <span></span>
+          <span></span>
+          <span></span>
+      </Hamburger>
 
       <Ul visible={isDropdownVisible}>
         {menuItems.map((item) => (
