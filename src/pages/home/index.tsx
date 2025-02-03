@@ -10,6 +10,7 @@ const Home = () => {
             <Helmet>
                 <title>Home - Marcos Tavares Desenvolvedor Fullstack</title>
                 <meta name="description" content="Marcos Tavares, desenvolvedor fullstack especializado em Java Script, Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
+                <link rel="canonical" href="https://marcostavares.dev.br/" />
                 <meta name="keywords" content="desenvolvedor fullstack, desenvolvimento web, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador fullstack, Marcos Tavares" />
                 <meta property="og:locale" content="pt_BR"/>
                 <meta property="og:type" content="website"/>
