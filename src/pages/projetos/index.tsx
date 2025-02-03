@@ -6,4 +6,4 @@ const Projetos = () => {
     );
 }
 
-export default Projetos;
+export default Projetos; 
