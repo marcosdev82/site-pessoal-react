@@ -34,9 +34,9 @@ const Home = () => {
                         <Curriculo>
                             <a href='http://marcostavares.dev.br/'><span>Download CV</span> <FileDownload style={{ fontSize: 16 }}/></a>
                         </Curriculo>
-                        <a href='http://marcostavares.dev.br/' className="social"><LinkedIn style={{ fontSize: 18 }} /></a>
-                        <a href='http://marcostavares.dev.br/' className="social"><Instagram style={{ fontSize: 18 }}/></a>
-                        <a href='http://marcostavares.dev.br/' className="social"><GitHub style={{ fontSize: 16 }}/></a>
+                        <a href='https://www.linkedin.com/in/marcostavares-dev/' target="_blank" className="social" rel="noreferrer"><LinkedIn style={{ fontSize: 18 }} /></a>
+                        <a href='https://www.instagram.com/marcostavares.dev/' target="_blank" className="social" rel="noreferrer"><Instagram style={{ fontSize: 18 }}/></a>
+                        <a href='https://github.com/marcosdev82' target="_blank"  className="social" rel="noreferrer"><GitHub style={{ fontSize: 16 }}/></a>
                     </SocialMedia>
                 </Description>
                 <Portrait>
