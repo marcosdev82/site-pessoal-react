@@ -3,28 +3,41 @@ import { NavLink } from "react-router-dom";
 import { MenuContent, Ul, Hamburger } from "./styles";
 
 const Menu = () => {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false); 
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [isMarked, setIsMarked] = useState(false);
-
 
   useEffect(() => {
     const handleResize = () => {
       const isDesktop = window.innerWidth >= 768;
-      setIsDropdownVisible(isDesktop); 
-      setIsMarked(isDesktop); 
+      setIsDropdownVisible(isDesktop);
+      setIsMarked(isDesktop);
+
+      if (isDesktop) {
+        document.body.style.overflow = "auto"; // Restaura a rolagem no desktop
+      }
     };
 
-    handleResize(); 
-    window.addEventListener("resize", handleResize); 
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Remove o listener ao desmontar
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    // Remove a rolagem quando o menu está aberto no mobile
+    document.body.style.overflow = isDropdownVisible ? "hidden" : "auto";
+  }, [isDropdownVisible]);
 
   const handleClick = () => {
     setIsDropdownVisible(!isDropdownVisible);
     setIsMarked(!isMarked);
+  };
+
+  const handleItemClick = () => {
+    setIsDropdownVisible(false);
+    setIsMarked(false);
   };
 
   const menuItems = [
@@ -39,9 +52,9 @@ const Menu = () => {
   return (
     <MenuContent>
       <Hamburger className={isMarked ? "marked" : ""} onClick={handleClick}>
-          <span></span>
-          <span></span>
-          <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </Hamburger>
 
       <Ul visible={isDropdownVisible}>
@@ -50,6 +63,7 @@ const Menu = () => {
             <NavLink
               to={item.link}
               className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={handleItemClick}
             >
               {item.name}
             </NavLink>
