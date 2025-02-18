@@ -30,10 +30,10 @@ const Menu = () => {
     setIsMarked(!isMarked);
   };
 
-  const handleItemClick = () => {
-    setIsDropdownVisible(false);
-    setIsMarked(false);
-  };
+  // const handleItemClick = () => {
+  //   setIsDropdownVisible(false);
+  //   setIsMarked(false);
+  // };
 
   const menuItems = [
     { id: 1, name: "Home", link: "/" },
