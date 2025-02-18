@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 interface UlProps {
   visible: boolean;
 }
@@ -52,9 +53,15 @@ export const Ul = styled.ul<UlProps>`
     align-items: start;
     gap: 15px;
     padding: 20px;
+    /* opacity: ${({ visible }) => (visible ? "1" : "0")};
+    transform: ${({ visible }) =>
+      visible ? "translateY(0)" : "translateY(-10px)"};
+    pointer-events: ${({ visible }) => (visible ? "auto" : "none")};
+    transition: opacity 0.3s ease, transform 0.3s ease; */
     & li {
       display: flex;
     }
+    
   }
   & li a {
       color: ${props => props.theme.colors.white};

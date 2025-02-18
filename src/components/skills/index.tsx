@@ -4,6 +4,8 @@ import javascript from '../../assets/images/js.png';
 import typescript from '../../assets/images/ts.png';
 import node from '../../assets/images/node.png';
 import react from '../../assets/images/react.png';
+import nest from '../../assets/images/nest.png';
+import redux from '../../assets/images/redux.png';
 import jest from '../../assets/images/jest.png';
 import cypress from '../../assets/images/cy.png';
 import laravel from '../../assets/images/laravel.png';
@@ -24,6 +26,8 @@ const Skills = () => {
                     <li><IconSkill src={typescript} alt="Type Script" /></li>
                     <li><IconSkill src={node} alt="Node JS" /></li>
                     <li><IconSkill src={react} alt="React and React Native" /></li>
+                    <li><IconSkill src={nest} alt="Nest" /></li>
+                    <li><IconSkill src={redux} alt="Redux" /></li>
                     <li><IconSkill src={jest} alt="Jest" /></li>
                     <li><IconSkill src={cypress} alt="Cypress" /></li>
                     <li><IconSkill src={laravel} alt="Laravel" /></li>
