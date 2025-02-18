@@ -11,10 +11,6 @@ const Menu = () => {
       const isDesktop = window.innerWidth >= 768;
       setIsDropdownVisible(isDesktop);
       setIsMarked(isDesktop);
-
-      if (isDesktop) {
-        document.body.style.overflow = "auto"; // Restaura a rolagem no desktop
-      }
     };
 
     handleResize();
@@ -25,10 +21,9 @@ const Menu = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Remove a rolagem quando o menu está aberto no mobile
-    document.body.style.overflow = isDropdownVisible ? "hidden" : "auto";
-  }, [isDropdownVisible]);
+  // useEffect(() => {
+  //   document.body.style.overflow = isDropdownVisible ? "hidden" : "auto";
+  // }, [isDropdownVisible]);
 
   const handleClick = () => {
     setIsDropdownVisible(!isDropdownVisible);
