@@ -58,7 +58,6 @@ const Menu = () => {
             <NavLink
               to={item.link}
               className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={handleItemClick}
             >
               {item.name}
             </NavLink>
