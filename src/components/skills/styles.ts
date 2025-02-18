@@ -18,13 +18,17 @@ export const List = styled.div`
         display: flex;
         flex-direction: row;
         width: 100%;
-        justify-content: space-around;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
     }
 
     ul li {
         color: #fff;
         width: 100%;
         display: flex;
+        flex: 1;
         align-items: center;
         justify-content: center;
     }
