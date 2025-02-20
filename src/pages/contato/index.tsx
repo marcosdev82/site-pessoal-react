@@ -3,6 +3,43 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Helmet } from 'react-helmet-async';
 import { EntryTitle } from './styles';
 
+interface FormValues {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+
+const validate = (values: FormValues) => {
+    const errors: Partial<FormValues> = {};
+
+    if (!values.name) {
+        errors.name = 'O campo de nome é obrigatório.';
+    } else if (values.name.length < 3) {
+        errors.name = 'O nome deve ter pelo menos 3 caracteres.';
+    }
+
+    if (!values.email) {
+        errors.email = 'O campo de e-mail é obrigatório.';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+        errors.email = 'Por favor, insira um e-mail válido.';
+    }
+
+    if (!values.phone) {
+        errors.phone = 'O campo de telefone é obrigatório.';
+    } else if (!/^\(\d{2}\) \d{4,5}-\d{4}$/.test(values.phone)) {
+        errors.phone = 'Formato inválido. Use (XX) XXXXX-XXXX.';
+    }
+
+    if (!values.message) {
+        errors.message = 'O campo de mensagem é obrigatório.';
+    } else if (values.message.length < 10) {
+        errors.message = 'A mensagem deve ter pelo menos 10 caracteres.';
+    }
+
+    return errors;
+};
+
 const Contato = () => {
     return (
         <>
@@ -11,34 +48,13 @@ const Contato = () => {
                 <meta name="description" content="Entre em contato com Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Transforme suas ideias em soluções digitais inteligentes com aplicações robustas, escaláveis e intuitivas." />
                 <link rel="canonical" href="https://marcostavares.dev.br/contato" />
                 <meta name="robots" content="index, follow" />
-                <meta name="keywords" content="desenvolvedor fullstack, desenvolvimento web, contato, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador fullstack, Marcos Tavares" />
-                <meta property="og:locale" content="pt_BR" />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Contato - Marcos Tavares Fullstack" />
-                <meta property="og:description" content="Entre em contato com Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Transforme suas ideias em soluções digitais inteligentes." />
-                <meta property="og:url" content="https://marcostavares.dev.br/contato" />
-                <meta property="og:site_name" content="Marcos Tavares FullStack" />
-                <meta property="article:publisher" content="https://www.facebook.com/marcostavares.dev" />
             </Helmet>
 
             <EntryTitle>
                 <h1>Contato</h1>
                 <Formik
-                    initialValues={{ email: '', password: '' }}
-                    validate={values => {
-                        const errors = {};
-                        if (!values.email) {
-                            errors.email = 'O campo de e-mail é obrigatório.';
-                        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-                            errors.email = 'Por favor, insira um e-mail válido.';
-                        }
-                        if (!values.password) {
-                            errors.password = 'O campo de senha é obrigatório.';
-                        } else if (values.password.length < 6) {
-                            errors.password = 'A senha deve ter no mínimo 6 caracteres.';
-                        }
-                        return errors;
-                    }}
+                    initialValues={{ name: '', email: '', phone: '', message: '' }}
+                    validate={validate}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
@@ -49,15 +65,27 @@ const Contato = () => {
                     {({ isSubmitting }) => (
                         <Form>
                             <div>
-                                <label htmlFor="email">E-mail:</label>
-                                <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" aria-label="E-mail" />
-                                <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
+                                <label htmlFor="name">Nome:</label>
+                                <Field type="text" name="name" id="name" placeholder="Digite seu nome" />
+                                <ErrorMessage name="name" component="div" style={{ color: 'red' }} aria-live="polite" />
                             </div>
 
                             <div>
-                                <label htmlFor="password">Senha:</label>
-                                <Field type="password" name="password" id="password" placeholder="Digite sua senha" aria-label="Senha" />
-                                <ErrorMessage name="password" component="div" style={{ color: 'red' }} />
+                                <label htmlFor="email">E-mail:</label>
+                                <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" />
+                                <ErrorMessage name="email" component="div" style={{ color: 'red' }} aria-live="polite" />
+                            </div>
+
+                            <div>
+                                <label htmlFor="phone">Telefone:</label>
+                                <Field type="text" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" />
+                                <ErrorMessage name="phone" component="div" style={{ color: 'red' }} aria-live="polite" />
+                            </div>
+
+                            <div>
+                                <label htmlFor="message">Mensagem:</label>
+                                <Field as="textarea" name="message" id="message" placeholder="Digite sua mensagem" />
+                                <ErrorMessage name="message" component="div" style={{ color: 'red' }} aria-live="polite" />
                             </div>
 
                             <button type="submit" disabled={isSubmitting}>
