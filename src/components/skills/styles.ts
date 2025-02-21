@@ -7,11 +7,13 @@ export const ListSkills = styled.section`
 export const List = styled.div`
     display: flex;
     width: 100%;
-    padding: 40px 20px;
     margin-bottom: 40px;
-    border: 1px solid ${props => props.theme.colors.border100};
+    gap: 10px;
     border-radius: 6px;
     position: relative;
+    justify-content: space-between;
+
+    h2 { font-size: 14px; color:rgb(219, 219, 219)}
 
     ul {
         list-style: none;
@@ -20,8 +22,11 @@ export const List = styled.div`
         width: 100%;
         justify-content: center;
         margin: 0;
-        padding: 0;
-        gap: 10px;
+        padding: 15px;
+        gap: 15px;
+        border: 1px solid rgba(242, 242, 242, 0.17);
+        border-radius: 3px;
+        box-shadow: 0 0 30px rgb(12 236 182 / 10%);
     }
 
     ul li {
@@ -34,9 +39,9 @@ export const List = styled.div`
     }
 
     li img{
-        filter: grayscale(100%);
+        /* filter: grayscale(100%);
         transition: filter 0.3s ease;
-        transition: transform 0.3s ease; 
+        transition: transform 0.3s ease;  */
     }
 
     li:hover img{
