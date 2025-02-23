@@ -40,7 +40,7 @@ export const Description = styled.div`
 
     p {
         color: #dbdbdb;
-        font-size: 20px;
+        font-size: 18px;
         margin: 10px 0 20px;
         line-height: 32px;
     }

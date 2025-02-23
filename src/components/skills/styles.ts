@@ -39,9 +39,9 @@ export const List = styled.div`
     }
 
     li img{
-        /* filter: grayscale(100%);
+        filter: grayscale(100%);
         transition: filter 0.3s ease;
-        transition: transform 0.3s ease;  */
+        transition: transform 0.3s ease; 
     }
 
     li:hover img{
