@@ -11,7 +11,7 @@ export const SectionEntryTitle = styled.section`
         font-size: 26px;
         font-weight: 900;
         margin-top: 2px;
-        font-family: "Gugi", sans-serif;
+        /* font-family: "Gugi", sans-serif; */
         position: relative;
     }
 

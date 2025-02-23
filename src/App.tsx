@@ -11,6 +11,9 @@ import { BrowserRouter as Router, Route, Navigate, Routes  } from 'react-router-
 import Home from './pages/home';
 import Servicos from './pages/servicos';
 import Contato from './pages/contato';
+import Blog from './pages/blog';
+import Trabalhos from './pages/trabalhos';
+import Sobre from './pages/sobre';
 
 const App = () => {
   return (
@@ -23,8 +26,11 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/servicos" element={<Servicos />} />
                 <Route path="/contato" element={<Contato />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/trabalhos" element={<Trabalhos />} />
+                <Route path="/sobre" element={<Sobre />} />
                 {/* Redireciona outras rotas inválidas para a home */}
-                <Route path="*" element={<Navigate to="/" />} />
+                {/* <Route path="*" element={<Navigate to="/" />} /> */}
               </Routes>
             </Layout>
           </Router>
