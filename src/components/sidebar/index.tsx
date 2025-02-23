@@ -1,6 +1,8 @@
+import { Aside } from "./style";
+
 const Sidebar = () => {
     return (
-        <h3>Sidebar</h3>
+        <Aside>Sidebar</Aside>
     );
 }
 

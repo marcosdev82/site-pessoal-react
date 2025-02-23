@@ -51,7 +51,7 @@ const ListPosts = () => {
     ];
 
     return (
-        <section className="entryContent">
+        <div className="list-post">
             {posts.map((post) => (
                 <article key={post.id} style={{ border: "1px solid #ddd", padding: "20px", marginBottom: "20px", borderRadius: "8px" }}>
                     <h2>{post.title}</h2>
@@ -75,7 +75,7 @@ const ListPosts = () => {
                     )}
                 </article>
             ))}
-        </section>
+        </div>
     );
 }
 

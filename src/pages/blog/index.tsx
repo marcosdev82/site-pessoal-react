@@ -24,7 +24,7 @@ const Blog = () => {
 
             <EntryTitle title='Blog' />
 
-            <section>
+            <section className='entry-content'>
                 <Sidebar />
                 <ListPosts />
             </section>
