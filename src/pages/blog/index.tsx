@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import EntryTitle from '../../components/entrytitle';
+import Sidebar from '../../components/sidebar';
+import ListPosts from './listPosts';
 
 const Blog = () => {
     return (
@@ -22,7 +24,11 @@ const Blog = () => {
 
             <EntryTitle title='Blog' />
 
- 
+            <section>
+                <Sidebar />
+                <ListPosts />
+            </section>
+    
         </>
     );
 };
