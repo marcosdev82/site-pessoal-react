@@ -13,6 +13,7 @@ export const Container = styled.header`
     justify-content: center;
     align-items: center;
     padding: 0 15px;
+    background-color: #00000030;
 
     .cicle {
         display: block;
