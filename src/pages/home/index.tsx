@@ -33,6 +33,7 @@ const Home = () => {
                         <a href="https://www.linkedin.com/in/marcostavares-dev/" target="_blank" className="social" rel="noopener noreferrer"><LinkedIn style={{ fontSize: 18 }} /></a>
                         <a href="https://www.instagram.com/marcostavares.dev/" target="_blank" className="social" rel="noopener noreferrer"><Instagram style={{ fontSize: 18 }} /></a>
                         <a href="https://github.com/marcosdev82" target="_blank" className="social" rel="noopener noreferrer"><GitHub style={{ fontSize: 16 }} /></a>
+                        {/* <a href="https://github.com/marcosdev82" target="_blank" className="social" rel="noopener noreferrer"><GitHub style={{ fontSize: 16 }} /></a> */}
                     </SocialMedia>
                 </Description>
                 <Portrait>

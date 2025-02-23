@@ -1,4 +1,4 @@
-import { Aside } from "./style";
+import { Aside } from "./styles";
 
 const Sidebar = () => {
     return (

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import EntryTitle from '../../components/entrytitle';
 import Sidebar from '../../components/sidebar';
 import ListPosts from './listPosts';
+import { EntryContent } from './styles';
 
 const Blog = () => {
     return (
@@ -24,10 +25,10 @@ const Blog = () => {
 
             <EntryTitle title='Blog' />
 
-            <section className='entry-content'>
+            <EntryContent>
                 <Sidebar />
                 <ListPosts />
-            </section>
+            </EntryContent>
     
         </>
     );
