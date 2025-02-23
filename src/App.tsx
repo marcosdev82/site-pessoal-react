@@ -5,7 +5,7 @@ import GlobalStyles from './styles/GlobalStyles';
 
 import dark from './styles/themes/dark';
 import Layout from './components/layout';
-import { BrowserRouter as Router, Route, Navigate, Routes  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 
 
 import Home from './pages/home';
