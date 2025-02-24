@@ -16,3 +16,65 @@ export const EntryTitle = styled.section`
     }
 
 `;
+export const Content = styled.section`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto); */
+`;
+export const ContactForm = styled.div`
+    grid-column: 1/1;
+    min-height: 600px;
+    padding: 0 15px;
+
+    & form div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+    
+    & form label {
+        display: inline-block;
+        color: #f2f2f2;
+        font-size: 12px;
+    }
+    & form input {
+        height: 36px;
+        padding: 5px;
+    }
+    & form textarea {
+       height: 70px;
+       padding: 5px;
+       margin-bottom: 10px;
+    }
+    & form button { 
+        display: flex;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: #000;
+        line-height: 25px;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        position: relative;
+        background: transparent;
+        z-index: 1;
+    }
+    & button::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        background-color: #09f0b4;
+        z-index: 0;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+    }
+    & button span {
+        color: #000;
+        position: relative;
+        z-index: 2;
+        font-weight: 600;
+    }
+`;

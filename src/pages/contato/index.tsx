@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Helmet } from 'react-helmet-async';
 import EntryTitle  from '../../components/entrytitle';
+import { ContactForm, Content } from './styles';
 
 
 interface FormValues {
@@ -53,58 +54,60 @@ const Contato = () => {
 
             <EntryTitle title='Contato' />
 
-            <section> 
-                <Formik
-                        initialValues={{ name: '', email: '', phone: '', message: '' }}
-                        validate={validate}
-                        onSubmit={(values, { setSubmitting }) => {
-                            setTimeout(() => {
-                                alert(JSON.stringify(values, null, 2));
-                                setSubmitting(false);
-                            }, 400);
-                        }}
-                    >
-                        {({ isSubmitting }) => (
-                            <Form>
-                                <div>
-                                    <label htmlFor="name">Nome:</label>
-                                    <Field type="text" name="name" id="name" placeholder="Digite seu nome" />
-                                    <ErrorMessage name="name">
-                                        {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
-                                    </ErrorMessage>
-                                </div>
+            <Content> 
+                <ContactForm>
+                    <Formik
+                            initialValues={{ name: '', email: '', phone: '', message: '' }}
+                            validate={validate}
+                            onSubmit={(values, { setSubmitting }) => {
+                                setTimeout(() => {
+                                    alert(JSON.stringify(values, null, 2));
+                                    setSubmitting(false);
+                                }, 400);
+                            }}
+                        >
+                            {({ isSubmitting }) => (
+                                <Form>
+                                    <div>
+                                        <label htmlFor="name">Nome:</label>
+                                        <Field type="text" name="name" id="name" placeholder="Digite seu nome" />
+                                        <ErrorMessage name="name">
+                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                        </ErrorMessage>
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="email">E-mail:</label>
-                                    <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" />
-                                    <ErrorMessage name="email">
-                                        {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
-                                    </ErrorMessage>
-                                </div>
+                                    <div>
+                                        <label htmlFor="email">E-mail:</label>
+                                        <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" />
+                                        <ErrorMessage name="email">
+                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                        </ErrorMessage>
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="phone">Telefone:</label>
-                                    <Field type="text" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" />
-                                    <ErrorMessage name="phone">
-                                        {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
-                                    </ErrorMessage>
-                                </div>
+                                    <div>
+                                        <label htmlFor="phone">Telefone:</label>
+                                        <Field type="text" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" />
+                                        <ErrorMessage name="phone">
+                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                        </ErrorMessage>
+                                    </div>
 
-                                <div>
-                                    <label htmlFor="message">Mensagem:</label>
-                                    <Field as="textarea" name="message" id="message" placeholder="Digite sua mensagem" />
-                                    <ErrorMessage name="message">
-                                        {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
-                                    </ErrorMessage>
-                                </div>
+                                    <div>
+                                        <label htmlFor="message">Mensagem:</label>
+                                        <Field as="textarea" name="message" id="message" placeholder="Digite sua mensagem" />
+                                        <ErrorMessage name="message">
+                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                        </ErrorMessage>
+                                    </div>
 
-                                <button type="submit" disabled={isSubmitting}>
-                                    Enviar
-                                </button>
-                            </Form>
-                        )}
-                </Formik>
-            </section>
+                                    <button type="submit" disabled={isSubmitting}>
+                                        <span>Enviar</span>
+                                    </button>
+                                </Form>
+                            )}
+                    </Formik>
+                </ContactForm>
+            </Content>
 
         </>
     );

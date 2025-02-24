@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 interface UlProps {
   visible: boolean;
 }
@@ -84,8 +83,6 @@ export const Ul = styled.ul<UlProps>`
       transform-origin: right;
       background: -o-linear-gradient(190deg, #6ff2cb 0%, rgba(115, 67, 210, 0) 100%);
       background: linear-gradient(260deg, #6ff2cb 0%, rgba(115, 67, 210, 0) 100%);
-      /* -webkit-filter: blur(1px);
-      filter: blur(1px); */
   }
   & li a.active,
   & li a:hover {
