@@ -71,8 +71,8 @@ const Contato = () => {
                                     <div>
                                         <label htmlFor="name">Nome:</label>
                                         <Field type="text" name="name" id="name" placeholder="Digite seu nome" />
-                                        <ErrorMessage name="name">
-                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                          <ErrorMessage name="name">
+                                            {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
                                         </ErrorMessage>
                                     </div>
 
@@ -80,7 +80,7 @@ const Contato = () => {
                                         <label htmlFor="email">E-mail:</label>
                                         <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" />
                                         <ErrorMessage name="email">
-                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                            {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
                                         </ErrorMessage>
                                     </div>
 
@@ -88,7 +88,7 @@ const Contato = () => {
                                         <label htmlFor="phone">Telefone:</label>
                                         <Field type="text" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" />
                                         <ErrorMessage name="phone">
-                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                            {msg => <div style={{ color: '#f16262' }} className='error'  aria-live="polite">{msg}</div>}
                                         </ErrorMessage>
                                     </div>
 
@@ -96,7 +96,7 @@ const Contato = () => {
                                         <label htmlFor="message">Mensagem:</label>
                                         <Field as="textarea" name="message" id="message" placeholder="Digite sua mensagem" />
                                         <ErrorMessage name="message">
-                                            {msg => <div style={{ color: 'red' }} aria-live="polite">{msg}</div>}
+                                            {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
                                         </ErrorMessage>
                                     </div>
 

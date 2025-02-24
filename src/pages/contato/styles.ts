@@ -24,7 +24,7 @@ export const Content = styled.section`
 export const ContactForm = styled.div`
     grid-column: 1/1;
     min-height: 600px;
-    padding: 0 15px;
+    padding: 0;
 
     & form div {
         display: flex;
@@ -39,7 +39,7 @@ export const ContactForm = styled.div`
         font-size: 12px;
     }
     & form input {
-        height: 36px;
+        height: 34px;
         padding: 5px;
     }
     & form textarea {
@@ -76,5 +76,11 @@ export const ContactForm = styled.div`
         position: relative;
         z-index: 2;
         font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    & .error {
+        font-size: 9px;
+        text-transform: uppercase;
     }
 `;
