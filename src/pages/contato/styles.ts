@@ -42,11 +42,47 @@ export const ContactForm = styled.div`
         height: 34px;
         padding: 5px;
     }
+    & form input::placeholder {
+        color: gray; /* Define a cor */
+        opacity: 1; /* Garante visibilidade total */
+        font-style: italic; /* Opcional: deixa em itálico */
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    & form input::-webkit-input-placeholder { /* Chrome, Safari */
+        color: gray; /* Define a cor */
+        opacity: 1; /* Garante visibilidade total */
+        font-style: italic; /* Opcional: deixa em itálico */
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    & form input::-moz-placeholder { /* Firefox */
+        color: gray; /* Define a cor */
+        opacity: 1; /* Garante visibilidade total */
+        font-style: italic; /* Opcional: deixa em itálico */
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    & form  input:-ms-input-placeholder { /* Internet Explorer */
+        color: gray; /* Define a cor */
+        opacity: 1; /* Garante visibilidade total */
+        font-style: italic; /* Opcional: deixa em itálico */
+        font-size: 10px;
+        text-transform: uppercase;
+    }
     & form textarea {
        height: 70px;
        padding: 5px;
        margin-bottom: 10px;
     }
+    & form textarea::placeholder {
+        color: gray; /* Define a cor */
+        font-size: 10px; /* Ajusta o tamanho */
+        font-style: italic; /* Opcional: deixa em itálico */
+        text-transform: uppercase;
+        opacity: 1; /* Garante visibilidade total */
+    }
+
     & form button { 
         display: flex;
         padding: 10px 30px;
