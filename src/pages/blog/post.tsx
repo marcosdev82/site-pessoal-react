@@ -1,7 +1,6 @@
 import React from 'react';
 import { Article } from './styles';
 
-// Definir a interface do Post
 interface PostProps {
   id: number;
   title: string;
@@ -9,7 +8,7 @@ interface PostProps {
   thumbnailUrl?: string;
 }
 
-const Post: React.FC<PostProps> = ({ id, title, content, thumbnailUrl }) => {
+const Post = ({ id, title, content, thumbnailUrl }: PostProps) => {
   return (
     <Article key={id} >
       {/* Verificar se existe a imagem antes de renderizar */}
@@ -17,7 +16,7 @@ const Post: React.FC<PostProps> = ({ id, title, content, thumbnailUrl }) => {
         <img
           src={thumbnailUrl}
           alt={title}
-          style={{ width: '600px', height: 'auto' }} // Adicionar estilo para a imagem
+          style={{ width: '600px', height: 'auto' }} 
         />
       )}
       <h2>{title}</h2>

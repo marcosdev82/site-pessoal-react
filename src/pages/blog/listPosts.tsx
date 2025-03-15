@@ -4,7 +4,7 @@ import Post from './post'; // Importando o componente Post
 
 const API_URL_LISTAR_POSTS = 'https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed';
 
-interface Post {
+interface PostContent {
   id: number;
   title: { rendered: string };
   content: { rendered: string };
@@ -14,14 +14,14 @@ interface Post {
 }
 
 const ListPosts = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<PostContent[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function obterPosts() {
       try {
-        const { data } = await Axios.get<Post[]>(API_URL_LISTAR_POSTS);
+        const { data } = await Axios.get<PostContent[]>(API_URL_LISTAR_POSTS);
         setPosts(data);
         setLoading(false);
       } catch (err) {
