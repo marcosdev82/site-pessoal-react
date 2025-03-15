@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Thumbnail from '../../assets/images/thumnail-1024x1024.jpg';
 
 const ListPosts = () => {
+    const API_URL_LISTAR_POSTS = 'http://localhost:4000/gerenciador-tarefas';
+    const [carregarPosts, setCarregarPosts] = useState(true);
+
+    useEffect(() => {
+        async function obterPost() {
+
+            try {
+                // const params = `?pag=${paginaAtual}&ordem=${ordem}&filtro-tarefa=${filtroTarefa}`; 
+                let { data } = await axios.get(API_URL_LISTAR_POSTS + params);
+                console.log(data)
+                
+            } catch (err) {
+                
+            }
+        }
+
+        if (carregarPosts) {
+            setCarregarPosts(false);
+        }
+    }, [carregarPosts]);
+    
     const posts = [
         {
             id: 1,

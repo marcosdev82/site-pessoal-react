@@ -47,7 +47,7 @@ const Contato = () => {
         <>
             <Helmet>
                 <title>Contato - Marcos Tavares Desenvolvedor Fullstack</title>
-                <meta name="description" content="Entre em contato com Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Transforme suas ideias em soluções digitais inteligentes com aplicações robustas, escaláveis e intuitivas." />
+                <meta name="description" content="Entre em contato com Marcos Tavares, Whatsapp desenvolvedor fullstack especializado em JavaScript. Aproveite e faça um orçamento." />
                 <link rel="canonical" href="https://marcostavares.dev.br/contato" />
                 <meta name="robots" content="index, follow" />
             </Helmet>
