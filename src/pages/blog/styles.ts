@@ -18,6 +18,9 @@ export const Article = styled.article`
     border-radius: 8px;
     background-color: #000;
     color:rgb(107, 107, 107);
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
     
     & p {
        color: #bbbbbb

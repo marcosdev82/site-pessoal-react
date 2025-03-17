@@ -7,7 +7,7 @@ const API_URL_LISTAR_POSTS = 'https://marcostavares.dev.br/wp/wp-json/wp/v2/post
 interface PostContent {
   id: number;
   title: { rendered: string };
-  content: { rendered: string };
+  excerpt: { rendered: string };
   _embedded?: {
     "wp:featuredmedia"?: { source_url: string }[];
   };
@@ -47,7 +47,7 @@ const ListPosts = () => {
             key={post.id}
             id={post.id}
             title={post.title.rendered}
-            content={post.content.rendered}
+            excerpt={post.excerpt.rendered}
             thumbnailUrl={thumbnailUrl}
           />
         );

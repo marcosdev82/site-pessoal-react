@@ -4,11 +4,11 @@ import { Article } from './styles';
 interface PostProps {
   id: number;
   title: string;
-  content: string;
+  excerpt: string;
   thumbnailUrl?: string;
 }
 
-const Post = ({ id, title, content, thumbnailUrl }: PostProps) => {
+const Post = ({ id, title, excerpt, thumbnailUrl }: PostProps) => {
   return (
     <Article key={id} >
       {/* Verificar se existe a imagem antes de renderizar */}
@@ -25,7 +25,7 @@ const Post = ({ id, title, content, thumbnailUrl }: PostProps) => {
         <h2>{title}</h2>
         <div
           dangerouslySetInnerHTML={{
-            __html: content,
+            __html: excerpt,
           }}
         />
       </div>
