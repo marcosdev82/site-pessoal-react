@@ -13,18 +13,22 @@ const Post = ({ id, title, content, thumbnailUrl }: PostProps) => {
     <Article key={id} >
       {/* Verificar se existe a imagem antes de renderizar */}
       {thumbnailUrl && (
-        <img
-          src={thumbnailUrl}
-          alt={title}
-          style={{ width: '600px', height: 'auto' }} 
-        />
+        <figure>
+          <img
+            src={thumbnailUrl}
+            alt={title}
+            style={{ width: '320px', height: 'auto' }} 
+          />
+        </figure>
       )}
-      <h2>{title}</h2>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: content,
-        }}
-      />
+      <div className='description'>
+        <h2>{title}</h2>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: content,
+          }}
+        />
+      </div>
     </Article>
   );
 };
