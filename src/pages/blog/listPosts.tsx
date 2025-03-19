@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import Post from './post'; // Importando o componente Post
+import Pagination from '../../components/paginacao';
 
 const API_URL_LISTAR_POSTS = 'https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed';
 
@@ -17,11 +18,27 @@ const ListPosts = () => {
   const [posts, setPosts] = useState<PostContent[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
+  const [paginaAtual, setPaginaAtual] = useState(1);
+  // const [ordenarAsc, setOrdenarAsc] = useState(false);
+  // const [ordenarDesc, setOrdenarDesc] = useState(false);
+  const totalItems = 100;  
+  const itemsPorPagina = 10;  
+ 
   useEffect(() => {
     async function obterPosts() {
+
+      // // ordem 
+      // let ordem = '';
+      // if (ordenarAsc) {
+      //     ordem = 'ASC'
+      // } else if (ordenarDesc) {
+      //     ordem = 'DESC'
+      // }
+
       try {
-        const { data } = await Axios.get<PostContent[]>(API_URL_LISTAR_POSTS);
+        // const params = `?pag=${paginaAtual}&ordem=${ordem}&filtro-tarefa=${filtroTarefa}`; 
+        const params = `?pag=${paginaAtual}`; 
+        const { data } = await Axios.get<PostContent[]>(API_URL_LISTAR_POSTS  + params);
         setPosts(data);
         setLoading(false);
       } catch (err) {
@@ -31,8 +48,18 @@ const ListPosts = () => {
       }
     }
 
+    if (loading) {
+      obterPosts();
+      setLoading(false);
+    }
+
     obterPosts();
-  }, []);
+  }, [loading, paginaAtual]);
+
+  const handleMudarPagina = (novaPagina: number) => {
+    setPaginaAtual(novaPagina);
+    setLoading(true);
+  };
 
   if (loading) return <div>Carregando posts...</div>;
   if (error) return <div>{error}</div>;
@@ -43,16 +70,25 @@ const ListPosts = () => {
         const thumbnailUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
         return (
-          <Post
-            key={post.id}
-            id={post.id}
-            title={post.title.rendered}
-            excerpt={post.excerpt.rendered}
-            thumbnailUrl={thumbnailUrl}
-          />
+            <Post
+              key={post.id}
+              id={post.id}
+              title={post.title.rendered}
+              excerpt={post.excerpt.rendered}
+              thumbnailUrl={thumbnailUrl}
+            />
         );
       })}
+
+      <Pagination
+        paginaAtual={paginaAtual}
+        totalItems={totalItems}
+        itemsPorPagina={itemsPorPagina}
+        mudarPagina={handleMudarPagina}
+      />
+
     </div>
+    
   );
 };
 
