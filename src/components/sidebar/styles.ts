@@ -1,10 +1,21 @@
 import styled from "styled-components";
 
 export const Aside = styled.aside`
-    border: 1px solid rgb(221, 221, 221);
-    max-height: 500px;
-    height: 100%;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    position: relative;
+    display: flex;
+    max-height: calc(100vh - 40px);  
+    & .sidebar {
+        border: 1px solid rgb(151, 151, 151);
+        max-height: 500px;
+        width: 278px; 
+        max-width: calc(310px - 40px);  
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        position: sticky;
+        top: 20px;  
+        overflow-y: auto;  
+        height: auto;  
+       
+    }
 `;
