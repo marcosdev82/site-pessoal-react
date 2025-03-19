@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article } from './styles';
+import { Article, CardPost } from './styles';
 
 interface PostProps {
   id: number;
@@ -11,24 +11,26 @@ interface PostProps {
 const Post = ({ id, title, excerpt, thumbnailUrl }: PostProps) => {
   return (
     <Article key={id} >
-      {/* Verificar se existe a imagem antes de renderizar */}
-      {thumbnailUrl && (
-        <figure>
-          <img
-            src={thumbnailUrl}
-            alt={title}
-            style={{ width: '320px', height: 'auto' }} 
+      <CardPost>
+        {/* Verificar se existe a imagem antes de renderizar */}
+        {thumbnailUrl && (
+          <figure>
+            <img
+              src={thumbnailUrl}
+              alt={title}
+              style={{ width: '320px', height: 'auto' }} 
+            />
+          </figure>
+        )}
+        <div className='description'>
+          <h2>{title}</h2>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: excerpt,
+            }}
           />
-        </figure>
-      )}
-      <div className='description'>
-        <h2>{title}</h2>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: excerpt,
-          }}
-        />
-      </div>
+        </div>
+      </CardPost>
     </Article>
   );
 };

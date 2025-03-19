@@ -12,16 +12,28 @@ export const Content = styled.section`
     padding: 20px;
 `;
 export const Article = styled.article`
-    border: 1px solid rgb(90 90 90);
-    padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    background: linear-gradient(to left,rgba(43, 247, 145, 0.7) 0%,rgba(83, 176, 234, 0.54) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+`;
+export const CardPost = styled.div`
     background-color: #000;
+    // border: 1px solid rgb(90 90 90);
+    padding: 20px;
     color:rgb(107, 107, 107);
+    position: relative;
+    display: inline-flex;
     display: flex;
     gap: 20px;
     flex-direction: row;
-    
+    border-radius: 8px;
+    border: 3px solid transparent;
     & p {
        color: #bbbbbb
     }
