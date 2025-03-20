@@ -19,15 +19,22 @@ const ListPosts = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [paginaAtual, setPaginaAtual] = useState(1);
-  const totalItems = 6;  
+  const [totalItems, setTotalItems] = useState(0);
   const itemsPorPagina = 2;  
 
   useEffect(() => {
     async function obterPosts() {
       try {
         const params = `&page=${paginaAtual}&per_page=2`;
-        const { data } = await Axios.get<PostContent[]>(API_URL_LISTAR_POSTS + params);
-        setPosts(data);
+        const response = await Axios.get<PostContent[]>(API_URL_LISTAR_POSTS + params);
+
+        setPosts(response.data);
+
+        // Pegando o total de posts do cabeçalho
+        const total = response.headers["x-wp-total"];
+        if (total) setTotalItems(parseInt(total));
+
+        setPosts(response.data);
         setLoading(false);
       } catch (err) {
         console.error("Erro ao obter posts:", err);
@@ -37,7 +44,7 @@ const ListPosts = () => {
     }
 
     obterPosts();
-  }, [paginaAtual]);
+  }, [loading, paginaAtual]);
 
   const handleMudarPagina = (novaPagina: number) => {
     setPaginaAtual(novaPagina);
@@ -70,6 +77,7 @@ const ListPosts = () => {
         itemsPorPagina={itemsPorPagina}
         mudarPagina={handleMudarPagina}
       />
+      
     </div>
   );
 };
