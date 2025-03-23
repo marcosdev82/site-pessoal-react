@@ -38,3 +38,4 @@ export const CardPost = styled.div`
        color: #bbbbbb
     }
 `;
+export const Form = styled.input``;
