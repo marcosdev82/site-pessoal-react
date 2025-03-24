@@ -34,10 +34,15 @@ const SinglePost = () => {
   return (
     <div>
       <h1 dangerouslySetInnerHTML={{ __html: postData.title.rendered }} />
-      <img
-        src={postData._embedded?.["wp:featuredmedia"]?.[0]?.source_url || ""}
-        alt="Imagem do post"
-      />
+       {postData.thumbnails && (
+          <figure>
+              <img
+                src={postData.thumbnails?.medium_large}
+                alt={postData.title.rendered}
+                style={{ width: "320px", height: "auto" }}
+              />
+          </figure>
+        )}
       <div dangerouslySetInnerHTML={{ __html: postData.content.rendered }} />
     </div>
   );

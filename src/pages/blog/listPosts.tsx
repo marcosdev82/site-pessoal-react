@@ -11,9 +11,7 @@ interface PostContent {
   title: { rendered: string };
   excerpt: { rendered: string };
   slug: string;
-  _embedded?: {
-    "wp:featuredmedia"?: { source_url: string }[];
-  };
+  thumbnails?: { [size: string]: string }; 
 }
 
 const ListPosts = () => {
@@ -63,7 +61,7 @@ const ListPosts = () => {
     );
     setFilteredPosts(filtered);
     setTotalItems(filtered.length);
-    setCurrentPage(1); // Voltar para a primeira página após a pesquisa
+    setCurrentPage(1); 
   };
 
   // Paginação no lado cliente
@@ -72,7 +70,7 @@ const ListPosts = () => {
     currentPage * perPage
   );
 
-  // Chama fetchPosts quando o componente for montado
+ 
   useEffect(() => {
     fetchPosts(); // Carrega todos os posts inicialmente
   }, []);
@@ -82,7 +80,7 @@ const ListPosts = () => {
       <div className="search-container">
         <Search
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // Atualiza o termo de pesquisa enquanto digita
+          onChange={(e) => setSearchTerm(e.target.value)}  
           className="filtro-tarefa"
           placeholder="Digite para filtrar..."
         />
@@ -100,16 +98,13 @@ const ListPosts = () => {
           <div className="list-post">
             {paginatedPosts.length > 0 ? (
               paginatedPosts.map((post) => {
-                const thumbnailUrl =
-                  post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
-
                 return (
                   <Post
                     key={post.id}
                     id={post.id}
                     title={post.title.rendered}
                     excerpt={post.excerpt.rendered}
-                    thumbnailUrl={thumbnailUrl}
+                    thumbnailUrl={post.thumbnails?.medium}
                     permalink={post.slug}
                   />
                 );
