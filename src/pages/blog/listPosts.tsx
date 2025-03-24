@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
-import Post from './post';
-import Pagination from '../../components/paginacao';
-import Search from '../../components/search';
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import Post from "./post";
+import Pagination from "../../components/paginacao";
+import Search from "../../components/search";
 
-const API_URL_LISTAR_POSTS = 'https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed';
+const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed";
 
 interface PostContent {
   id: number;
   title: { rendered: string };
   excerpt: { rendered: string };
+  slug: string;
   _embedded?: {
     "wp:featuredmedia"?: { source_url: string }[];
   };
@@ -17,84 +18,117 @@ interface PostContent {
 
 const ListPosts = () => {
   const [posts, setPosts] = useState<PostContent[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [paginaAtual, setPaginaAtual] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
-  const itemsPorPagina = 3;  
-  const [filtroPost, setFiltroPost] = useState('');
+  const [filteredPosts, setFilteredPosts] = useState<PostContent[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const perPage = 3; // Quantidade de itens por página
 
-  useEffect(() => {
-    async function obterPosts() {
-      try {
-        const params = `&page=${paginaAtual}&per_page=${itemsPorPagina}&search=${filtroPost}`;
-        const response = await Axios.get<PostContent[]>(API_URL_LISTAR_POSTS + params);
+  // Função para buscar todos os posts inicialmente
+  const fetchPosts = async () => {
+    setLoading(true);
+    setError(null);
 
-        setPosts(response.data);
+    try {
+      const response = await Axios.get<PostContent[]>(API_URL);
+      const allPosts = response.data;
 
-        // Pegando o total de posts do cabeçalho
-        const total = response.headers["x-wp-total"];
-        if (total) setTotalItems(parseInt(total));
+      setPosts(allPosts);
+      setFilteredPosts(allPosts);
 
-        setPosts(response.data);
-        setLoading(false);
-      } catch (err) {
-        console.error("Erro ao obter posts:", err);
-        setError("Não foi possível carregar os posts.");
-        setLoading(false);
-      }
+      // Pegando o total de posts do cabeçalho
+      const total = response.headers["x-wp-total"];
+      setTotalItems(total ? parseInt(total, 10) : allPosts.length); // Usa o total dos posts se disponível
+    } catch (err) {
+      console.error("Erro ao obter posts:", err);
+      setError("Não foi possível carregar os posts.");
+    } finally {
+      setLoading(false);
     }
-
-    obterPosts();
-  }, [loading, paginaAtual, filtroPost]);
-
-  const handleMudarPagina = (novaPagina: number) => {
-    setPaginaAtual(novaPagina);
-    setLoading(true);
   };
 
-  const handleFiltrar = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFiltroPost(event.target.value);
-    setLoading(true);
+  // Função para alterar a página
+  const handleMudarPagina = (page: number) => {
+    setCurrentPage(page);
   };
 
+  // Função para filtrar posts ao submeter a pesquisa
+  const handleSearchSubmit = () => {
+    const filtered = posts.filter(
+      (post) =>
+        post.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.rendered.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPosts(filtered);
+    setTotalItems(filtered.length);
+    setCurrentPage(1); // Voltar para a primeira página após a pesquisa
+  };
 
-  if (loading) return <div>Carregando posts...</div>;
-  if (error) return <div>{error}</div>;
+  // Paginação no lado cliente
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * perPage,
+    currentPage * perPage
+  );
+
+  // Chama fetchPosts quando o componente for montado
+  useEffect(() => {
+    fetchPosts(); // Carrega todos os posts inicialmente
+  }, []);
 
   return (
     <div>
-      <Search 
-        value={filtroPost}
-        onChange={handleFiltrar}
-        className="filtro-tarefa"
-        placeholder="Digite para filtrar..."
-      />
-
-      <div className="list-post">
-        {posts.map((post) => {
-
-          const thumbnailUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
-
-          return (
-            <Post
-              key={post.id}
-              id={post.id}
-              title={post.title.rendered}
-              excerpt={post.excerpt.rendered}
-              thumbnailUrl={thumbnailUrl} 
-            />
-          );
-        })}
-
-        <Pagination
-          paginaAtual={paginaAtual}
-          totalItems={totalItems}
-          itemsPorPagina={itemsPorPagina}
-          mudarPagina={handleMudarPagina}
+      <div className="search-container">
+        <Search
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)} // Atualiza o termo de pesquisa enquanto digita
+          className="filtro-tarefa"
+          placeholder="Digite para filtrar..."
         />
-        
+        <button onClick={handleSearchSubmit} disabled={loading}>
+          {loading ? "Pesquisando..." : "Pesquisar"}
+        </button>
       </div>
+
+      {error && <div className="error-message">{error}</div>}
+
+      {loading ? (
+        <p>Carregando posts...</p>
+      ) : (
+        <>
+          <div className="list-post">
+            {paginatedPosts.length > 0 ? (
+              paginatedPosts.map((post) => {
+                const thumbnailUrl =
+                  post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
+
+                return (
+                  <Post
+                    key={post.id}
+                    id={post.id}
+                    title={post.title.rendered}
+                    excerpt={post.excerpt.rendered}
+                    thumbnailUrl={thumbnailUrl}
+                    permalink={post.slug}
+                  />
+                );
+              })
+            ) : (
+              <p>Nenhum post encontrado.</p>
+            )}
+          </div>
+
+          {totalItems > perPage && (
+            <Pagination
+              currentPage={currentPage}
+              totalItems={totalItems}
+              itemsPorPagina={perPage}
+              mudarPagina={handleMudarPagina}
+            />
+          )}
+        </>
+      )}
     </div>
   );
 };

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Input } from './styles';
+import React from "react";
 
 interface SearchProps {
   value: string;
@@ -8,15 +7,21 @@ interface SearchProps {
   placeholder?: string;
 }
 
-const Search  = ({ value, onChange, className = "search", placeholder = "Search..." }: SearchProps) => {
+const Search: React.FC<SearchProps> = ({
+  value,
+  onChange,
+  className = "search",
+  placeholder = "Search...",
+}) => {
   return (
-      <Input 
-        type="text" 
-        value={value} 
-        onChange={onChange} 
-        placeholder={placeholder}
-        data-testid="text-tarefa"
-      />
+    <input
+      type="text"
+      value={value}
+      onChange={onChange}
+      className={className}
+      placeholder={placeholder}
+      data-testid="text-tarefa"
+    />
   );
 };
 
