@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Post from "./post";
-import Pagination from "../../components/paginacao";
+import Pagination from "../../components/pagination";
 import Search from "../../components/search";
 
 const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed";

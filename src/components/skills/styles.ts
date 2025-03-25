@@ -13,7 +13,14 @@ export const List = styled.div`
     position: relative;
     justify-content: space-between;
 
-    h2 { font-size: 14px; color:rgb(219, 219, 219)}
+    h2 { 
+        font-size: 14px; 
+        color:rgb(219, 219, 219);
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: .5rem;
+        margin-top: 0;
+    }
 
     ul {
         list-style: none;
