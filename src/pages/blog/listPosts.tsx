@@ -11,7 +11,8 @@ interface PostContent {
   title: { rendered: string };
   excerpt: { rendered: string };
   slug: string;
-  thumbnails?: { [size: string]: string }; 
+  featured_media: number; 
+  _embedded?: { [key: string]: any };  
 }
 
 const ListPosts = () => {
@@ -36,7 +37,6 @@ const ListPosts = () => {
       setPosts(allPosts);
       setFilteredPosts(allPosts);
 
-      // Pegando o total de posts do cabeçalho
       const total = response.headers["x-wp-total"];
       setTotalItems(total ? parseInt(total, 10) : allPosts.length); // Usa o total dos posts se disponível
     } catch (err) {
@@ -47,12 +47,10 @@ const ListPosts = () => {
     }
   };
 
-  // Função para alterar a página
   const handleMudarPagina = (page: number) => {
     setCurrentPage(page);
   };
 
-  // Função para filtrar posts ao submeter a pesquisa
   const handleSearchSubmit = () => {
     const filtered = posts.filter(
       (post) =>
@@ -72,7 +70,7 @@ const ListPosts = () => {
 
  
   useEffect(() => {
-    fetchPosts(); // Carrega todos os posts inicialmente
+    fetchPosts();  
   }, []);
 
   return (
@@ -104,7 +102,8 @@ const ListPosts = () => {
                     id={post.id}
                     title={post.title.rendered}
                     excerpt={post.excerpt.rendered}
-                    thumbnailUrl={post.thumbnails?.medium}
+                    featured_media={post.featured_media}
+                    _embedded={post._embedded} // Agora reconhece opcionalidade
                     permalink={post.slug}
                   />
                 );
