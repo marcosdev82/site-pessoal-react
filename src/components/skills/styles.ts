@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const ListSkills = styled.section`
     display: flex;
     width: 100%;
+    @media (max-width: 576px) {
+        flex-direction: column;
+    }
 `;
 export const List = styled.div`
     display: flex;
@@ -40,7 +43,6 @@ export const List = styled.div`
         color: #fff;
         width: 100%;
         display: flex;
-        flex: 1;
         align-items: center;
         justify-content: center;
     }
@@ -59,11 +61,17 @@ export const List = styled.div`
 
     @media (max-width: 576px) {
         display: flex;
+        flex-direction: column;
         width: 100%;
         padding: 20px 20px;
         border: 1px solid #09f0b47d;
         border-radius: 5px;
         position: relative;
+        
+        .group {
+            margin-bottom: 10px;
+        }
+
         ul {
             flex-wrap: wrap;
             gap: 15px;
@@ -72,7 +80,7 @@ export const List = styled.div`
             width: auto;
         }
         ul li img{ 
-            width: 60px;
+            width: auto;
         }
     }
 `;

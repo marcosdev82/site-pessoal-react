@@ -18,4 +18,8 @@ export const Aside = styled.aside`
         height: auto;  
        
     }
+
+    @media (max-width: 576px) {
+        display: none;
+    }
 `;

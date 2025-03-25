@@ -21,6 +21,7 @@ export const Article = styled.article`
     justify-content: center;
     align-items: center;
     padding: 1px;
+    
 `;
 export const CardPost = styled.div`
     background-color: #000;
@@ -36,6 +37,10 @@ export const CardPost = styled.div`
     border: 3px solid transparent;
     & p {
        color: #bbbbbb
+    }
+
+    @media (max-width: 576px) { 
+        flex-direction: column;
     }
 `;
 export const Form = styled.input``;
