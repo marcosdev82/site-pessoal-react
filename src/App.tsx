@@ -14,6 +14,7 @@ import Blog from "./pages/blog";
 import SinglePost from "./pages/blog/SinglePost";
 import Trabalhos from "./pages/trabalhos";
 import Sobre from "./pages/sobre";
+import NotFound from "./pages/404";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
               <Route path="/blog/:post" element={<SinglePost />} />
               <Route path="/trabalhos" element={<Trabalhos />} />
               <Route path="/sobre" element={<Sobre />} />
+              <Route path="*" element={<NotFound />} />
               {/* Redireciona outras rotas inválidas para a home */}
               {/* <Route path="*" element={<Navigate to="/" />} /> */}
             </Routes>
