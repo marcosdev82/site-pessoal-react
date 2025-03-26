@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
-import Image from "../../components/thumbnails"
+import Post from "./post";
 
 const API_URL =
   "https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed&slug=";
@@ -33,20 +33,15 @@ const SinglePost = () => {
   if (!postData) return <p>Nenhum post encontrado.</p>;
 
   return (
-    <div>
-      <h1 dangerouslySetInnerHTML={{ __html: postData.title.rendered }} />
-       {postData.thumbnails && (
-          <figure>
-              <Image
-                src={postData.thumbnails?.medium_large}
-                alt={postData.title.rendered}
-                width={320}
-                height={180}
-              />
-          </figure>
-        )}
-      <div dangerouslySetInnerHTML={{ __html: postData.content.rendered }} />
-    </div>
+    <Post
+      key={postData.id}
+      id={postData.id}
+      title={postData.title.rendered}
+      excerpt={postData.excerpt.rendered}
+      featured_media={postData.featured_media}
+      _embedded={postData._embedded} // Agora reconhece opcionalidade
+      permalink={postData.slug}
+    />
   );
 };
 
