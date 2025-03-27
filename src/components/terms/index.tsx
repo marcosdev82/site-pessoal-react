@@ -1,4 +1,5 @@
 import useTerms from "../../hooks/useTerms"; 
+import { TermsContainer, ListTerms } from "./styles";
 
 const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/categories"; 
 
@@ -12,7 +13,7 @@ const Terms = () => {
   const { Terms, loading, error } = useTerms(API_URL);  
 
   return (
-    <div>
+    <TermsContainer>
       <h3>Categorias:</h3>
  
       {error && <div className="error-message">{error}</div>}
@@ -20,15 +21,15 @@ const Terms = () => {
       {loading ? (
         <p>Carregando categorias...</p>
       ) : (
-        <ul>
+        <ListTerms>
           {Terms.map((term: TermsContent) => (
             <li key={term.id}>
-              {term.name} ({term.slug})
+              {term.name} ({'1'})
             </li>
           ))}
-        </ul>
+        </ListTerms>
       )}
-    </div>
+    </TermsContainer>
   );
 };
 

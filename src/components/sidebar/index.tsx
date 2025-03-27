@@ -41,7 +41,6 @@ const Sidebar = () => {
         }}
       >
         <>
-          <h2>Sidebar</h2>
           <Terms />
         </>
       </div>
