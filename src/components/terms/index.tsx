@@ -1,6 +1,6 @@
-import useTerms from "../../hooks/useTerms"; // Corrigido nome do import
+import useTerms from "../../hooks/useTerms"; 
 
-const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/categories"; // Corrigida URL
+const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/categories"; 
 
 interface TermsContent {
   id: number;
@@ -9,7 +9,7 @@ interface TermsContent {
 }
 
 const Terms = () => {
-  const { Terms, loading, error } = useTerms(API_URL); // Corrigida a desestruturação
+  const { Terms, loading, error } = useTerms(API_URL);  
 
   return (
     <div>

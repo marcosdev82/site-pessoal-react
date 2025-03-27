@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 // Hook customizado para filtrar dados de '_embedded'
 const useFilteredEmbeddedData = (_embedded: { [key: string]: any }, allowedKeys: string[]) => {
-  // useMemo para garantir que a filtragem seja feita apenas quando necessário (performance)
+  
   const filteredData = useMemo(() => {
     if (!_embedded || typeof _embedded !== 'object') return {};
 
