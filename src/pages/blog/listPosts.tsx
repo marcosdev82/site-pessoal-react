@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import Post from "./post";
 import Pagination from "../../components/pagination";
@@ -23,7 +23,7 @@ const ListPosts = () => {
   const [totalItems, setTotalItems] = useState(0);
   const [filteredPosts, setFilteredPosts] = useState<PostContent[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const perPage = 3; // Quantidade de itens por página
+  const perPage = 3; // Quantidade de itens por página (preciso deixar dinâmico)
 
   // Função para buscar todos os posts inicialmente
   const fetchPosts = async () => {
@@ -38,7 +38,7 @@ const ListPosts = () => {
       setFilteredPosts(allPosts);
 
       const total = response.headers["x-wp-total"];
-      setTotalItems(total ? parseInt(total, 10) : allPosts.length); // Usa o total dos posts se disponível
+      setTotalItems(total ? parseInt(total, 10) : allPosts.length);
     } catch (err) {
       console.error("Erro ao obter posts:", err);
       setError("Não foi possível carregar os posts.");
@@ -62,7 +62,7 @@ const ListPosts = () => {
     setCurrentPage(1); 
   };
 
-  // Paginação no lado cliente
+  // Paginação no lado cliente (Refatorar)
   const paginatedPosts = filteredPosts.slice(
     (currentPage - 1) * perPage,
     currentPage * perPage
@@ -103,7 +103,7 @@ const ListPosts = () => {
                     title={post.title.rendered}
                     excerpt={post.excerpt.rendered}
                     featured_media={post.featured_media}
-                    _embedded={post._embedded} // Agora reconhece opcionalidade
+                    _embedded={post._embedded} 
                     permalink={post.slug}
                   />
                 );

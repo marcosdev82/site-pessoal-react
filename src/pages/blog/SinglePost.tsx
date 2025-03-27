@@ -19,7 +19,7 @@ const SinglePost = () => {
     Axios.get(`${API_URL}${post}`)
       .then((response) => {
         if (response.data.length > 0) {
-          setPostData(response.data[0]); // Pegando o primeiro post encontrado
+          setPostData(response.data[0]);
         } else {
           setError("Post não encontrado.");
         }
@@ -39,7 +39,7 @@ const SinglePost = () => {
       title={postData.title.rendered}
       excerpt={postData.excerpt.rendered}
       featured_media={postData.featured_media}
-      _embedded={postData._embedded} // Agora reconhece opcionalidade
+      _embedded={postData._embedded} 
       permalink={postData.slug}
     />
   );
