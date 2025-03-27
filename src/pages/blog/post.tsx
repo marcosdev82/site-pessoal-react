@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Article, CardPost } from "./styles";
 import Thumbnail from "../../components/thumbnails";
 import useThumbnail from "../../hooks/useThumbnail";
+import usePostTerms from "../../hooks/usePostTerms";
 
 interface PostProps {
   id: number;
@@ -16,7 +17,8 @@ interface PostProps {
 const Post = ({ id, title, excerpt, featured_media, _embedded, permalink }: PostProps) => {
 
   const thumbnail = useThumbnail(_embedded, "medium");
-
+  // const postTerms = usePostTerms(_embedded, "wp:term");
+  
   return (
     <Article key={id}>
       <CardPost>
