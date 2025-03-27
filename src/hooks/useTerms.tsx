@@ -4,6 +4,7 @@ interface Terms {
   id: number;
   name: string;
   slug: string;
+  count: number;
 }
 
 const useTerms = (url: string) => {
@@ -24,6 +25,7 @@ const useTerms = (url: string) => {
           id: Terms.id,
           name: Terms.name,
           slug: Terms.slug,
+          count: Terms.count,
         }));
 
         setTerms(formattedTerms);

@@ -7,6 +7,7 @@ interface TermsContent {
   id: number;
   name: string;
   slug: string;
+  count: number;
 }
 
 const Terms = () => {
@@ -24,7 +25,7 @@ const Terms = () => {
         <ListTerms>
           {Terms.map((term: TermsContent) => (
             <li key={term.id}>
-              {term.name} ({'1'})
+              {term.name} ({term.count})
             </li>
           ))}
         </ListTerms>
