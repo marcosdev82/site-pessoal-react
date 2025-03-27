@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Aside } from "./styles";
+import Terms from "../terms";
 
 const Sidebar = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -39,8 +40,10 @@ const Sidebar = () => {
           transition: "0.3s",
         }}
       >
-        <h2>Sidebar</h2>
-        <p>Conteúdo fixo aqui...</p>
+        <>
+          <h2>Sidebar</h2>
+          <Terms />
+        </>
       </div>
     </Aside>
   );
