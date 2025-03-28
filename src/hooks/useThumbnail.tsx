@@ -8,7 +8,7 @@ interface ImageSize {
 
 interface MediaDetails {
   sizes: {
-    [key: string]: ImageSize;
+    [key in ThumbnailSize]?: ImageSize; // 🔹 Chaves são limitadas ao tipo ThumbnailSize
   };
 }
 
@@ -17,15 +17,17 @@ interface EmbeddedMedia {
   alt_text?: string;
 }
 
-const useThumbnail = (_embedded: { [key: string]: any } | undefined, size: string) => {
+type ThumbnailSize = "medium" | "large" | "thumbnail" | "full"; // 🔹 Agora só aceita esses valores
+
+const useThumbnail = (_embedded: { [key: string]: any } | undefined, size: ThumbnailSize) => {
   const thumbnail = useMemo(() => {
     const media = _embedded?.["wp:featuredmedia"]?.[0] as EmbeddedMedia | undefined;
-    
+
     if (!media?.media_details?.sizes || !media.media_details.sizes[size]) {
-      return null; 
+      return null;
     }
 
-    const { source_url, width, height } = media.media_details.sizes[size];
+    const { source_url, width, height } = media.media_details.sizes[size]!; 
 
     return {
       url: source_url,
