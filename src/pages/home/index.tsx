@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Helmet } from 'react-helmet-async';
 import { About, Description, Portrait, Image, SocialMedia, Curriculo } from './styles';
 import { Instagram, LinkedIn, GitHub, FileDownload } from '@mui/icons-material';
