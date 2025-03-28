@@ -24,7 +24,7 @@ const usePostAuthor = (
       id: author.id,
       name: author.name,
       slug: author.slug,
-      foto: author.avatar_urls?.["96"] || "",
+      foto: author.avatar_urls?.["24"] || "",
       link: author.link,
     };
   }, [_embedded]);
