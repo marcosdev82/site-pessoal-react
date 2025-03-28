@@ -3,7 +3,7 @@ import { Article, CardPost } from "./styles";
 import Thumbnail from "../../components/thumbnails";
 import PostEntryMeta from "../../components/entrymeta";
 import useThumbnail from "../../hooks/useThumbnail";
-import usePostTerms from "../../hooks/usePostTerms";
+// import usePostTerms from "../../hooks/usePostTerms";
 
 
 interface PostProps {
@@ -18,6 +18,7 @@ interface PostProps {
 const Post = ({ id, title, excerpt, featured_media, _embedded, permalink }: PostProps) => {
 
   const thumbnail = useThumbnail(_embedded, "medium");
+  // const author = usePostAuthor((_embedded));
   // const postTerms = usePostTerms(_embedded, "wp:term");
   
   return (
