@@ -15,7 +15,7 @@ const Terms = () => {
 
   return (
     <TermsContainer>
-      <h3>Categorias:</h3>
+      <h2>Categorias:</h2>
  
       {error && <div className="error-message">{error}</div>}
 
@@ -25,7 +25,7 @@ const Terms = () => {
         <ListTerms>
           {Terms.map((term: TermsContent) => (
             <li key={term.id}>
-              {term.name} ({term.count})
+              <a href={term.slug}>{term.name} <span className="badge">({term.count})</span></a>
             </li>
           ))}
         </ListTerms>
