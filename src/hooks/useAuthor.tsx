@@ -4,12 +4,12 @@ interface AuthorContent {
   id: number;
   name: string;
   slug: string;
-  avatarUrl: string;
+  foto: string;
   link: string;
 }
 
 const usePostAuthor = (
-  _embedded: { [key: string]: any } | undefined
+  _embedded: { [key: string]: any } | undefined,
 ): AuthorContent | null => {
   const postAuthor = useMemo(() => {
     const authorArray = _embedded?.["author"];
@@ -24,7 +24,7 @@ const usePostAuthor = (
       id: author.id,
       name: author.name,
       slug: author.slug,
-      avatarUrl: author.avatar_urls?.["96"] || "",
+      foto: author.avatar_urls?.["96"] || "",
       link: author.link,
     };
   }, [_embedded]);
