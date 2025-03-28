@@ -8,8 +8,8 @@ export const EntryAvatar = styled.div`
     
     img {
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: cover;
     }
     

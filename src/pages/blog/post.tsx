@@ -17,7 +17,7 @@ interface PostProps {
 const Post = ({ id, title, excerpt, featured_media, _embedded, permalink }: PostProps) => {
   const thumbnail = useThumbnail(_embedded, "medium");
   const authorEntry = usePostAuthor(_embedded);
-
+  console.log("Post:", JSON.stringify(thumbnail, null, 2));
   return (
     <Article key={id}>
       <CardPost>

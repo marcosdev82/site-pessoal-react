@@ -23,11 +23,12 @@ interface EntryMetaContent {
 const PostEntryMeta = ({ date, author, category }: EntryMetaContent) => { 
   // console.log(author + "teste");
   //  console.log("Author:", JSON.stringify(author, null, 2));
+  const size = 24; // Define o tamanho do avatar (24, 48 ou 96)
 
   return (
     <EntryMeta>
       {author && author.foto ? (
-        <span><Avatar id={author.id} foto={author.foto} size={24} /></span>
+        <span><Avatar id={author.id} foto={author.foto} size={size} /></span>
       ) : null}
       {author && <span className='author'>{author.name}</span>}
       <span className='date'>{date}</span>

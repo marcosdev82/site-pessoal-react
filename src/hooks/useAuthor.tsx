@@ -4,7 +4,7 @@ interface AuthorContent {
   id: number;
   name: string;
   slug: string;
-  foto: string;
+  foto?: { [key: string]: any } | null;
   link: string;
 }
 
@@ -24,7 +24,7 @@ const usePostAuthor = (
       id: author.id,
       name: author.name,
       slug: author.slug,
-      foto: author.avatar_urls?.["24"] || "",
+      foto: author.avatar_urls || "",
       link: author.link,
     };
   }, [_embedded]);
