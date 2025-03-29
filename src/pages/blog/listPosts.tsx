@@ -6,13 +6,21 @@ import Search from "../../components/search";
 
 const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/posts?_embed";
 
+interface Category {
+  id: number;
+  slug: string;
+  name: string;
+}
+
 interface PostContent {
   id: number;
   title: { rendered: string };
   excerpt: { rendered: string };
   slug: string;
   featured_media: number; 
+  date: string;
   _embedded?: { [key: string]: any };  
+  categories_details?: Category | null; 
 }
 
 const ListPosts = () => {
@@ -103,7 +111,9 @@ const ListPosts = () => {
                     title={post.title.rendered}
                     excerpt={post.excerpt.rendered}
                     featured_media={post.featured_media}
+                    date={post.date}
                     _embedded={post._embedded} 
+                    categories={post.categories_details}
                     permalink={post.slug}
                   />
                 );

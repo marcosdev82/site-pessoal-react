@@ -1,41 +1,44 @@
         
 import { EntryMeta } from './styles';
 import Avatar from "../../components/avatar";
+import useFormattedDate from '../../hooks/useFormattedDate';
 
-interface EntryMetaContent {
-    date: string;
-    avatar?: string;
-    author: { [key: string]: any } | null;
-    category?: string;
+interface Category {
+  id: number;
+  slug: string;
+  name: string;
 }
 
-// const PostEntryMeta = ({ date, author, category }: EntryMetaContent) => {
-//     return (
-//       <EntryMeta>
-//         <span className='date'>{date}</span>
-//         {author.avatar_urls[96] ? (<span><Avatar id={author.id} foto={author.avatar_urls[96]} /></span>) : null}
-//         <span className='author'>{author.name}</span>
-//         {category ? (<div className='entry-category'>{category}</div>) : null}
-//       </EntryMeta> 
-//     );
-// };
+interface EntryMetaContent {
+  date: string;
+  avatar?: string;
+  author: { [key: string]: any } | null;
+  categories?: Category | null; // Agora é um objeto e não um array
+}
 
-const PostEntryMeta = ({ date, author, category }: EntryMetaContent) => { 
-  // console.log(author + "teste");
-  //  console.log("Author:", JSON.stringify(author, null, 2));
+const PostEntryMeta = ({ date, author, categories }: EntryMetaContent) => { 
+  console.log("categories", categories);
   const size = 24; // Define o tamanho do avatar (24, 48 ou 96)
+  const formattedDate = useFormattedDate(date);
+
 
   return (
     <EntryMeta>
-      {author && author.foto ? (
+      {author && author.foto && (
         <span><Avatar id={author.id} foto={author.foto} size={size} /></span>
-      ) : null}
+      )}
       {author && <span className='author'>{author.name}</span>}
-      | <span className='date'>{date}</span>
-      | {category && <div className='entry-category'>{category}</div>}
+      | <span className='date'>{formattedDate}</span>
+      
+      {Array.isArray(categories) && categories.length > 0 && (
+        <div className='entry-category'>
+          {categories.map((category: Category) => (
+            <a href={category.slug} className='btn' key={category.id}>{category.name}</a>
+          ))}
+        </div>
+      )}
     </EntryMeta> 
   );
 };
-
 
 export default PostEntryMeta;

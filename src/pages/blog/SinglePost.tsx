@@ -38,6 +38,7 @@ const SinglePost = () => {
       id={postData.id}
       title={postData.title.rendered}
       excerpt={postData.excerpt.rendered}
+      date={postData.date}
       featured_media={postData.featured_media}
       _embedded={postData._embedded} 
       permalink={postData.slug}

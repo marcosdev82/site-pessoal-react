@@ -10,13 +10,13 @@ const usePostTerms = (
   _embedded: { [key: string]: any } | undefined
 ): TaxonPostContent | null => {
   const postTerms = useMemo(() => {
-    const termsArray = _embedded?.["wp:term"]?.[0];
-
+    const termsArray = _embedded?.["wp:term"]?.[0] as TaxonPostContent[] | undefined;
+   
     if (!Array.isArray(termsArray) || termsArray.length === 0) {
       return null;
     }
-
-    const term = termsArray[0] as TaxonPostContent;
+    
+    const term = termsArray[0];
 
     return {
       id: term.id,

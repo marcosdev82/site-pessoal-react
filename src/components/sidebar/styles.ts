@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Aside = styled.aside`
     position: relative;
-    display: flex;
     min-height: 60px;
     & .sidebar {
         border: 1px solid rgba(151, 151, 151, 0.32);
