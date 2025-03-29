@@ -28,7 +28,7 @@ const Button = styled.button<{ active?: boolean }>`
     background: ${props => props.theme.colors.tertiary};
     color: ${ props => props.theme.colors.secundary };
     cursor: not-allowed;
-    opacity: 0.4;
+    opacity: 0.2;
   }
 `;
 

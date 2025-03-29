@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import Post from "./post";
+import Post from "./Post";
 import Pagination from "../../components/pagination";
 import Search from "../../components/search";
 
@@ -76,7 +76,6 @@ const ListPosts = () => {
     currentPage * perPage
   );
 
- 
   useEffect(() => {
     fetchPosts();  
   }, []);

@@ -4,13 +4,14 @@ export const EntryAvatar = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
 
     a {
         display: flex;
     }
     
     img {
-        border-radius: 50%;
         max-width: 100%;
         max-height: 100%;
         object-fit: cover;
