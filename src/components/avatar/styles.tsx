@@ -4,7 +4,10 @@ export const EntryAvatar = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+
+    a {
+        display: flex;
+    }
     
     img {
         border-radius: 50%;
@@ -15,6 +18,6 @@ export const EntryAvatar = styled.div`
     
     span {
         font-size: 14px;
-        color: #333;
+        color: #d1d1d1;
     }
 `;

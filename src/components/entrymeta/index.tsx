@@ -31,8 +31,8 @@ const PostEntryMeta = ({ date, author, category }: EntryMetaContent) => {
         <span><Avatar id={author.id} foto={author.foto} size={size} /></span>
       ) : null}
       {author && <span className='author'>{author.name}</span>}
-      <span className='date'>{date}</span>
-      {category && <div className='entry-category'>{category}</div>}
+      | <span className='date'>{date}</span>
+      | {category && <div className='entry-category'>{category}</div>}
     </EntryMeta> 
   );
 };

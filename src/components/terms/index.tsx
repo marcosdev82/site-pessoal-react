@@ -15,7 +15,7 @@ const Terms = () => {
 
   return (
     <TermsContainer>
-      <h2>Categorias:</h2>
+      <h2>Categorias</h2>
  
       {error && <div className="error-message">{error}</div>}
 

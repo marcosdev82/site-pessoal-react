@@ -7,11 +7,10 @@ interface TaxonPostContent {
 }
 
 const usePostTerms = (
-  _embedded: { [key: string]: any } | undefined,
-  size: string
+  _embedded: { [key: string]: any } | undefined
 ): TaxonPostContent | null => {
   const postTerms = useMemo(() => {
-    const termsArray = _embedded?.["wp:terms"]?.[0];
+    const termsArray = _embedded?.["wp:term"]?.[0];
 
     if (!Array.isArray(termsArray) || termsArray.length === 0) {
       return null;

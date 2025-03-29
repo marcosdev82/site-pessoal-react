@@ -26,7 +26,7 @@ export const Article = styled.article`
 export const CardPost = styled.div`
     background-color: #000;
     // border: 1px solid rgb(90 90 90);
-    padding: 20px;
+    padding: 20px 20px 60px;
     color:rgb(107, 107, 107);
     position: relative;
     display: inline-flex;
@@ -35,8 +35,16 @@ export const CardPost = styled.div`
     flex-direction: row;
     border-radius: 8px;
     border: 3px solid transparent;
+
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
     & p {
-       color: #bbbbbb
+       color: #bbbbbb;
+       line-height: 1.5;
     }
 
     @media (max-width: 576px) { 

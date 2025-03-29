@@ -4,6 +4,7 @@ import Thumbnail from "../../components/thumbnails";
 import PostEntryMeta from "../../components/entrymeta";
 import useThumbnail from "../../hooks/useThumbnail";
 import usePostAuthor from "../../hooks/useAuthor";
+// import usePostTerms from "../../hooks/usePostTerms";
 
 interface PostProps {
   id: number;
@@ -17,7 +18,9 @@ interface PostProps {
 const Post = ({ id, title, excerpt, featured_media, _embedded, permalink }: PostProps) => {
   const thumbnail = useThumbnail(_embedded, "medium");
   const authorEntry = usePostAuthor(_embedded);
-  console.log("Post:", JSON.stringify(thumbnail, null, 2));
+  // const categorys = usePostTerms(_embedded);
+ 
+  // console.log("Post:", JSON.stringify(terms, null, 2));
   return (
     <Article key={id}>
       <CardPost>
@@ -40,8 +43,9 @@ const Post = ({ id, title, excerpt, featured_media, _embedded, permalink }: Post
               __html: excerpt,
             }}
           />
-          <PostEntryMeta author={authorEntry} category="PHP" date="17/11/1982" />
+         
         </div>
+        <PostEntryMeta author={authorEntry} category="PHP" date="17/11/1982" />
       </CardPost>
     </Article>
   );
