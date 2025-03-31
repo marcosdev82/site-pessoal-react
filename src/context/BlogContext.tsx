@@ -1,9 +1,8 @@
-// src/context/BlogContext.tsx
 import { createContext, useState, useEffect } from "react";
 import { getPosts, getCategories } from "../service/api";
 
 // Tipos para os dados
-interface Post  {
+interface Post {
   id: number;
   title: string;
   content: string;
@@ -21,8 +20,8 @@ interface BlogContextType {
   categories: Category[];
 };
 
-// Criando o contexto com valor inicial `null`
 export const BlogContext = createContext<BlogContextType | null>(null);
+
 
 export const BlogProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);

@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { HelmetProvider } from "react-helmet-async";
+import { BlogProvider } from "./context/BlogContext";
 import GlobalStyles from "./styles/GlobalStyles";
 
 import dark from "./styles/themes/dark";
@@ -20,23 +21,25 @@ const App = () => {
   return (
     <HelmetProvider>
       <ThemeProvider theme={dark}>
-        <GlobalStyles />
-        <Router>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/servicos" element={<Servicos />} />
-              <Route path="/contato" element={<Contato />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:post" element={<SinglePost />} />
-              <Route path="/trabalhos" element={<Trabalhos />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="*" element={<NotFound />} />
-              {/* Redireciona outras rotas inválidas para a home */}
-              {/* <Route path="*" element={<Navigate to="/" />} /> */}
-            </Routes>
-          </Layout>
-        </Router>
+        <BlogProvider>
+          <GlobalStyles />
+          <Router>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/servicos" element={<Servicos />} />
+                <Route path="/contato" element={<Contato />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:post" element={<SinglePost />} />
+                <Route path="/trabalhos" element={<Trabalhos />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="*" element={<NotFound />} />
+                {/* Redireciona outras rotas inválidas para a home */}
+                {/* <Route path="*" element={<Navigate to="/" />} /> */}
+              </Routes>
+            </Layout>
+          </Router>
+        </BlogProvider>
       </ThemeProvider>
     </HelmetProvider>
   );

@@ -17,10 +17,10 @@ interface PostContent {
   title: { rendered: string };
   excerpt: { rendered: string };
   slug: string;
-  featured_media: number; 
+  featured_media: number;
   date: string;
-  _embedded?: { [key: string]: any };  
-  categories_details?: Category | null; 
+  _embedded?: { [key: string]: any };
+  categories_details?: Category | null;
 }
 
 const ListPosts = () => {
@@ -67,7 +67,7 @@ const ListPosts = () => {
     );
     setFilteredPosts(filtered);
     setTotalItems(filtered.length);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   // Paginação no lado cliente (Refatorar)
@@ -77,7 +77,7 @@ const ListPosts = () => {
   );
 
   useEffect(() => {
-    fetchPosts();  
+    fetchPosts();
   }, []);
 
   return (
@@ -85,7 +85,7 @@ const ListPosts = () => {
       <div className="search-container">
         <Search
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}  
+          onChange={(e) => setSearchTerm(e.target.value)}
           className="filtro-tarefa"
           placeholder="Digite para filtrar..."
         />
@@ -111,7 +111,7 @@ const ListPosts = () => {
                     excerpt={post.excerpt.rendered}
                     featured_media={post.featured_media}
                     date={post.date}
-                    _embedded={post._embedded} 
+                    _embedded={post._embedded}
                     categories={post.categories_details}
                     permalink={post.slug}
                   />
