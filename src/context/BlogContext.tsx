@@ -10,6 +10,7 @@ interface Post {
 
 interface Category {
   id: number;
+  slug: string;
   name: string;
 }
 
@@ -18,7 +19,7 @@ interface BlogContextType {
   categories: Category[];
 }
 
-export const BlogContext = createContext<BlogContextType | null>(null);
+export const BlogContext = createContext<BlogContextType | unknown>(null);
 
 interface BlogProviderProps {
   children: ReactNode;
