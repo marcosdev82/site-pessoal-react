@@ -1,27 +1,23 @@
 
 import { EntryMeta } from './styles';
+import { EntryMetaContent, Category } from '../../types/posts';
 // import Avatar from "../../components/avatar";
 // import useFormattedDate from '../../hooks/useFormattedDate';
 
-interface Category {
-  id: number;
-  slug: string;
-  name: string;
-}
+// interface Category {
+//   id: number;
+//   slug: string;
+//   name: string;
+// }
 
-interface AuthorData {
-  name?: string;
-  email?: string;
-  description?: string;
-  avatar_urls: { [key: string]: any };
-}
+// interface AuthorData {
+//   name?: string;
+//   email?: string;
+//   description?: string;
+//   avatar_urls: { [key: string]: any };
+// }
 
-interface EntryMetaContent {
-  date?: string;
-  avatar?: string;
-  author?: AuthorData;
-  categories_details?: Category[] | null;
-}
+
 
 const PostEntryMeta = ({ author, categories_details, date }: EntryMetaContent) => {
 

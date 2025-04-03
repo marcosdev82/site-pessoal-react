@@ -1,52 +1,7 @@
 import React, { createContext, useEffect, useState, ReactNode, useMemo } from 'react';
 import axios from 'axios';
+import { Post, Category } from '../types/posts'
 
-interface ImageSize {
-  file: string;
-  width: number;
-  height: number;
-  mime_type: string;
-  filesize: number;
-  source_url: string;
-}
-
-interface MediaDetails {
-  width: number;
-  height: number;
-  file: string;
-  filesize: number;
-  sizes: ImageSize;
-}
-
-interface Category {
-  id: number;
-  slug: string;
-  name: string;
-}
-
-interface AvatarUrls {
-  [size: number]: string; // Tamanhos dinâmicos como 24, 48, 96
-}
-
-interface AuthorData {
-  id?: number;
-  name?: string;
-  email?: string;
-  description?: string;
-  avatar_urls?: AvatarUrls;
-}
-
-interface Post {
-  id: number;
-  title: string;
-  content: string;
-  excerpt: string;
-  media_details?: MediaDetails[];
-  date: string;
-  categories_details?: Category[];
-  author_data?: AuthorData[];
-  slug: string;
-}
 
 // Interface para o contexto do blog
 interface BlogContextType {
