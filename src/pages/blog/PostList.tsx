@@ -22,7 +22,7 @@ const PostList = () => {
                     excerpt={post.excerpt}
                     media_details={post.media_details}
                     categories_details={post.categories_details}
-                    // author_data={post.author_data} // Corrigido de autho_data para author_data
+                    author_data={post.author_data}
                     slug={post.slug}
                 />
             ))}

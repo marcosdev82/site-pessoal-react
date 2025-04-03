@@ -12,7 +12,7 @@ export interface MediaDetails {
   height: number;
   file: string;
   filesize: number;
-  sizes: ImageSize;
+  sizes: Record<string, ImageSize>; // Correção: 'sizes' é um objeto indexado
 }
 
 export interface Category {
@@ -22,7 +22,7 @@ export interface Category {
 }
 
 export interface AvatarUrls {
-  [size: number]: string; // Tamanhos dinâmicos como 24, 48, 96
+  [size: number]: string; // Exemplo: { 24: "url", 48: "url" }
 }
 
 export interface AuthorData {
@@ -33,21 +33,21 @@ export interface AuthorData {
   avatar_urls?: AvatarUrls;
 }
 
-export interface Post {
+export interface PostType {
   id: number;
   title: string;
-  content: string;
-  excerpt: string;
-  media_details?: MediaDetails[];
-  date: string;
+  content?: string;
+  excerpt?: string;
+  media_details?: MediaDetails;
+  date?: string;
   categories_details?: Category[];
-  author_data?: AuthorData[];
-  slug: string;
+  author_data?: AuthorData;
+  slug?: string;
 }
 
 export interface EntryMetaContent {
   date?: string;
-  avatar?: string;
-  author?: AuthorData;
+  avatar?: AvatarUrls;
+  author?: AuthorData | null; // Correção de AuthorData[] | null para AuthorData | null
   categories_details?: Category[] | null;
 }

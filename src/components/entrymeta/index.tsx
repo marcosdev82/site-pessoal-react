@@ -1,28 +1,15 @@
 
 import { EntryMeta } from './styles';
 import { EntryMetaContent, Category } from '../../types/posts';
-// import Avatar from "../../components/avatar";
-// import useFormattedDate from '../../hooks/useFormattedDate';
 
-// interface Category {
-//   id: number;
-//   slug: string;
-//   name: string;
-// }
-
-// interface AuthorData {
-//   name?: string;
-//   email?: string;
-//   description?: string;
-//   avatar_urls: { [key: string]: any };
-// }
-
-
-
-const PostEntryMeta = ({ author, categories_details, date }: EntryMetaContent) => {
-
+const PostEntryMeta = (prop: EntryMetaContent) => {
+  const { author, categories_details } = prop;
   return (
     <EntryMeta>
+
+      {author && (
+        <span>{author.name}</span>
+      )}
 
       {Array.isArray(categories_details) && categories_details.length > 0 && (
         <div className='entry-category'>

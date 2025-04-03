@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState, ReactNode, useMemo } from 'react';
 import axios from 'axios';
-import { Post, Category } from '../types/posts'
+import { PostType, Category } from '../types/posts'
 
 
 // Interface para o contexto do blog
 interface BlogContextType {
-  posts: Post[];
+  posts: PostType[];
   categories: Category[];
 }
 
@@ -19,14 +19,14 @@ interface BlogProviderProps {
 
 // Provider do blog
 export const BlogProvider = ({ children }: BlogProviderProps) => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<PostType[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [postsResponse, categoriesResponse] = await Promise.all([
-          axios.get<Post[]>('https://marcostavares.dev.br/wp/wp-json/wp/v2/posts'),
+          axios.get<PostType[]>('https://marcostavares.dev.br/wp/wp-json/wp/v2/posts'),
           axios.get<Category[]>('https://marcostavares.dev.br/wp/wp-json/wp/v2/categories'),
         ]);
 
