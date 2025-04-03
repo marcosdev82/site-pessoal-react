@@ -21,25 +21,23 @@ const App = () => {
   return (
     <HelmetProvider>
       <ThemeProvider theme={dark}>
-        <BlogProvider>
-          <GlobalStyles />
-          <Router>
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/servicos" element={<Servicos />} />
-                <Route path="/contato" element={<Contato />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:post" element={<SinglePost />} />
-                <Route path="/trabalhos" element={<Trabalhos />} />
-                <Route path="/sobre" element={<Sobre />} />
-                <Route path="*" element={<NotFound />} />
-                {/* Redireciona outras rotas inválidas para a home */}
-                {/* <Route path="*" element={<Navigate to="/" />} /> */}
-              </Routes>
-            </Layout>
-          </Router>
-        </BlogProvider>
+        <GlobalStyles />
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/servicos" element={<Servicos />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:post" element={<SinglePost />} />
+              <Route path="/trabalhos" element={<Trabalhos />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="*" element={<NotFound />} />
+              {/* Redireciona outras rotas inválidas para a home */}
+              {/* <Route path="*" element={<Navigate to="/" />} /> */}
+            </Routes>
+          </Layout>
+        </Router>
       </ThemeProvider>
     </HelmetProvider>
   );

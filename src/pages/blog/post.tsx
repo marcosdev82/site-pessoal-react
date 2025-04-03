@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Article, CardPost } from "./styles";
 import Thumbnail from "../../components/thumbnails";
-import PostEntryMeta from "../../components/entrymeta";
 import useThumbnail from "../../hooks/useThumbnail";
-import usePostAuthor from "../../hooks/useAuthor";
+import PostEntryMeta from "../../components/entrymeta";
+// import useThumbnail from "../../hooks/useThumbnail";
+// import usePostAuthor from "../../hooks/useAuthor";
+
 
 interface Category {
   id: number;
@@ -11,46 +13,71 @@ interface Category {
   name: string;
 }
 
-interface PostProps {
-  id: number;
-  title: string;
-  excerpt: string;
-  featured_media: number;
-  date: string;
-  _embedded?: { [key: string]: any };
-  categories?: Category | null;  
-  permalink: string;
+interface AvatarUrls {
+  [size: number]: string; // Tamanhos dinâmicos como 24, 48, 96
 }
 
-const Post = ({ id, title, excerpt, featured_media, date, _embedded, categories, permalink }: PostProps) => {
-  const thumbnail = useThumbnail(_embedded, "medium");
-  const authorEntry = usePostAuthor(_embedded);
- 
+
+interface AuthorData {
+  id?: number;
+  nome?: string;
+  email?: string;
+  description?: string;
+  avatar_urls: { [key: string]: any };
+}
+
+interface PostType {
+  id: number;
+  title: string;
+  excerpt?: string;
+  media_details?: { [key: string]: any };
+  date?: string;
+  categories_details?: Category[];
+  author_data?: AuthorData[];
+  slug?: string;
+}
+
+const Post = (props: PostType) => {
+
+  const { id, title, excerpt, media_details, author_data, categories_details, slug } = props;
+  const thumbnail = useThumbnail(media_details, 'medium');
+  // console.log(categories_details)
+  // const authorEntry = usePostAuthor(_embedded);
   return (
     <Article key={id}>
       <CardPost>
+
         {thumbnail?.url && (
           <figure>
-            <Link to={permalink}>
+            <a href={slug}>
               <Thumbnail
                 src={thumbnail.url}
-                alt={thumbnail.alt || "Thumbnail"}
                 width={thumbnail.width}
                 height={thumbnail.height}
+                alt={title} // Agora você pode definir o alt onde for usar o hook
               />
-            </Link>
+            </a>
           </figure>
         )}
+
         <div className="description">
           <h2>{title}</h2>
+          {excerpt && <div>{excerpt}</div>} {/* Exibe o excerpt apenas se estiver definido */}
+          {/* 
           <div
             dangerouslySetInnerHTML={{
               __html: excerpt,
             }}
           />
-         
+          */}
         </div>
-        <PostEntryMeta author={authorEntry} categories={categories} date={date} />
+
+        <PostEntryMeta
+          // author={author_data}
+          categories_details={categories_details}
+        // data='teste'
+        />
+
       </CardPost>
     </Article>
   );

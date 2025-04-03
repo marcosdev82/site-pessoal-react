@@ -21,7 +21,7 @@ const Content = () => {
     if (!post) return;
 
     setLoading(true);
-    setError(null);  
+    setError(null);
 
     Axios.get(`${API_URL}${post}`)
       .then((response) => {
@@ -44,25 +44,25 @@ const Content = () => {
 
   return (
     <>
-     
+
       <ContentArticle key={postData.id} className="Content-article">
-         <EntryTitle title={postData.title?.rendered} />
+        <EntryTitle title={postData.title?.rendered} />
         {thumbnail?.url && (
-            <figure>
-                <Thumbnail
-                  src={thumbnail.url}
-                  alt={thumbnail.alt || "Thumbnail"}
-                  width={thumbnail.width}
-                  height={thumbnail.height}
-                />
-            </figure>
-          )}
+          <figure>
+            <Thumbnail
+              src={thumbnail.url}
+              alt={postData.title || "Thumbnail"}
+              width={thumbnail.width}
+              height={thumbnail.height}
+            />
+          </figure>
+        )}
         <div className="description">
           {/* <h2 dangerouslySetInnerHTML={{ __html: postData.title?.rendered }} /> */}
           <div dangerouslySetInnerHTML={{ __html: postData.content?.rendered }} />
         </div>
 
-        <PostEntryMeta author={authorEntry} categories={postData.categories} date={postData.date} />
+        {/* <PostEntryMeta author={authorEntry} categories={postData.categories} date={postData.date} /> */}
       </ContentArticle>
     </>
   );

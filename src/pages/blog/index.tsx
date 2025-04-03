@@ -1,43 +1,34 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { BlogContext } from '../../context/BlogContext';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import EntryTitle from '../../components/entrytitle';
+import PostList from './PostList';
+import { BlogProvider } from '../../context/BlogContext';
 
-interface Category {
-    id: number;
-    slug: string;
-    name: string;
-}
-
-interface Post {
-    id: number;
-    title: { rendered: string };
-    excerpt: { rendered: string };
-    featured_media: number;
-    date: string;
-    _embedded?: { [key: string]: any };
-    categories?: Category | null;
-    permalink: string;
-}
-
-const PostList = () => {
-    const { posts } = useContext(BlogContext) as { posts: Post[] }; // Tipando o contexto
-
+const Blog = () => {
     return (
-        <div>
-            <h2>Todos os Posts</h2>
-            {posts.length > 0 ? (
-                <ul>
-                    {posts.map(post => (
-                        <li key={post.id}>
-                            <Link to={`/post/${post.id}`}>{post.title.rendered}</Link>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>Nenhum post encontrado.</p>
-            )}
-        </div>
+        <>
+            <Helmet>
+                <title>Serviços - Marcos Tavares Desenvolvedor Fullstack</title>
+                <meta name="description" content="Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
+                <link rel="canonical" href="https://marcostavares.dev.br/servicos" />
+                <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="desenvolvedor fullstack, desenvolvimento web, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador fullstack, Marcos Tavares" />
+                <meta property="og:locale" content="pt_BR" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Serviços - Marcos Tavares Fullstack" />
+                <meta property="og:description" content="Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
+                <meta property="og:url" content="https://marcostavares.dev.br/servicos" />
+                <meta property="og:site_name" content="Marcos Tavares FullStack" />
+                <meta property="article:publisher" content="https://www.facebook.com/marcostavares.dev" />
+            </Helmet>
+
+            <EntryTitle title='Serviço' />
+
+            <BlogProvider>
+                <PostList />
+            </BlogProvider>
+        </>
     );
 };
 
-export default PostList;
+export default Blog;

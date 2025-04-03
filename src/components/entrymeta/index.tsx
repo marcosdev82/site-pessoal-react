@@ -1,7 +1,7 @@
-        
+
 import { EntryMeta } from './styles';
-import Avatar from "../../components/avatar";
-import useFormattedDate from '../../hooks/useFormattedDate';
+// import Avatar from "../../components/avatar";
+// import useFormattedDate from '../../hooks/useFormattedDate';
 
 interface Category {
   id: number;
@@ -9,35 +9,33 @@ interface Category {
   name: string;
 }
 
-interface EntryMetaContent {
-  date: string;
-  avatar?: string;
-  author: { [key: string]: any } | null;
-  categories?: Category | null; // Agora é um objeto e não um array
+interface AuthorData {
+  name?: string;
+  email?: string;
+  description?: string;
+  avatar_urls: { [key: string]: any };
 }
 
-const PostEntryMeta = ({ date, author, categories }: EntryMetaContent) => { 
-  console.log("categories", categories);
-  const size = 24; // Define o tamanho do avatar (24, 48 ou 96)
-  const formattedDate = useFormattedDate(date);
+interface EntryMetaContent {
+  date?: string;
+  avatar?: string;
+  author?: AuthorData;
+  categories_details?: Category[] | null;
+}
 
+const PostEntryMeta = ({ author, categories_details, date }: EntryMetaContent) => {
 
   return (
     <EntryMeta>
-      {author && author.foto && (
-        <span><Avatar id={author.id} foto={author.foto} size={size} /></span>
-      )}
-      {author && <span className='author'>{author.name}</span>}
-      | <span className='date'>{formattedDate}</span>
-      
-      {Array.isArray(categories) && categories.length > 0 && (
+
+      {Array.isArray(categories_details) && categories_details.length > 0 && (
         <div className='entry-category'>
-          {categories.map((category: Category) => (
+          {categories_details.map((category: Category) => (
             <a href={category.slug} className='btn' key={category.id}>{category.name}</a>
           ))}
         </div>
       )}
-    </EntryMeta> 
+    </EntryMeta>
   );
 };
 
