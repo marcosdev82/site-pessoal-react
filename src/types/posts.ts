@@ -29,17 +29,18 @@ export interface Category {
   name: string;
 }
 
+// Definições de tipos
 export interface AvatarUrls {
   [size: number]: string; // Exemplo: { 24: "url", 48: "url" }
 }
 
-export type AvatarSizes = 24 | 48 | 96
+export type AvatarSizes = 24 | 48 | 96;
 
 export interface AvatarContent {
-  id: number;
+  id?: number;
   name?: string;
   slug?: string;
-  foto: string;
+  foto?: string;
   link?: string;
   size?: AvatarSizes;
 }
