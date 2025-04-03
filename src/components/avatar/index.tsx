@@ -1,15 +1,10 @@
 import { EntryAvatar } from './styles';
+import { AvatarContent, AvatarUrls } from '../../types/posts';
 
-interface AvatarContent{
-    id: number;
-    name?: string;
-    slug?: string;
-    foto?: { [key: string]: any } | null;
-    link?: string;
-    size?: 24 | 48 | 96;
-}
 
-const Avatar = ({ id, name, slug, foto, link, size = 24 }: AvatarContent) => {
+const Avatar = (props: AvatarContent) => {
+
+    const { id, name, slug, foto, link, size = 24 } = props
     const imageUrl = foto && typeof foto === "object" ? foto[size] || foto[24] : ""; // Usa tamanho padrão
 
     return (

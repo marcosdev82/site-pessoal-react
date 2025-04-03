@@ -1,10 +1,15 @@
 import { useMemo } from "react";
 
-const useFormattedDate = (dateString: string): string => {
+const useFormattedDate = (dateString?: string): string => {
   return useMemo(() => {
-    if (!dateString) return "";
+    if (!dateString) return ""; // Retorna uma string vazia se dateString for undefined
 
     const date = new Date(dateString);
+
+    // Verifica se a data é válida
+    if (isNaN(date.getTime())) {
+      return ""; // Retorna uma string vazia se a data não for válida
+    }
 
     const options: Intl.DateTimeFormatOptions = {
       day: "numeric",
@@ -15,7 +20,8 @@ const useFormattedDate = (dateString: string): string => {
       hour12: false,
     };
 
-    return date.toLocaleDateString("pt-BR", options).replace(" à", "");
+    // Formata a data para o padrão brasileiro e remove " às" se existir
+    return date.toLocaleDateString("pt-BR", options).replace(" às", " às");
   }, [dateString]);
 };
 

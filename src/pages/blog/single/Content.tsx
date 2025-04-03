@@ -50,7 +50,7 @@ const Content = () => {
         {thumbnail?.url && (
           <figure>
             <Thumbnail
-              src={thumbnail.url}
+              url={thumbnail.url}
               alt={postData.title || "Thumbnail"}
               width={thumbnail.width}
               height={thumbnail.height}

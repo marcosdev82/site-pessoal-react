@@ -3,21 +3,25 @@ import { PostType } from '../../types/posts';
 import Thumbnail from "../../components/thumbnails";
 import useThumbnail from "../../hooks/useThumbnail";
 import PostEntryMeta from "../../components/entrymeta";
+import useFormattedDate from '../../hooks/useFormattedDate';
 
 const Post = (props: PostType) => {
 
-  const { id, title, excerpt, media_details, author_data, categories_details, slug } = props;
-  const thumbnail = useThumbnail(media_details, 'medium');
+  const { id, title, date, excerpt, media_details, author_data, categories_details, slug } = props;
+
+  const thumbnail = useThumbnail(media_details ?? undefined, 'thumbnail')
+
+  const postDate = useFormattedDate(date)
 
   return (
     <Article key={id}>
       <CardPost>
 
-        {thumbnail?.url && (
+        {thumbnail && thumbnail?.url && (
           <figure>
             <a href={slug}>
               <Thumbnail
-                src={thumbnail.url}
+                url={thumbnail.url}
                 width={thumbnail.width}
                 height={thumbnail.height}
                 alt={title}
@@ -28,20 +32,13 @@ const Post = (props: PostType) => {
 
         <div className="description">
           <h2>{title}</h2>
-          {excerpt && <div>{excerpt}</div>}
-          {/* 
-          <div
-            dangerouslySetInnerHTML={{
-              __html: excerpt,
-            }}
-          />
-          */}
+          {excerpt && excerpt}
         </div>
 
         <PostEntryMeta
           author={author_data}
+          date={postDate}
           categories_details={categories_details}
-        // data='teste'
         />
 
       </CardPost>

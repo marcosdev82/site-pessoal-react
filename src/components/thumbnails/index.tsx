@@ -1,15 +1,12 @@
 import { Image } from "./styles";
+import { ThumbnailData } from '../../types/posts';
 
-interface PropImage {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-}
+const Thumbnail = (prop: ThumbnailData) => {
 
-const Thumbnail = ({ src, alt, width, height }: PropImage) => {
+  const { url, alt, width, height } = prop
+
   return (
-    <Image src={src} alt={alt} width={width} height={height} />
+    <Image src={url} alt={alt} width={width} height={height} />
   );
 };
 

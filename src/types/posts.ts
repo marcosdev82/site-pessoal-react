@@ -12,8 +12,16 @@ export interface MediaDetails {
   height: number;
   file: string;
   filesize: number;
-  sizes: Record<string, ImageSize>; // Correção: 'sizes' é um objeto indexado
+  sizes: Record<ThumbnailSize, ImageSize>;
 }
+export interface ThumbnailData {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
+export type ThumbnailSize = 'medium' | 'large' | 'thumbnail' | 'medium_large' | 'full';
 
 export interface Category {
   id: number;
@@ -25,9 +33,20 @@ export interface AvatarUrls {
   [size: number]: string; // Exemplo: { 24: "url", 48: "url" }
 }
 
-export interface AuthorData {
-  id?: number;
+export type AvatarSizes = 24 | 48 | 96
+
+export interface AvatarContent {
+  id: number;
   name?: string;
+  slug?: string;
+  foto: string;
+  link?: string;
+  size?: AvatarSizes;
+}
+
+export interface AuthorData {
+  id: number;
+  name: string;
   email?: string;
   description?: string;
   avatar_urls?: AvatarUrls;
@@ -38,7 +57,7 @@ export interface PostType {
   title: string;
   content?: string;
   excerpt?: string;
-  media_details?: MediaDetails;
+  media_details?: MediaDetails | undefined | null;
   date?: string;
   categories_details?: Category[];
   author_data?: AuthorData;
