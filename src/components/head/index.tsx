@@ -1,10 +1,8 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import Sidebar from '../../../components/sidebar';
-import { EntryContent } from './styles';
+import { Helmet } from "react-helmet-async"
+import { HeadContent } from "../../types/posts";
 
 
-const Blog = () => {
+const Head = ({ title, description, canonical, robot, keywords, local, type, siteName, publish }: HeadContent) => {
     return (
         <>
             <Helmet>
@@ -21,16 +19,8 @@ const Blog = () => {
                 <meta property="og:site_name" content="Marcos Tavares FullStack" />
                 <meta property="article:publisher" content="https://www.facebook.com/marcostavares.dev" />
             </Helmet>
-
-
-
-            <EntryContent>
-                <Sidebar />
-                {/* <Content /> */}
-            </EntryContent>
-
         </>
-    );
-};
+    )
+}
 
-export default Blog;
+export default Head;

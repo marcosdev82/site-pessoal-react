@@ -71,3 +71,15 @@ export interface EntryMetaContent {
   author?: AuthorData | null; // Correção de AuthorData[] | null para AuthorData | null
   categories_details?: Category[] | null;
 }
+
+export interface HeadContent {
+  title: string;
+  description?: string;
+  canonical?: string;
+  robot?: string;
+  keywords?: string;
+  local?: string;
+  type?: string;
+  siteName?: string;
+  publish?: string;
+}
