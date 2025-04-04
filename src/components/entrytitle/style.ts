@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionEntryTitle = styled.section`
+export const SectionEntryTitle = styled.div`
     min-height: 120px;
     width: 100%;
     display: flex;
@@ -13,6 +13,8 @@ export const SectionEntryTitle = styled.section`
         margin-top: 2px;
         /* font-family: "Gugi", sans-serif; */
         position: relative;
+        display: block; /* Garanta que não está como 'none' */
+        visibility: visible;
     }
 
 `;

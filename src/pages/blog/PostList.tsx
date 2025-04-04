@@ -12,10 +12,10 @@ const PostList = () => {
     }
 
     const { posts } = context;
+    const title = 'Blog - Marcos Tavares Fullstack';;
 
     return (
         <>
-
             <Head
                 title='Blog - Marcos Tavares Fullstack'
                 description='Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados.'
@@ -28,7 +28,9 @@ const PostList = () => {
                 publish='https://www.facebook.com/marcostavares.dev'
             />
 
-            <EntryTitle title='Blog' />
+            <section className='entry-title'>
+                <EntryTitle title={title} />
+            </section>
 
             <div>
                 {posts.map((post) => (
@@ -44,7 +46,7 @@ const PostList = () => {
                         slug={post.slug}
                     />
                 ))}
-            </div>
+            </div >
         </>
     );
 };

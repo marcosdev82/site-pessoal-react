@@ -26,7 +26,7 @@ export const Article = styled.article`
 
 export const CardPost = styled.div`
     background-color: #000;
-    // border: 1px solid rgb(90 90 90);
+    width: 100%;
     padding: 20px 20px 60px;
     color:rgb(107, 107, 107);
     position: relative;

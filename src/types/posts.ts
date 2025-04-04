@@ -83,3 +83,7 @@ export interface HeadContent {
   siteName?: string;
   publish?: string;
 }
+
+export interface EntryTitleProps {
+  title?: string;
+}

@@ -1,15 +1,12 @@
-import {SectionEntryTitle} from './style';  
+import { EntryTitleProps } from '../../types/posts';
+import { SectionEntryTitle } from './style';
 
-interface TitleProps {
-    title?: string;
-}
-
-const EntryTitle = ({ title = "Título da Página" }: TitleProps) => {
+const EntryTitle = ({ title = "Título da Página" }: EntryTitleProps) => {
+    console.log('Current title:', title);  // Verifique no console
     return (
-        <SectionEntryTitle>
-            <h1>{title}</h1>
+        <SectionEntryTitle >
+            <h1>{title || "Fallback Title"}</h1>
         </SectionEntryTitle>
     );
 };
-
 export default EntryTitle;
