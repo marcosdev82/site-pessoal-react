@@ -15,7 +15,20 @@ const PostList = () => {
 
     return (
         <>
-            < EntryTitle title='Blog' />
+
+            <Head
+                title='Blog - Marcos Tavares Fullstack'
+                description='Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados.'
+                canonical='https://marcostavares.dev.br/blog'
+                robot='index, follow'
+                keywords='desenvolvedor fullstack, desenvolvimento web, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador fullstack, Marcos Tavares'
+                local='pt_BR'
+                type='website'
+                siteName='Marcos Tavares FullStack'
+                publish='https://www.facebook.com/marcostavares.dev'
+            />
+
+            <EntryTitle title='Blog' />
 
             <div>
                 {posts.map((post) => (

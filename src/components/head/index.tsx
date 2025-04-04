@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async"
 import { HeadContent } from "../../types/posts";
 
-
 const Head = ({ title, description, canonical, robot, keywords, local, type, siteName, publish }: HeadContent) => {
     return (
         <>
