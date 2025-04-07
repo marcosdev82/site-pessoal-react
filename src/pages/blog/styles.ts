@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+export const EntryTitle = styled.section``;
+
 export const EntryContent = styled.section`
     display: flex;
     min-height: 100px;

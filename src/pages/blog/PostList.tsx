@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { BlogContext } from '../../context/BlogContext';
 import Post from './Post';
-import { EntryTitle } from '../contato/styles';
+import EntryTitle from '../../components/entrytitle';
 import Head from '../../components/head';
 
 const PostList = () => {
@@ -12,7 +12,7 @@ const PostList = () => {
     }
 
     const { posts } = context;
-    const title = 'Blog - Marcos Tavares Fullstack';;
+    const title = 'Blog - Marcos Tavares Fullstack';
 
     return (
         <>
