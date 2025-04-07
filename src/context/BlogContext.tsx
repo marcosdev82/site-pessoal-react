@@ -1,12 +1,17 @@
 import React, { createContext, useEffect, useState, ReactNode, useMemo } from 'react';
 import axios from 'axios';
-import { PostType, Category } from '../types/posts'
-
+import { PostType, Category } from '../types/posts';
 
 // Interface para o contexto do blog
 interface BlogContextType {
   posts: PostType[];
   categories: Category[];
+  currentPage: number;
+  totalPages: number;
+  itemsPerPage: number;
+  isLoading: boolean;
+  changePage: (page: number) => void;
+  fetchPosts: (page?: number) => Promise<void>;
 }
 
 // Criação do contexto
@@ -15,39 +20,86 @@ export const BlogContext = createContext<BlogContextType | undefined>(undefined)
 // Props do provider
 interface BlogProviderProps {
   children: ReactNode;
+  itemsPerPage?: number;
 }
 
 // Provider do blog
-export const BlogProvider = ({ children }: BlogProviderProps) => {
+export const BlogProvider = ({ children, itemsPerPage = 10 }: BlogProviderProps) => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [totalPosts, setTotalPosts] = useState(0);
+
+  const fetchPosts = async (page: number = currentPage) => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get<PostType[]>(
+        'https://marcostavares.dev.br/wp/wp-json/wp/v2/posts',
+        {
+          params: {
+            page,
+            per_page: itemsPerPage,
+          },
+        }
+      );
+
+      // A API WordPress retorna o total de posts no header 'X-WP-Total'
+      const wpTotal = parseInt(response.headers['x-wp-total'] || '0', 10);
+      const wpTotalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
+
+      setPosts(response.data);
+      setTotalPosts(wpTotal);
+      setTotalPages(wpTotalPages);
+      setCurrentPage(page);
+    } catch (error) {
+      console.error('Erro ao carregar os posts:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get<Category[]>(
+        'https://marcostavares.dev.br/wp/wp-json/wp/v2/categories'
+      );
+      setCategories(response.data);
+    } catch (error) {
+      console.error('Erro ao carregar as categorias:', error);
+    }
+  };
+
+  const changePage = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      fetchPosts(page);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [postsResponse, categoriesResponse] = await Promise.all([
-          axios.get<PostType[]>('https://marcostavares.dev.br/wp/wp-json/wp/v2/posts'),
-          axios.get<Category[]>('https://marcostavares.dev.br/wp/wp-json/wp/v2/categories'),
-        ]);
-
-        // console.log('Posts:', postsResponse.data); // Verifique os dados recebidos
-        // console.log('Categories:', categoriesResponse.data); // Verifique os dados recebidos
-
-        setPosts(postsResponse.data);
-        setCategories(categoriesResponse.data);
-      } catch (error) {
-        console.error('Erro ao carregar os dados:', error);
-      }
+    // Carrega os dados iniciais
+    const loadInitialData = async () => {
+      await Promise.all([fetchPosts(1), fetchCategories()]);
     };
 
-    fetchData();
+    loadInitialData();
   }, []);
 
-  const value = useMemo(() => ({ posts, categories }), [posts, categories]);
-
-  return (
-    <BlogContext.Provider value={value}>
-      {children}
-    </BlogContext.Provider>
+  const value = useMemo(
+    () => ({
+      posts,
+      categories,
+      currentPage,
+      totalPages,
+      itemsPerPage,
+      isLoading,
+      changePage,
+      fetchPosts,
+      totalPosts,
+    }),
+    [posts, categories, currentPage, totalPages, isLoading]
   );
+
+  return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
 };

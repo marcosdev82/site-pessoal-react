@@ -3,15 +3,17 @@ import { BlogContext } from '../../context/BlogContext';
 import Post from './Post';
 import EntryTitle from '../../components/entrytitle';
 import Head from '../../components/head';
+import Pagination from '../../components/pagination';
+
 
 const PostList = () => {
-    const context = useContext(BlogContext);
+    const { posts, currentPage, itemsPerPage, totalPosts, changePage } = useContext(BlogContext);
 
-    if (!context) {
+    if (!posts) {
         return <p>Carregando...</p>;
     }
 
-    const { posts } = context;
+
     const title = 'Blog - Marcos Tavares Fullstack';
 
     return (
@@ -46,7 +48,15 @@ const PostList = () => {
                         slug={post.slug}
                     />
                 ))}
+
             </div >
+
+            <Pagination
+                currentPage={currentPage}
+                totalItems={totalPosts}
+                itemsPorPagina={itemsPerPage}
+                mudarPagina={changePage}
+            />
         </>
     );
 };
