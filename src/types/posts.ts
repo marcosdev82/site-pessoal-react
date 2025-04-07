@@ -86,4 +86,5 @@ export interface HeadContent {
 
 export interface EntryTitleProps {
   title?: string;
+  icon?: string;
 }
