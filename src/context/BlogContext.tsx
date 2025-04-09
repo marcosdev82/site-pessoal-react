@@ -1,18 +1,6 @@
 import React, { createContext, useEffect, useState, ReactNode, useMemo } from 'react';
 import axios from 'axios';
-import { PostType, Category } from '../types/posts';
-
-// Interface para o contexto do blog
-interface BlogContextType {
-  posts: PostType[];
-  categories: Category[];
-  currentPage: number;
-  totalPages: number;
-  itemsPerPage: number;
-  isLoading: boolean;
-  changePage: (page: number) => void;
-  fetchPosts: (page?: number) => Promise<void>;
-}
+import { PostType, Category, BlogContextType } from '../types/posts';
 
 // Criação do contexto
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
@@ -24,7 +12,7 @@ interface BlogProviderProps {
 }
 
 // Provider do blog
-export const BlogProvider = ({ children, itemsPerPage = 10 }: BlogProviderProps) => {
+export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -98,7 +86,7 @@ export const BlogProvider = ({ children, itemsPerPage = 10 }: BlogProviderProps)
       fetchPosts,
       totalPosts,
     }),
-    [posts, categories, currentPage, totalPages, isLoading]
+    [posts, categories, currentPage, totalPages, totalPosts, isLoading]
   );
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;

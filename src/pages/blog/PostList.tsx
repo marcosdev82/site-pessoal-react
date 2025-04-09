@@ -4,11 +4,12 @@ import Post from './Post';
 import EntryTitle from '../../components/entrytitle';
 import Head from '../../components/head';
 import Pagination from '../../components/pagination';
+import { BlogContextType } from '../../types/posts';
 
 
 const PostList = () => {
-    const { posts, currentPage, itemsPerPage, totalPosts, changePage } = useContext(BlogContext);
-
+    const { posts, currentPage, itemsPerPage, totalPosts, changePage } = useContext(BlogContext) as BlogContextType
+    // const totalPages = Math.ceil(totalPosts / itemsPerPage);
     if (!posts) {
         return <p>Carregando...</p>;
     }
