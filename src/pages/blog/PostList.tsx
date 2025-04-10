@@ -5,6 +5,8 @@ import EntryTitle from '../../components/entrytitle';
 import Head from '../../components/head';
 import Pagination from '../../components/pagination';
 import { BlogContextType } from '../../types/posts';
+import { Content, EntryContent } from './styles';
+import Sidebar from '../../components/sidebar';
 
 
 const PostList = () => {
@@ -14,11 +16,11 @@ const PostList = () => {
         return <p>Carregando...</p>;
     }
 
-
     const title = 'Blog - Marcos Tavares Fullstack';
 
     return (
         <>
+
             <Head
                 title='Blog - Marcos Tavares Fullstack'
                 description='Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados.'
@@ -35,22 +37,24 @@ const PostList = () => {
                 <EntryTitle title={title} />
             </section>
 
-            <div>
-                {posts.map((post) => (
-                    <Post
-                        key={post.id}
-                        id={post.id}
-                        title={post.title}
-                        date={post.date}
-                        excerpt={post.excerpt}
-                        media_details={post.media_details}
-                        categories_details={post.categories_details}
-                        author_data={post.author_data}
-                        slug={post.slug}
-                    />
-                ))}
-
-            </div >
+            <EntryContent>
+                <Sidebar />
+                <Content>
+                    {posts.map((post) => (
+                        <Post
+                            key={post.id}
+                            id={post.id}
+                            title={post.title}
+                            date={post.date}
+                            excerpt={post.excerpt}
+                            media_details={post.media_details}
+                            categories_details={post.categories_details}
+                            author_data={post.author_data}
+                            slug={post.slug}
+                        />
+                    ))}
+                </Content>
+            </EntryContent>
 
             <Pagination
                 currentPage={currentPage}

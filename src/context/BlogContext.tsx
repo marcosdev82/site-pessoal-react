@@ -2,16 +2,13 @@ import React, { createContext, useEffect, useState, ReactNode, useMemo } from 'r
 import axios from 'axios';
 import { PostType, Category, BlogContextType } from '../types/posts';
 
-// Criação do contexto
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
 
-// Props do provider
 interface BlogProviderProps {
   children: ReactNode;
   itemsPerPage?: number;
 }
 
-// Provider do blog
 export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -20,11 +17,11 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   const [isLoading, setIsLoading] = useState(false);
   const [totalPosts, setTotalPosts] = useState(0);
 
-  const fetchPosts = async (page: number = currentPage) => {
+  const fetchPosts = React.useCallback(async (page: number = currentPage) => {
     setIsLoading(true);
     try {
       const response = await axios.get<PostType[]>(
-        'https://marcostavares.dev.br/wp/wp-json/wp/v2/posts',
+        `${process.env.REACT_APP_API}/posts`,
         {
           params: {
             page,
@@ -46,12 +43,12 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [currentPage, itemsPerPage]);
 
   const fetchCategories = async () => {
     try {
       const response = await axios.get<Category[]>(
-        'https://marcostavares.dev.br/wp/wp-json/wp/v2/categories'
+        `${process.env.REACT_APP_API}/categories`
       );
       setCategories(response.data);
     } catch (error) {
@@ -59,14 +56,13 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     }
   };
 
-  const changePage = (page: number) => {
+  const changePage = React.useCallback((page: number) => {
     if (page >= 1 && page <= totalPages) {
       fetchPosts(page);
     }
-  };
+  }, [totalPages, fetchPosts]);
 
   useEffect(() => {
-    // Carrega os dados iniciais
     const loadInitialData = async () => {
       await Promise.all([fetchPosts(1), fetchCategories()]);
     };
@@ -86,7 +82,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       fetchPosts,
       totalPosts,
     }),
-    [posts, categories, currentPage, totalPages, totalPosts, isLoading]
+    [posts, categories, currentPage, totalPages, totalPosts, isLoading, changePage, fetchPosts, itemsPerPage]
   );
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
