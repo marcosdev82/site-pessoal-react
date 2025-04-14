@@ -9,9 +9,9 @@ export const EntryContent = styled.section`
     grid-template-columns: 1fr 3fr;
     gap: 2rem;
 `;
+
 export const Content = styled.section`
     flex-grow: 1;
-    padding: 20px;
 `;
 export const Article = styled.article`
     margin-bottom: 20px;
