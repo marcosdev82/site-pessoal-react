@@ -89,15 +89,15 @@ export interface EntryTitleProps {
   icon?: string;
 }
 
-// Interface para o contexto do blog
 export interface BlogContextType {
   posts: PostType[];
   categories: Category[];
   currentPage: number;
   totalPages: number;
-  totalPosts: number
+  totalPosts: number;
   itemsPerPage: number;
   isLoading: boolean;
   changePage: (page: number) => void;
   fetchPosts: (page?: number) => Promise<void>;
+  getPostById: (id: number) => Promise<PostType | null>; 
 }

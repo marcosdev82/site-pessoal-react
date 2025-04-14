@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Sidebar from '../../../components/sidebar';
 import { EntryContent } from './styles';
 import Head from '../../../components/head';
 import { Content, EntryTitle } from '../styles';
+import { BlogContext } from '../../../context/BlogContext';
 
+const Single = () => {
+    const blogContext = useContext(BlogContext);
 
-const Blog = () => {
+    useEffect(() => {
+        if (blogContext) {
+            blogContext.getPostById(123).then(post => {
+                if (post) {
+                    console.log('Post:', post);
+                }
+            });
+        }
+    }, []);
+
     return (
         <>
             <Head
@@ -36,4 +48,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default Single;

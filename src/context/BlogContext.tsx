@@ -30,7 +30,6 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
         }
       );
 
-      // A API WordPress retorna o total de posts no header 'X-WP-Total'
       const wpTotal = parseInt(response.headers['x-wp-total'] || '0', 10);
       const wpTotalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
 
@@ -47,14 +46,22 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get<Category[]>(
-        `${process.env.REACT_APP_API}/categories`
-      );
+      const response = await axios.get<Category[]>(`${process.env.REACT_APP_API}/categories`);
       setCategories(response.data);
     } catch (error) {
       console.error('Erro ao carregar as categorias:', error);
     }
   };
+
+  const getPostById = React.useCallback(async (id: number): Promise<PostType | null> => {
+    try {
+      const response = await axios.get<PostType>(`${process.env.REACT_APP_API}/posts/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error(`Erro ao carregar o post com ID ${id}:`, error);
+      return null;
+    }
+  }, []);
 
   const changePage = React.useCallback((page: number) => {
     if (page >= 1 && page <= totalPages) {
@@ -81,8 +88,20 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       changePage,
       fetchPosts,
       totalPosts,
+      getPostById, // Aqui está a função adicionada no contexto
     }),
-    [posts, categories, currentPage, totalPages, totalPosts, isLoading, changePage, fetchPosts, itemsPerPage]
+    [
+      posts,
+      categories,
+      currentPage,
+      totalPages,
+      totalPosts,
+      isLoading,
+      changePage,
+      fetchPosts,
+      itemsPerPage,
+      getPostById,
+    ]
   );
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
