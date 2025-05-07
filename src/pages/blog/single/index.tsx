@@ -7,7 +7,6 @@ import { BlogContext } from '../../../context/BlogContext';
 
 const SinglePost = () => {
     const blogContext = useContext(BlogContext);
-    console.log('BlogContext:', blogContext);
 
     useEffect(() => {
         if (blogContext) {

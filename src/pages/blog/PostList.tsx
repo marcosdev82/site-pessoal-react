@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { BlogContext } from '../../context/BlogContext';
-import Post from './Post';
+import Post from './post';
 import EntryTitle from '../../components/entrytitle';
 import Head from '../../components/head';
 import Pagination from '../../components/pagination';
