@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import EntryTitle from '../../../components/entrytitle';
 import Sidebar from '../../../components/sidebar';
 import Head from '../../../components/head';
@@ -7,18 +7,27 @@ import { BlogContext } from '../../../context/BlogContext';
 
 const SinglePost = () => {
     const blogContext = useContext(BlogContext);
+    const [post, setPost] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (blogContext) {
-            blogContext.getPostBySlug('teste-2').then(post => {
-                if (post) {
-                    console.log('Post:', post);
-                } else {
-                    console.log('Post not found');
-                }
-            });
+            blogContext.getPostBySlug('teste-2')
+                .then(fetchedPost => {
+                    if (fetchedPost) {
+                        setPost(fetchedPost);
+                    } else {
+                        console.log('Post not found');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching post:', error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
         }
-    }, []);
+    }, [blogContext]);
 
     return (
         <>
@@ -41,11 +50,18 @@ const SinglePost = () => {
             <EntryContent>
                 <Sidebar />
                 <Content>
-                    <h1>Single post</h1>
-                    <p>Conteúdo do post aqui...</p>
+                    {loading ? (
+                        <p>Carregando...</p>
+                    ) : post ? (
+                        <>
+                            <h1>{post.title}</h1>
+                            <p>{post.content}</p>
+                        </>
+                    ) : (
+                        <p>Post não encontrado.</p>
+                    )}
                 </Content>
             </EntryContent>
-
         </>
     );
 };
