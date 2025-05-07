@@ -75,7 +75,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     };
 
     loadInitialData();
-  }, []);
+  }, [fetchPosts]);
 
   const value = useMemo(
     () => ({
