@@ -1,18 +1,21 @@
 import React, { useContext, useEffect } from 'react';
+import EntryTitle from '../../../components/entrytitle';
 import Sidebar from '../../../components/sidebar';
-import { EntryContent } from './styles';
 import Head from '../../../components/head';
-import { Content, EntryTitle } from '../styles';
+import { Content, EntryContent } from '../styles';
 import { BlogContext } from '../../../context/BlogContext';
 
-const Single = () => {
+const SinglePost = () => {
     const blogContext = useContext(BlogContext);
+    console.log('BlogContext:', blogContext);
 
     useEffect(() => {
         if (blogContext) {
-            blogContext.getPostById(123).then(post => {
+            blogContext.getPostBySlug('teste-2').then(post => {
                 if (post) {
                     console.log('Post:', post);
+                } else {
+                    console.log('Post not found');
                 }
             });
         }
@@ -48,4 +51,4 @@ const Single = () => {
     );
 };
 
-export default Single;
+export default SinglePost;

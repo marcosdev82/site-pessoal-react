@@ -53,12 +53,12 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     }
   };
 
-  const getPostById = React.useCallback(async (id: number): Promise<PostType | null> => {
+  const getPostBySlug = React.useCallback(async (slug: string): Promise<PostType | null> => {
     try {
-      const response = await axios.get<PostType>(`${process.env.REACT_APP_API}/posts/${id}`);
+      const response = await axios.get<PostType>(`${process.env.REACT_APP_API}/posts?slug=${slug}`);
       return response.data;
     } catch (error) {
-      console.error(`Erro ao carregar o post com ID ${id}:`, error);
+      console.error(`Erro ao carregar o post com ID ${slug}:`, error);
       return null;
     }
   }, []);
@@ -88,7 +88,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       changePage,
       fetchPosts,
       totalPosts,
-      getPostById, // Aqui está a função adicionada no contexto
+      getPostBySlug,
     }),
     [
       posts,
@@ -100,7 +100,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       changePage,
       fetchPosts,
       itemsPerPage,
-      getPostById,
+      getPostBySlug,
     ]
   );
 

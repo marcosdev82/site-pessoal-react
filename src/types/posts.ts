@@ -99,5 +99,5 @@ export interface BlogContextType {
   isLoading: boolean;
   changePage: (page: number) => void;
   fetchPosts: (page?: number) => Promise<void>;
-  getPostById: (id: number) => Promise<PostType | null>; 
+  getPostBySlug: (slug: string) => Promise<PostType | null>; 
 }
