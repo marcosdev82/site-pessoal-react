@@ -2,22 +2,17 @@ import React, { createContext, useEffect, useState, ReactNode, useMemo } from 'r
 import axios from 'axios';
 import { PostType, Category } from '../types/posts'
 
-
-// Interface para o contexto do blog
 interface BlogContextType {
   posts: PostType[];
   categories: Category[];
 }
 
-// Criação do contexto
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
 
-// Props do provider
 interface BlogProviderProps {
   children: ReactNode;
 }
 
-// Provider do blog
 export const BlogProvider = ({ children }: BlogProviderProps) => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
