@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { HelmetProvider } from "react-helmet-async";
-import { BlogProvider } from "./context/BlogContext";
 import GlobalStyles from "./styles/GlobalStyles";
+import { BlogProvider } from "./context/BlogContext"; // Certifique-se de que o caminho está correto
 
 import dark from "./styles/themes/dark";
 import Layout from "./components/layout";
@@ -22,22 +22,22 @@ const App = () => {
     <HelmetProvider>
       <ThemeProvider theme={dark}>
         <GlobalStyles />
-        <Router>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/servicos" element={<Servicos />} />
-              <Route path="/contato" element={<Contato />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:post" element={<SinglePost />} />
-              <Route path="/trabalhos" element={<Trabalhos />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="*" element={<NotFound />} />
-              {/* Redireciona outras rotas inválidas para a home */}
-              {/* <Route path="*" element={<Navigate to="/" />} /> */}
-            </Routes>
-          </Layout>
-        </Router>
+        <BlogProvider> {/* Adicione o BlogProvider aqui */}
+          <Router>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/servicos" element={<Servicos />} />
+                <Route path="/contato" element={<Contato />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:post" element={<SinglePost />} />
+                <Route path="/trabalhos" element={<Trabalhos />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </Router>
+        </BlogProvider>
       </ThemeProvider>
     </HelmetProvider>
   );
