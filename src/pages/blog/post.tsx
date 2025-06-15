@@ -19,7 +19,7 @@ const Post = (props: PostType) => {
 
         {thumbnail && thumbnail?.url && (
           <figure>
-            <a href={slug}>
+            <a href={`blog/${slug}`} title={title}>
               <Thumbnail
                 url={thumbnail.url}
                 width={thumbnail.width}

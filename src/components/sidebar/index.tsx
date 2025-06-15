@@ -8,21 +8,21 @@ const Sidebar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-    const sidebar = document.querySelector(".sidebar") as HTMLElement | null;
-    const footer = document.querySelector("footer") as HTMLElement | null;
-    
-    if (sidebar && footer) {
+      const sidebar = document.querySelector(".sidebar") as HTMLElement | null;
+      const footer = document.querySelector("footer") as HTMLElement | null;
+
+      if (sidebar && footer) {
         const sidebarHeight = sidebar.offsetHeight;
         const footerTop = footer.getBoundingClientRect().top;
-    
+
         if (footerTop <= sidebarHeight + 20) {
-        setIsAtFooter(true);
+          setIsAtFooter(true);
         } else {
-        setIsAtFooter(false);
+          setIsAtFooter(false);
         }
-    }
-    
-    setIsFixed(window.scrollY > 160);
+      }
+
+      setIsFixed(window.scrollY > 160);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -41,6 +41,7 @@ const Sidebar = () => {
         }}
       >
         <>
+          teste
           <Terms />
         </>
       </div>

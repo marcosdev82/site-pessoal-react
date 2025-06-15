@@ -88,3 +88,16 @@ export interface EntryTitleProps {
   title?: string;
   icon?: string;
 }
+
+export interface BlogContextType {
+  posts: PostType[];
+  categories: Category[];
+  currentPage: number;
+  totalPages: number;
+  totalPosts: number;
+  itemsPerPage: number;
+  isLoading: boolean;
+  changePage: (page: number) => void;
+  fetchPosts: (page?: number) => Promise<void>;
+  getPostBySlug: (slug: string) => Promise<PostType | null>; 
+}
