@@ -1,13 +1,15 @@
 import styled from 'styled-components';
-
+import portraitImg from '../../assets/images/moldura.jpg';
 
 export const About = styled.section`
-    min-height: 100px;
-    margin: 60px 0 60px;
+    height: 100%;
+    max-height: 360px;
     position: relative;
     display: flex;
     flex-direction: row;
     gap: 15px;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 576px) {
         display: flex;
         flex-direction: column;
@@ -49,7 +51,7 @@ export const Description = styled.div`
         width: 100%;
         align-items: center;
         justify-content: center;
-         h2 {
+        h2 {
             font-size: 40px;
             color: #000;
             text-shadow: -1px -1px 0 #09f0b4, 1px -1px 0 #09f0b4, -1px 1px 0 #09f0b4, 1px 1px 0 #09f0b4;
@@ -64,7 +66,10 @@ export const Description = styled.div`
     }
 `;
 export const Portrait = styled.div`
-    min-height: 100px;
+    height: 100%;
+    max-height: 360px;
+    background: url(${portraitImg}) no-repeat center right;
+    background-size: contain;
     width: 50%;
     display: flex;
     @media (max-width: 576px) {
@@ -94,7 +99,6 @@ export const SocialMedia = styled.div`
         align-items: center;
         border-radius: 25px;
         position: relative;
-       
     }
     .social:before {
         content: "";
@@ -112,7 +116,6 @@ export const SocialMedia = styled.div`
         transition: 0.3s;
         border-radius: 50%;
         z-index: -1;
-       
     }
     svg {
         fill: #09f0b4;
@@ -178,7 +181,6 @@ export const Curriculo = styled.div`
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
-       
     }
 
     @keyframes jumpInfinite {

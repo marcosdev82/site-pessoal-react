@@ -21,7 +21,7 @@ const Home = () => {
                 <meta property="og:site_name" content="Marcos Tavares FullStack" />
                 <meta property="article:publisher" content="https://www.facebook.com/marcostavares.dev" />
             </Helmet>
-            
+
             <About>
                 <Description>
                     <h2>DESENVOLVEDOR FULLSTACK</h2>
@@ -40,7 +40,7 @@ const Home = () => {
                     <Image />
                 </Portrait>
             </About>
-            
+
             <Skills />
         </>
     );
