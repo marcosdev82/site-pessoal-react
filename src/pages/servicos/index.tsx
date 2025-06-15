@@ -3,27 +3,37 @@ import { Helmet } from 'react-helmet-async';
 import ListarServicos from './listar-servicos';
 import EntryTitle from '../../components/entrytitle';
 
+// Suponha que você tenha um componente estilizado para o conteúdo
+import { Content } from '../../styles/PageStyles'; // ajuste conforme o seu projeto
+
 const Servicos = () => {
     return (
         <>
             <Helmet>
                 <title>Serviços - Marcos Tavares Desenvolvedor Fullstack</title>
-                <meta name="description" content="Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
+                <meta
+                    name="description"
+                    content="Confira os serviços oferecidos por Marcos Tavares, desenvolvedor fullstack especializado em JavaScript, React, Node.js e WordPress."
+                />
                 <link rel="canonical" href="https://marcostavares.dev.br/servicos" />
                 <meta name="robots" content="index, follow" />
-                <meta name="keywords" content="desenvolvedor fullstack, desenvolvimento web, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador fullstack, Marcos Tavares" />
-                <meta property="og:locale" content="pt_BR"/> 
-                <meta property="og:type" content="website"/>
-                <meta property="og:title" content="Serviços - Marcos Tavares Fullstack"/>
-                <meta property="og:description" content="Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados."/>
-                <meta property="og:url" content="https://marcostavares.dev.br/servicos"/>
-                <meta property="og:site_name" content="Marcos Tavares FullStack"/>
-                <meta property="article:publisher" content="https://www.facebook.com/marcostavares.dev"/>
             </Helmet>
 
-            <EntryTitle title='Serviço' />
+            <EntryTitle title="Serviços" />
 
-            <ListarServicos />
+            <Content>
+                <p>Ofereço soluções completas em desenvolvimento web, com foco em:</p>
+                <ul>
+                    <li>Desenvolvimento de sites institucionais e landing pages</li>
+                    <li>Criação de sistemas personalizados com React, Node.js e Laravel</li>
+                    <li>Integrações com APIs e automações</li>
+                    <li>Otimização de performance e SEO técnico</li>
+                    <li>Criação e manutenção de temas e plugins WordPress</li>
+                </ul>
+
+                {/* Lista dinâmica de serviços */}
+                <ListarServicos />
+            </Content>
         </>
     );
 };
