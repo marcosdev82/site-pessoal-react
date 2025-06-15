@@ -2,9 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import ListarServicos from './listar-servicos';
 import EntryTitle from '../../components/entrytitle';
-
-// Suponha que você tenha um componente estilizado para o conteúdo
-import { Content } from '../../styles/PageStyles'; // ajuste conforme o seu projeto
+import { Content } from '../contato/styles';
 
 const Servicos = () => {
     return (
