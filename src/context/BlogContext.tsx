@@ -58,7 +58,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       const response = await axios.get<PostType>(`${process.env.REACT_APP_API}/posts?slug=${slug}`);
       return response.data;
     } catch (error) {
-      console.error(`Erro ao carregar o post com ID ${slug}:`, error);
+      console.error(`Erro ao carregar o post com slug ${slug}:`, error);
       return null;
     }
   }, []);
