@@ -21,9 +21,10 @@ const Servicos = () => {
 
             <>
 
-                <h2>Ofereço soluções completas em desenvolvimento web, com foco em:</h2>
+
                 {/* Lista dinâmica de serviços */}
                 <Content>
+                    <h2>Ofereço soluções completas em desenvolvimento web, com foco em:</h2>
                     <ListarSevicos />
                 </Content>
             </>

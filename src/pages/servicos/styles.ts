@@ -27,7 +27,7 @@ export const Content = styled.section`
         font-size: 20px;
         font-weight: 400;
         margin-bottom: 20px; 
-        color: #333;
+        color: #fff;
     }
 
     & ul {
