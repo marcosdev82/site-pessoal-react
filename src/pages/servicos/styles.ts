@@ -34,10 +34,13 @@ export const Content = styled.section`
         list-style: none;
         padding-left: 0;
         margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // duas colunas iguais
+        gap: 15px; // espaçamento entre os itens (linha e coluna)
     }
 
     & ul li {
-        margin-bottom: 20px;
+        margin-bottom: 0;
         border-radius: 8px;
         background: linear-gradient(to left, rgba(43, 247, 145, 0.7) 0%, rgba(83, 176, 234, 0.54) 100%);
         display: flex;
@@ -48,20 +51,27 @@ export const Content = styled.section`
         padding: 1px;
     }
 
-    & ul li div {
+    & ul li .bg {
         background-color: #000;
         width: 100%;
-        padding: 30px;
+        height: 100%;
+        padding: 20px;
         color: rgb(107, 107, 107);
         position: relative;
         display: inline-flex;
         display: flex;
         gap: 20px;
         flex-direction: row;
+        align-items: center;
         border-radius: 8px;
         border: 3px solid transparent;
         color: #fff;
         font-size: 18px;
     }
+
+    & ul li .bg  .icon {
+        width: 50px;
+    }
+
 
 `;
