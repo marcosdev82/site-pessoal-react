@@ -24,16 +24,19 @@ export const Content = styled.section`
     padding: 20px 0;
 
     & h2 {
-        font-size: 20px;
+        font-size: 16px;
+        line-height: 30px;
         font-weight: 400;
-        margin-bottom: 20px; 
+        margin-bottom: 40px; 
         color: #fff;
+        text-align: center;
+        text-transform: uppercase;
     }
 
     & ul {
         list-style: none;
         padding-left: 0;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
         display: grid;
         grid-template-columns: repeat(2, 1fr); // duas colunas iguais
         gap: 15px; // espaçamento entre os itens (linha e coluna)

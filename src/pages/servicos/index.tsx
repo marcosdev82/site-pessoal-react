@@ -24,7 +24,7 @@ const Servicos = () => {
 
                 {/* Lista dinâmica de serviços */}
                 <Content>
-                    <h2>Ofereço soluções completas em desenvolvimento web, com foco em:</h2>
+                    <h2>Ofereço soluções completas em desenvolvimento web, com foco na criação de interfaces modernas, sistemas eficientes e experiências digitais que conectam marcas ao seu público de forma estratégica.</h2>
                     <ListarSevicos />
                 </Content>
             </>
