@@ -37,10 +37,31 @@ export const Content = styled.section`
     }
 
     & ul li {
-        margin-bottom: 10px;
-        font-size: 16px;
-        line-height: 1.5;   
+        margin-bottom: 20px;
+        border-radius: 8px;
+        background: linear-gradient(to left, rgba(43, 247, 145, 0.7) 0%, rgba(83, 176, 234, 0.54) 100%);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 1px;
+    }
+
+    & ul li div {
+        background-color: #000;
+        width: 100%;
+        padding: 30px;
+        color: rgb(107, 107, 107);
+        position: relative;
+        display: inline-flex;
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        border-radius: 8px;
+        border: 3px solid transparent;
         color: #fff;
+        font-size: 18px;
     }
 
 `;

@@ -5,13 +5,13 @@ function ListarSevicos() {
 
     return (
         <ul>
-            <li>Desenvolvimento de sites institucionais e landing pages</li>
-            <li>Criação de sistemas personalizados com React, Node.js e Laravel</li>
-            <li>Criação de Aplicativos com React</li>
-            <li>Integrações com APIs e automações</li>
-            <li>Otimização de performance e SEO técnico</li>
-            <li>Criação e manutenção de temas e plugins WordPress</li>
-            <li>Hospedagem de sites e sistemas</li>
+            <li><div>Desenvolvimento de sites institucionais e landing pages</div></li>
+            <li><div>Criação de sistemas personalizados com React, Node.js e Laravel</div></li>
+            <li><div>Criação de Aplicativos com React</div></li>
+            <li><div>Integrações com APIs e automações</div></li>
+            <li><div>Otimização de performance e SEO técnico</div></li>
+            <li><div>Criação e manutenção de temas e plugins WordPress</div></li>
+            <li><div>Hospedagem de sites e sistemas</div></li>
         </ul>
     );
 
