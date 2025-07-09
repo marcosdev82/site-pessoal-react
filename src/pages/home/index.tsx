@@ -37,7 +37,7 @@ const Home = () => {
                     </SocialMedia>
                 </Description>
                 <Portrait>
-                    <Image />
+                    {/* <Image /> */}
                 </Portrait>
             </About>
 
