@@ -1,6 +1,6 @@
 
 import { Helmet } from 'react-helmet-async';
-import { About, Description, Portrait, Image, SocialMedia, Curriculo } from './styles';
+import { About, Description, Portrait, SocialMedia, Curriculo } from './styles';
 import { Instagram, LinkedIn, GitHub, FileDownload } from '@mui/icons-material';
 import Skills from '../../components/skills';
 
@@ -37,7 +37,6 @@ const Home = () => {
                     </SocialMedia>
                 </Description>
                 <Portrait>
-                    {/* <Image /> */}
                 </Portrait>
             </About>
 
