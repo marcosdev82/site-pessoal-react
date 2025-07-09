@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import ListarServicos from './listar-servicos';
 import EntryTitle from '../../components/entrytitle';
-import { Content } from '../contato/styles';
+import { Content } from '../servicos/styles'
+import ListarSevicos from './listar-servicos';
 
 const Servicos = () => {
     return (
@@ -19,19 +19,15 @@ const Servicos = () => {
 
             <EntryTitle title="Serviços" />
 
-            <Content>
-                <p>Ofereço soluções completas em desenvolvimento web, com foco em:</p>
-                <ul>
-                    <li>Desenvolvimento de sites institucionais e landing pages</li>
-                    <li>Criação de sistemas personalizados com React, Node.js e Laravel</li>
-                    <li>Integrações com APIs e automações</li>
-                    <li>Otimização de performance e SEO técnico</li>
-                    <li>Criação e manutenção de temas e plugins WordPress</li>
-                </ul>
+            <>
+
 
                 {/* Lista dinâmica de serviços */}
-                <ListarServicos />
-            </Content>
+                <Content>
+                    <h2>Ofereço soluções completas em desenvolvimento web, com foco em:</h2>
+                    <ListarSevicos />
+                </Content>
+            </>
         </>
     );
 };
