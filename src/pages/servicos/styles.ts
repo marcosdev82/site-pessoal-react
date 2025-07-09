@@ -62,10 +62,6 @@ export const Content = styled.section`
         border: 3px solid transparent;
         color: #fff;
         font-size: 18px;
-
-        & FontAwesomeIcon {
-            font-size: 24px;
-        }
     }
 
 `;
