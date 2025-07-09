@@ -68,7 +68,7 @@ export const Description = styled.div`
 export const Portrait = styled.div`
     height: 100%;
     max-height: 360px;
-    background: url(${portraitImg}) no-repeat center right;
+    /* background: url(${portraitImg}) no-repeat center right; */
     background-size: contain;
     width: 50%;
     display: flex;
