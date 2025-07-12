@@ -11,7 +11,7 @@ const Servicos = () => {
                 <title>Serviços - Marcos Tavares Desenvolvedor Fullstack</title>
                 <meta
                     name="description"
-                    content="Confira os serviços oferecidos por Marcos Tavares, desenvolvedor fullstack especializado em JavaScript, React, Node.js e WordPress."
+                    content="Confira os serviços oferecidos por Marcos Tavares, desenvolvedor fullstack especializado em JavaScript, React, Node.js e WordPress. "
                 />
                 <link rel="canonical" href="https://marcostavares.dev.br/servicos" />
                 <meta name="robots" content="index, follow" />

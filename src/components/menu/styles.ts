@@ -70,7 +70,7 @@ export const Ul = styled.ul<UlProps>`
       transition: color 0.3s ease; 
       text-transform: uppercase;
   }
-  & li a::before {
+  /* & li a::before {
       content: '';
       position: absolute;
       bottom: 0;
@@ -79,19 +79,19 @@ export const Ul = styled.ul<UlProps>`
       height: 2px;
       background-color: #09f0b4;
       transition: transform 0.3s ease;
-      transform: scaleX(0); /* Inicialmente escondido */
+      transform: scaleX(0); 
       transform-origin: right;
       background: -o-linear-gradient(190deg, #6ff2cb 0%, rgba(115, 67, 210, 0) 100%);
       background: linear-gradient(260deg, #6ff2cb 0%, rgba(115, 67, 210, 0) 100%);
-  }
+  } */
   & li a.active,
   & li a:hover {
       color:#09f0b4;
   }
-  & li a:hover::before {
-      transform: scaleX(1); /* Efeito de hover: expande o pseudo-elemento */
+  /* & li a:hover::before {
+      transform: scaleX(1); 
       transform-origin: left;
-  }
+  } */
 `;
 
 export const Arrow = styled.div`

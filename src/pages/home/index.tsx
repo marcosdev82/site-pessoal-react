@@ -24,7 +24,7 @@ const Home = () => {
 
             <About>
                 <Description>
-                    <h2>DESENVOLVEDOR FULLSTACK</h2>
+                    <h2 className="typewriter">DESENVOLVEDOR FULLSTACK </h2>
                     <p>Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados.</p>
                     <SocialMedia>
                         <Curriculo>

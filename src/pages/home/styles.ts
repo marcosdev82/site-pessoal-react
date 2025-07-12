@@ -35,9 +35,28 @@ export const Description = styled.div`
     -webkit-text-fill-color: transparent; */
     font-size: 40px;
     color: #000;
-    text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4;
+    color:  #09f0b4;
+    /* text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4; */
     background-color: transparent; /* Fundo transparente */
 
+    }
+
+     .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #00ffcc;
+      width: 0;
+      font-size: 2rem;
+      animation: typing 3s steps(24, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 24ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
     }
 
     p {
