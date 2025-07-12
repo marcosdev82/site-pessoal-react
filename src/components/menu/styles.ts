@@ -27,7 +27,7 @@ export const Nav = styled.nav`
     height: 50px;
     line-height: 50px;
     width: 300px;
-   
+    font-family:'inter', sans-serif;
 `;
 export const Ul = styled.ul<UlProps>`
   position: relative;
@@ -69,6 +69,9 @@ export const Ul = styled.ul<UlProps>`
       padding-bottom:5px;
       transition: color 0.3s ease; 
       text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Inter';
   }
   /* & li a::before {
       content: '';

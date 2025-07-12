@@ -33,11 +33,12 @@ export const Description = styled.div`
         /* background-image: linear-gradient(to right, #09f0b4 0%, #fff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
-    font-size: 40px;
+    font-size: 42px;
     color: #000;
     color:  #09f0b4;
     /* text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4; */
     background-color: transparent; /* Fundo transparente */
+    font-family:'inter', sans-serif;
 
     }
 
@@ -52,7 +53,7 @@ export const Description = styled.div`
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 24ch }
+      to { width: 23ch }
     }
 
     @keyframes blink {
