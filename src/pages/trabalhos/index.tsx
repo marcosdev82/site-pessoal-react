@@ -9,7 +9,6 @@ const Trabalhos = () => {
                 <EntryTitle title='Trabalhos' />
             </>
 
-            <title>Trabalhos - Marcos Tavares Desenvolvedor Fullstack 2</title>
             <meta name="description" content="Marcos Tavares, desenvolvedor fullstack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
             <link rel="canonical" href="https://marcostavares.dev.br/trabalhos" />
             <meta name="robots" content="index, follow" />
