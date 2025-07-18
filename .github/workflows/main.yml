@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }} # Certifique-se de que este valor esteja correto
           log-level: verbose
           timeout: 60000
-          local-dir: ./build/
+          local-dir: ./dist/
           server-dir: /public_html/
           port: 21
           protocol: ftp
