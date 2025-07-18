@@ -1,7 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Helmet } from 'react-helmet-async';
-import EntryTitle  from '../../components/entrytitle';
+import EntryTitle from '../../components/entrytitle';
 import { ContactForm, Content } from './styles';
 
 
@@ -45,69 +44,68 @@ const validate = (values: FormValues) => {
 const Contato = () => {
     return (
         <>
-            <Helmet>
-                <title>Contato - Marcos Tavares Desenvolvedor Fullstack</title>
-                <meta name="description" content="Entre em contato com Marcos Tavares, Whatsapp desenvolvedor fullstack especializado em JavaScript. Aproveite e faça um orçamento." />
-                <link rel="canonical" href="https://marcostavares.dev.br/contato" />
-                <meta name="robots" content="index, follow" />
-            </Helmet>
-
             <EntryTitle title='Contato' />
 
-            <Content> 
+            <Content>
                 <ContactForm>
                     <Formik
-                            initialValues={{ name: '', email: '', phone: '', message: '' }}
-                            validate={validate}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                }, 400);
-                            }}
-                        >
-                            {({ isSubmitting }) => (
-                                <Form>
-                                    <div>
-                                        <label htmlFor="name">Nome:</label>
-                                        <Field type="text" name="name" id="name" placeholder="Digite seu nome" />
-                                          <ErrorMessage name="name">
-                                            {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
-                                        </ErrorMessage>
-                                    </div>
+                        initialValues={{ name: '', email: '', phone: '', message: '' }}
+                        validate={validate}
+                        onSubmit={(values, { setSubmitting }) => {
+                            setTimeout(() => {
+                                alert(JSON.stringify(values, null, 2));
+                                setSubmitting(false);
+                            }, 400);
+                        }}
+                    >
+                        {({ isSubmitting }) => (
+                            <Form>
+                                <div>
+                                    <label htmlFor="name">Nome:</label>
+                                    <Field type="text" name="name" id="name" placeholder="Digite seu nome" />
+                                    <ErrorMessage name="name">
+                                        {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
+                                    </ErrorMessage>
+                                </div>
 
-                                    <div>
-                                        <label htmlFor="email">E-mail:</label>
-                                        <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" />
-                                        <ErrorMessage name="email">
-                                            {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
-                                        </ErrorMessage>
-                                    </div>
+                                <div>
+                                    <label htmlFor="email">E-mail:</label>
+                                    <Field type="email" name="email" id="email" placeholder="Digite seu e-mail" />
+                                    <ErrorMessage name="email">
+                                        {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
+                                    </ErrorMessage>
+                                </div>
 
-                                    <div>
-                                        <label htmlFor="phone">Telefone:</label>
-                                        <Field type="text" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" />
-                                        <ErrorMessage name="phone">
-                                            {msg => <div style={{ color: '#f16262' }} className='error'  aria-live="polite">{msg}</div>}
-                                        </ErrorMessage>
-                                    </div>
+                                <div>
+                                    <label htmlFor="phone">Telefone:</label>
+                                    <Field type="text" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" />
+                                    <ErrorMessage name="phone">
+                                        {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
+                                    </ErrorMessage>
+                                </div>
 
-                                    <div>
-                                        <label htmlFor="message">Mensagem:</label>
-                                        <Field as="textarea" name="message" id="message" placeholder="Digite sua mensagem" />
-                                        <ErrorMessage name="message">
-                                            {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
-                                        </ErrorMessage>
-                                    </div>
+                                <div>
+                                    <label htmlFor="message">Mensagem:</label>
+                                    <Field as="textarea" name="message" id="message" placeholder="Digite sua mensagem" />
+                                    <ErrorMessage name="message">
+                                        {msg => <div style={{ color: '#f16262' }} className='error' aria-live="polite">{msg}</div>}
+                                    </ErrorMessage>
+                                </div>
 
-                                    <button type="submit" disabled={isSubmitting}>
-                                        <span>Enviar</span>
-                                    </button>
-                                </Form>
-                            )}
+                                <button type="submit" disabled={isSubmitting}>
+                                    <span>Enviar</span>
+                                </button>
+                            </Form>
+                        )}
                     </Formik>
                 </ContactForm>
             </Content>
+
+            <title>Contato - Marcos Tavares Desenvolvedor Fullstack</title>
+            <meta name="description" content="Entre em contato com Marcos Tavares, Whatsapp desenvolvedor fullstack especializado em JavaScript. Aproveite e faça um orçamento." />
+            <link rel="canonical" href="https://marcostavares.dev.br/contato" />
+            <meta name="robots" content="index, follow" />
+
 
         </>
     );
