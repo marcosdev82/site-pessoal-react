@@ -17,17 +17,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: 🔨 Build Project
         run: |
           npm install
           npm run build
-      
+
+      - name: 🔎 Verificar arquivos gerados
+        run: ls -R ./dist
+
       - name: 📂 Upload build files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}  # Certifique-se de que este valor esteja correto
+          server: ${{ secrets.FTP_HOST }} # Certifique-se de que este valor esteja correto
           username: ${{ secrets.FTP_USERNAME }} # Certifique-se de que este valor esteja correto
           password: ${{ secrets.FTP_PASSWORD }} # Certifique-se de que este valor esteja correto
           log-level: verbose
