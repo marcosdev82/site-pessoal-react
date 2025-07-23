@@ -101,8 +101,8 @@ const Contato = () => {
                 </ContactForm>
             </Content>
 
-            <title>Contato - Marcos Tavares Desenvolvedor Fullstack</title>
-            <meta name="description" content="Entre em contato com Marcos Tavares, Whatsapp desenvolvedor fullstack especializado em JavaScript. Aproveite e faça um orçamento." />
+            <title>Contato - Marcos Tavares Desenvolvedor full stack</title>
+            <meta name="description" content="Entre em contato com Marcos Tavares, Whatsapp desenvolvedor full stack especializado em JavaScript. Aproveite e faça um orçamento." />
             <link rel="canonical" href="https://marcostavares.dev.br/contato" />
             <meta name="robots" content="index, follow" />
 
