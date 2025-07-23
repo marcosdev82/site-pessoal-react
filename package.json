@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://marcostavares.dev.br",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -13,30 +20,27 @@
     "@mui/icons-material": "^6.1.4",
     "@mui/material": "^6.1.4",
     "@samkirkland/ftp-deploy": "^1.2.4",
-    "@types/react-dom": "^18.3.1",
-    "axios": "^1.8.3",
+    "axios": "^1.11.0",
     "formik": "^2.4.6",
     "framer-motion": "^12.4.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^6.27.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^7.7.0",
     "styled-components": "^6.1.13",
-    "typescript": "^4.9.5",
+    "typescript": "^5.4.5",
     "web-vitals": "^2.1.4",
     "yup": "^1.6.1"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "@types/react": "^19.0.35",
+    "@types/react-dom": "^19.0.17",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.34",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^5.2.10"
   },
   "browserslist": {
     "production": [
@@ -49,21 +53,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@svgr/webpack": "^8.1.0",
-    "@types/axios": "^0.14.4",
-    "@types/node": "^22.12.0",
-    "@types/react": "^19.1.8",
-    "@types/styled-components": "^5.1.34",
-    "@typescript-eslint/eslint-plugin": "^8.37.0",
-    "@typescript-eslint/parser": "^8.37.0",
-    "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^9.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "vite": "^7.0.5"
   }
 }
