@@ -14,14 +14,15 @@ export interface MediaDetails {
   filesize: number;
   sizes: Record<ThumbnailSize, ImageSize>;
 }
+
+export type ThumbnailSize = 'medium' | 'large' | 'thumbnail' | 'medium_large' | 'full';
+
 export interface ThumbnailData {
   url: string;
   width?: number;
   height?: number;
   alt?: string;
 }
-
-export type ThumbnailSize = 'medium' | 'large' | 'thumbnail' | 'medium_large' | 'full';
 
 export interface Category {
   id: number;
