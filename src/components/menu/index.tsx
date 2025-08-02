@@ -39,7 +39,7 @@ const Menu = () => {
     { id: 1, name: "Home", link: "/" },
     { id: 2, name: "Serviços", link: "/servicos" },
     { id: 3, name: "Trabalhos", link: "/trabalhos" },
-    { id: 4, name: "Sobre min", link: "/sobre" },
+    { id: 4, name: "Sobre mim", link: "/sobre" },
     // { id: 5, name: "Blog", link: "/blog" },
     { id: 6, name: "Contato", link: "/contato" },
   ];
