@@ -1,10 +1,17 @@
 import React from 'react';
 import EntryTitle from '../../components/entrytitle';
+import { Content } from '../servicos/styles';
 
 const Sobre = () => {
     return (
         <>
             <EntryTitle title='Sobre mim' />
+
+            <Content>
+                <p>
+                    Olá! Sou Marcos Tavares, natural de Porto Alegre/RS, formado em Análise e Desenvolvimento de Sistemas e atualmente residente em Fortaleza/CE. Tenho verdadeira paixão por desenvolvimento de software e já atuei com diversas tecnologias em projetos profissionais e pessoais. Sempre que possível, compartilho meu conhecimento com a comunidade e estou em constante busca por evolução e aprendizado contínuo.
+                </p>
+            </Content>
 
             <title>Sobre min - Marcos Tavares Desenvolvedor full stack</title>
             <meta name="description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
