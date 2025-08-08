@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import portraitImg from '../../assets/images/moldura.jpg';
+// import portraitImg from '../../assets/images/moldura.jpg';
 
 export const About = styled.section`
     height: 100%;
@@ -31,33 +31,33 @@ export const Description = styled.div`
     h2 {
     
         /* background-image: linear-gradient(to right, #09f0b4 0%, #fff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    font-size: 42px;
-    color: #000;
-    color:  #09f0b4;
-    /* text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4; */
-    background-color: transparent; /* Fundo transparente */
-    font-family:'inter', sans-serif;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+        font-size: 42px;
+        color: #000;
+        color:  #09f0b4;
+        /* text-shadow: -1px -1px 0 #09f0b4,1px -1px 0 #09f0b4,-1px 1px 0 #09f0b4,1px 1px 0 #09f0b4; */
+        background-color: transparent; /* Fundo transparente */
+        font-family:'inter', sans-serif;
 
     }
 
-     .typewriter {
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid #00ffcc;
-      width: 0;
-      font-size: 2rem;
-      animation: typing 3s steps(24, end) forwards, blink 0.7s step-end infinite;
+    .typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #00ffcc;
+        width: 0;
+        font-size: 2rem;
+        animation: typing 3s steps(24, end) forwards, blink 0.7s step-end infinite;
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 23ch }
+        from { width: 0 }
+        to { width: 23ch }
     }
 
     @keyframes blink {
-      50% { border-color: transparent }
+        50% { border-color: transparent }
     }
 
     p {
@@ -88,7 +88,6 @@ export const Description = styled.div`
 export const Portrait = styled.div`
     height: 100%;
     max-height: 360px;
-    /* background: url(${portraitImg}) no-repeat center right; */
     background-size: contain;
     width: 50%;
     display: flex;
