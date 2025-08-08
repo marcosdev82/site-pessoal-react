@@ -91,13 +91,16 @@ export const Portrait = styled.div`
     background-size: contain;
     width: 50%;
     display: flex;
+    align-items: center;
+    justify-content: end;
     @media (max-width: 576px) {
         width: 100%;
         display: none;
     }
 `;
-export const Image = styled.div`
-
+export const Image = styled.img`
+    border-radius: 100%;
+    border: 3px solid #09f0b4;
 `;
 export const Skills = styled.section`
 
