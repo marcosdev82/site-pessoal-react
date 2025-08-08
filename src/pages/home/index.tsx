@@ -2,6 +2,8 @@
 import { About, Description, Portrait, SocialMedia, Curriculo } from './styles';
 import { Instagram, LinkedIn, GitHub, FileDownload } from '@mui/icons-material';
 import Skills from '../../components/skills';
+import Thumbnail from '../../components/thumbnails';
+import portraitImg from '../../assets/images/thumnais-320x320.jpg';
 
 const Home = () => {
     return (
@@ -21,6 +23,13 @@ const Home = () => {
                     </SocialMedia>
                 </Description>
                 <Portrait>
+                    <Thumbnail
+                        key='1'
+                        url={portraitImg}
+                        alt='Marcos Tavares'
+                        height={320}
+                        width={320}
+                    />
                 </Portrait>
             </About>
 
