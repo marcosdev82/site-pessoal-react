@@ -100,7 +100,7 @@ export const Portrait = styled.div`
 `;
 export const Image = styled.img`
     border-radius: 100%;
-    border: 3px solid #09f0b4;
+    border: 3px solid #09f0b4; 
 `;
 export const Skills = styled.section`
 
