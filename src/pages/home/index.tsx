@@ -2,7 +2,7 @@
 import { About, Description, Portrait, Image, SocialMedia, Curriculo } from './styles';
 import { Instagram, LinkedIn, GitHub, FileDownload } from '@mui/icons-material';
 import Skills from '../../components/skills';
-import portraitImg from '../../assets/images/thumb-marcos.jpg';
+import portraitImg from '../../assets/images/thumnail-marcos.jpg';
 
 const Home = () => {
     return (
