@@ -22,7 +22,7 @@ const Home = () => {
                     </SocialMedia>
                 </Description>
                 <Portrait>
-                    <Image src={portraitImg} width={260} height={260} className='photo' alt="marcos tavares" />
+                    <Image src={portraitImg} width={260} height={260} className='photo' alt="Marcos Vinicius Souza Tavares" />
                 </Portrait>
             </About>
 
