@@ -22,13 +22,13 @@ const Home = () => {
                     </SocialMedia>
                 </Description>
                 <Portrait>
-                    <Image src={portraitImg} width={260} height={260} className='photo' />
+                    <Image src={portraitImg} width={260} height={260} className='photo' alt="marcos tavares" />
                 </Portrait>
             </About>
 
             <Skills />
 
-            <title>Home - Marcos Tavares Desenvolvedor Full stack</title>
+            <title>Home - Marcos Tavares Desenvolvedor full stack</title>
             <meta name="description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
             <link rel="canonical" href="https://marcostavares.dev.br/" />
             <meta name="robots" content="index, follow" />
