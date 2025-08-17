@@ -52,7 +52,7 @@ const Menu = () => {
         <span></span>
       </Hamburger>
 
-      <Ul visible={isDropdownVisible}>
+      <Ul $visible={isDropdownVisible}>
         {menuItems.map((item) => (
           <li key={item.id}>
             <NavLink

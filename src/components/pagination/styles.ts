@@ -9,9 +9,9 @@ const PaginationContainer = styled.div`
   margin-bottom: 40px;
 `;
 
-const Button = styled.button<{ active?: boolean }>`
-  background: ${({ active }) => (active ? props => props.theme.colors.tertiary : 'transparent')};
-  color: ${({ active }) => (active ? props => props.theme.colors.secundary : props => props.theme.colors.white)};
+const Button = styled.button<{ $active?: boolean }>`
+  background: ${({ $active }) => ($active ? props => props.theme.colors.tertiary : 'transparent')};
+  color: ${({ $active }) => ($active ? props => props.theme.colors.secundary : props => props.theme.colors.white)};
   border: 1px solid ${ props => props.theme.colors.border100 };
   padding: 8px 12px; 
   cursor: pointer;
@@ -20,7 +20,7 @@ const Button = styled.button<{ active?: boolean }>`
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${({ active }) => (active ?  props => props.theme.colors.tertiary  : props => props.theme.colors.tertiary)};
+    background: ${({ $active }) => ($active ?  props => props.theme.colors.tertiary  : props => props.theme.colors.tertiary)};
     color: ${ props => props.theme.colors.white };
   }
 

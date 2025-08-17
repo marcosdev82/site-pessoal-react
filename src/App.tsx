@@ -17,6 +17,9 @@ import Sobre from "./pages/sobre";
 import NotFound from "./pages/404";
 
 const App = () => {
+
+  console.log(`${import.meta.env.VITE_API}/posts`)
+
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />

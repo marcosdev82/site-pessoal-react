@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface UlProps {
-  visible: boolean;
+  $visible: boolean;
 }
 
 export const NavIcon = styled.div`
@@ -39,7 +39,7 @@ export const Ul = styled.ul<UlProps>`
   align-items: center;
   gap: 40px;
   z-index: 10;
-  display: ${({ visible }) => (visible ? "flex" : "none")}!important;
+  display: ${({ $visible }) => ($visible ? "flex" : "none")}!important;
 
   @media (max-width: 768px) {
     position: absolute;
@@ -52,10 +52,10 @@ export const Ul = styled.ul<UlProps>`
     align-items: start;
     gap: 15px;
     padding: 20px;
-    /* opacity: ${({ visible }) => (visible ? "1" : "0")};
-    transform: ${({ visible }) =>
-      visible ? "translateY(0)" : "translateY(-10px)"};
-    pointer-events: ${({ visible }) => (visible ? "auto" : "none")};
+    /* opacity: ${({ $visible }) => ($visible ? "1" : "0")};
+    transform: ${({ $visible }) =>
+      $visible ? "translateY(0)" : "translateY(-10px)"};
+    pointer-events: ${({ $visible }) => ($visible ? "auto" : "none")};
     transition: opacity 0.3s ease, transform 0.3s ease; */
     & li {
       display: flex;

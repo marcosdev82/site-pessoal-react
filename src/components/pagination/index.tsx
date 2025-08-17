@@ -38,7 +38,7 @@ const Pagination = ({
           <PaginationButtons.Item
             key={pageNumber}
             onClick={() => mudarPagina(pageNumber)}
-            active={currentPage === pageNumber}
+            $active={currentPage === pageNumber}
           >
             {pageNumber}
           </PaginationButtons.Item>

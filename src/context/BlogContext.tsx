@@ -17,11 +17,12 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   const [isLoading, setIsLoading] = useState(false);
   const [totalPosts, setTotalPosts] = useState(0);
 
-  const fetchPosts = React.useCallback(async (page: number = currentPage) => {
+  const fetchPosts = React.useCallback(async (page: number = 1) => {
     setIsLoading(true);
+
     try {
       const response = await axios.get<PostType[]>(
-        `${process.env.REACT_APP_API}/posts`,
+        `${import.meta.env.VITE_API}/posts`,
         {
           params: {
             page,
@@ -36,17 +37,19 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       setPosts(response.data);
       setTotalPosts(wpTotal);
       setTotalPages(wpTotalPages);
-      setCurrentPage(page);
+      setCurrentPage(page); // Isso deve vir após o fetch, como já está
     } catch (error) {
       console.error('Erro ao carregar os posts:', error);
     } finally {
       setIsLoading(false);
     }
-  }, [currentPage, itemsPerPage]);
+  }, [itemsPerPage]); // Remova currentPage daqui
+
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get<Category[]>(`${process.env.REACT_APP_API}/categories`);
+      const response = await axios.get<Category[]>(`${import.meta.env.VITE_API}/categories`);
+      console.log(import.meta.env.VITE_API)
       setCategories(response.data);
     } catch (error) {
       console.error('Erro ao carregar as categorias:', error);
@@ -55,7 +58,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
 
   const getPostBySlug = React.useCallback(async (slug: string): Promise<PostType | null> => {
     try {
-      const response = await axios.get<PostType>(`${process.env.REACT_APP_API}/posts?slug=${slug}`);
+      const response = await axios.get<PostType>(`${import.meta.env.VITE_API}/posts?slug=${slug}`);
       return response.data;
     } catch (error) {
       console.error(`Erro ao carregar o post com slug ${slug}:`, error);
