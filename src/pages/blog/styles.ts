@@ -46,8 +46,8 @@ export const CardPost = styled.div`
         font-weight: 600;
     }
     & p {
-       color: #bbbbbb;
-       line-height: 1.5;
+        color: #bbbbbb;
+        line-height: 1.5;
     }
 
     @media (max-width: 576px) { 

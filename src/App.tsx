@@ -11,7 +11,7 @@ import Home from "./pages/home";
 import Servicos from "./pages/servicos";
 import Contato from "./pages/contato";
 import Blog from "./pages/blog";
-import SinglePost from "./pages/blog/single";
+import SinglePost from "./pages/blog/";
 import Trabalhos from "./pages/trabalhos";
 import Sobre from "./pages/sobre";
 import NotFound from "./pages/404";

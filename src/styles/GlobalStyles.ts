@@ -27,6 +27,8 @@ export default createGlobalStyle`
     h1,h2,h3,h4,h5,h6 {
         color: #09f0b4;
     }
-    overflow-y: scroll;
+    p {
+        color: ${props => props.theme.colors.white}; 
+    }
 
 `;

@@ -41,7 +41,6 @@ const Sidebar = () => {
         }}
       >
         <>
-          teste
           <Terms />
         </>
       </div>

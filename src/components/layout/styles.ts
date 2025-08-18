@@ -42,8 +42,7 @@ export const Grid = styled.div`
 `;
 
 export const Container = styled.main`
-    display: grid  !important;
     grid-column: 2 / 8; /* corrigido: 8/2 estava invertido */
     min-height: 600px;
-    padding: 0 15px;
+    padding: 0 15px; 
 `;

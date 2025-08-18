@@ -1,7 +1,7 @@
-import EntryTitle from '../../../components/entrytitle';
-import Sidebar from '../../../components/sidebar';
-import Head from '../../../components/head';
-import { Content, EntryContent } from '../styles';
+import EntryTitle from '../../components/entrytitle';
+import Sidebar from '../../components/sidebar';
+import Head from '../../components/head';
+import { Content, EntryContent } from './styles';
 
 const SinglePost = () => {
 
