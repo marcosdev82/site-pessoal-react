@@ -4,6 +4,7 @@ import Thumbnail from "../../components/thumbnails";
 import useThumbnail from "../../hooks/useThumbnail";
 import PostEntryMeta from "../../components/entrymeta";
 import useFormattedDate from '../../hooks/useFormattedDate';
+import { Link } from 'react-router-dom';
 
 const Post = (props: PostType) => {
 
@@ -19,14 +20,14 @@ const Post = (props: PostType) => {
 
         {thumbnail && thumbnail?.url && (
           <figure>
-            <a href={`blog/${slug}`} title={title}>
+            <Link to={`/blog/${slug}`}>
               <Thumbnail
                 url={thumbnail.url}
                 width={thumbnail.width}
                 height={thumbnail.height}
                 alt={title}
               />
-            </a>
+            </Link>
           </figure>
         )}
 
@@ -42,7 +43,7 @@ const Post = (props: PostType) => {
         />
 
       </CardPost>
-    </Article>
+    </Article >
   );
 };
 
