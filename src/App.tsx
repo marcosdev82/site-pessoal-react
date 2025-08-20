@@ -11,14 +11,13 @@ import Home from "./pages/home";
 import Servicos from "./pages/servicos";
 import Contato from "./pages/contato";
 import Blog from "./pages/blog";
+import Category from "./pages/blog/category";
 import SinglePost from './pages/blog/single';
 import Trabalhos from "./pages/trabalhos";
 import Sobre from "./pages/sobre";
 import NotFound from "./pages/404";
 
 const App = () => {
-
-  console.log(`${import.meta.env.VITE_API}/posts`)
 
   return (
     <ThemeProvider theme={dark}>
@@ -32,6 +31,7 @@ const App = () => {
               <Route path="/contato" element={<Contato />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<SinglePost />} />
+              <Route path="/blog/category/:slug" element={<Category />} />
               <Route path="/trabalhos" element={<Trabalhos />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="*" element={<NotFound />} />
