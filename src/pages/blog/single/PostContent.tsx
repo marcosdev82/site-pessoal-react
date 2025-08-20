@@ -46,7 +46,7 @@ const SinglePost = () => {
     return (
         <>
             <Head
-                title='Blog - Marcos Tavares full stack'
+                title={`Blog - ${title}`}
                 description='Marcos Tavares, desenvolvedor full stack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados.'
                 canonical='https://marcostavares.dev.br/blog'
                 robot='index, follow'
