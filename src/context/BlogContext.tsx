@@ -56,6 +56,19 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     }
   };
 
+  const getCategoryBySlug = React.useCallback(async (slug: string): Promise<Category | null> => {
+    try {
+      const response = await axios.get<Category[]>(`${import.meta.env.VITE_API}/categories`, {
+        params: { slug }
+      });
+
+      return response.data.length > 0 ? response.data[0] : null;
+    } catch (error) {
+      console.error(`Erro ao buscar categoria com slug "${slug}":`, error);
+      return null;
+    }
+  }, []);
+
   const getPostBySlug = React.useCallback(async (slug: string): Promise<PostType | null> => {
     try {
       const response = await axios.get<PostType>(`${import.meta.env.VITE_API}/posts?slug=${slug}`);
@@ -92,6 +105,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       fetchPosts,
       totalPosts,
       getPostBySlug,
+      getCategoryBySlug,
     }),
     [
       posts,
@@ -104,6 +118,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       fetchPosts,
       itemsPerPage,
       getPostBySlug,
+      getCategoryBySlug,
     ]
   );
 

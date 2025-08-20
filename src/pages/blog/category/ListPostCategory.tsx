@@ -4,23 +4,22 @@ import EntryTitle from '../../../components/entrytitle';
 import { useContext, useEffect } from "react";
 import { BlogContext } from "../../../context/BlogContext";
 import { BlogContextType } from "../../../types/posts";
+import { useParams } from "react-router-dom";
 
-const ListPostCategory = () => {
+const Category = () => {
+
+    const { slug } = useParams<{ slug: string }>();
 
     const {
-        categories,
+        getCategoryBySlug,
         fetchPosts,
     } = useContext(BlogContext) as BlogContextType;
 
     useEffect(() => {
-        // fetchPosts(currentPage);
-    }, [fetchPosts]);
-
-    if (!categories) {
-        return <p>Carregando...</p>;
-    }
-
-    console.log(categories)
+        if (slug) {
+            getCategoryBySlug(slug);
+        }
+    }, [slug, getCategoryBySlug]);
 
     const title = "Categoria"
 
@@ -64,4 +63,4 @@ const ListPostCategory = () => {
     );
 }
 
-export default ListPostCategory;
+export default Category;

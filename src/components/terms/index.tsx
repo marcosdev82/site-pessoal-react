@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useTerms from "../../hooks/useTerms";
 import { TermsContainer, ListTerms } from "./styles";
 
@@ -25,7 +26,7 @@ const Terms = () => {
         <ListTerms>
           {Terms.map((term: TermsContent) => (
             <li key={term.id}>
-              <a href={`/blog/category/${term.slug}`}>{term.name} <span className="badge">({term.count})</span></a>
+              <Link to={`/blog/category/${term.slug}`}>{term.name} <span className="badge">({term.count})</span></Link>
             </li>
           ))}
         </ListTerms>
