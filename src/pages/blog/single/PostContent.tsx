@@ -48,7 +48,7 @@ const SinglePost = () => {
             <Head
                 title={`Blog - ${title}`}
                 description='Marcos Tavares, desenvolvedor full stack especializado em JavaScript. Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados.'
-                canonical='https://marcostavares.dev.br/blog'
+                canonical={`https://marcostavares.dev.br/blog/${slug}`}
                 robot='index, follow'
                 keywords='desenvolvedor full stack, desenvolvimento web, aplicações escaláveis, criação de sites, sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador full stack, Marcos Tavares'
                 local='pt_BR'
