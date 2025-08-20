@@ -11,7 +11,7 @@ import Home from "./pages/home";
 import Servicos from "./pages/servicos";
 import Contato from "./pages/contato";
 import Blog from "./pages/blog";
-import SinglePost from './pages/blog/SinglePost';
+import SinglePost from './pages/blog/single';
 import Trabalhos from "./pages/trabalhos";
 import Sobre from "./pages/sobre";
 import NotFound from "./pages/404";
@@ -31,7 +31,7 @@ const App = () => {
               <Route path="/servicos" element={<Servicos />} />
               <Route path="/contato" element={<Contato />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:post" element={<SinglePost />} />
+              <Route path="/blog/:slug" element={<SinglePost />} />
               <Route path="/trabalhos" element={<Trabalhos />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="*" element={<NotFound />} />
