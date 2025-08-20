@@ -9,13 +9,14 @@ import { Content, EntryContent } from './styles';
 import Sidebar from '../../components/sidebar';
 
 const PostList = () => {
+
     const {
         posts,
         currentPage,
         itemsPerPage,
         totalPosts,
         changePage,
-        fetchPosts, // importante: incluir fetchPosts aqui
+        fetchPosts,
     } = useContext(BlogContext) as BlogContextType;
 
     useEffect(() => {

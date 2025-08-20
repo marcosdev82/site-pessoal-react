@@ -1,17 +1,16 @@
-import { useMemo } from "react";
-import { MediaDetails, ThumbnailData, ThumbnailSize } from "../types/posts";
+import { useMemo } from 'react';
+import { MediaDetails, ThumbnailData, ThumbnailSize } from '../types/posts';
 
 const useThumbnail = (
   media_details: MediaDetails | undefined,
   size: ThumbnailSize = 'medium'
 ): ThumbnailData | null => {
-  return useMemo(() => {
-    if (!media_details || typeof media_details !== 'object') {
+  return useMemo<ThumbnailData | null>(() => {
+    if (!media_details || !media_details.sizes) {
       return null;
     }
 
-    // Verifica se o tamanho solicitado existe
-    const sizeData = media_details.sizes?.[size];
+    const sizeData = media_details.sizes[size];
 
     if (!sizeData) return null;
 
