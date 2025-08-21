@@ -8,7 +8,8 @@ import { BlogContextType, PostType } from '../../../types/posts';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Thumbnail from '../../../components/thumbnails';
-
+import useThumbnail from '../../../hooks/useThumbnail';
+import useFormattedDate from '../../../hooks/useFormattedDate';
 
 
 const SinglePost = () => {
@@ -21,7 +22,8 @@ const SinglePost = () => {
 
     const [post, setPost] = useState<PostType | null>(null);
 
-    // const thumbnail = useThumbnail(media_details ?? undefined, 'thumbnail')
+    const thumbnail = useThumbnail(post?.media_details ?? undefined, 'medium_large');
+    const postDate = useFormattedDate(post?.date)
 
     useEffect(() => {
         if (slug) {
@@ -38,57 +40,56 @@ const SinglePost = () => {
         return <p>Carregando...</p>;
     }
 
-    const { id, title, date, content, media_details, author_data, categories_details } = post;
-    console.log(media_details)
 
-    // const postDate = useFormattedDate(date)
 
     return (
         <>
             <section className='entry-title'>
-                <EntryTitle title={title} />
+                <EntryTitle title={post?.title} />
             </section>
 
             <EntryContent>
                 <Sidebar />
                 <Content>
-                    {/* {thumbnail && thumbnail?.url && (
+                    {thumbnail && thumbnail?.url && (
                         <figure>
 
                             <Thumbnail
                                 url={thumbnail.url}
                                 width={thumbnail.width}
                                 height={thumbnail.height}
-                                alt={title}
+                                alt={post?.title}
                             />
 
                         </figure>
-                    )} */}
+                    )}
 
-                    <h1>{title}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: content ?? '' }} />
+
+                    <h1>{post?.title}</h1>
+                    <h3>{postDate}</h3>
+                    <div dangerouslySetInnerHTML={{ __html: post?.content ?? '' }} />
                 </Content>
             </EntryContent>
 
-            <title>{`Blog - ${title}`}</title>
+            <title>{`Blog - ${post?.title}`}</title>
 
             <meta name="description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 
                 Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
             <meta name="keywords" content="desenvolvedor full stack, desenvolvimento web, aplicações escaláveis, criação de sites, 
                 sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador full stack, Marcos Tavares" />
             <meta name="robots" content="index, follow" />
-            <link rel="canonical" href={`https://marcostavares.dev.br/blog/${title}`} />
+            <link rel="canonical" href={`https://marcostavares.dev.br/blog/${post?.title}`} />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content={`Blog - ${title}`} />
+            <meta property="og:title" content={`Blog - ${post?.title}`} />
             <meta property="og:description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 
                 Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas 
                 que unem design e funcionalidade para entregar excelência e resultados." />
             <meta property="og:site_name" content="Marcos Tavares full stack" />
-            <meta property="og:url" content={`https://marcostavares.dev.br/blog/${title}`} />
+            <meta property="og:url" content={`https://marcostavares.dev.br/blog/${post?.title}`} />
             <meta property="og:locale" content="pt_BR" />
             <meta property="article:author" content="https://www.facebook.com/marcostavares.dev" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={`Blog - ${title}`} />
+            <meta name="twitter:title" content={`Blog - ${post?.title}`} />
             <meta name="twitter:description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 
                 Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas 
                 que unem design e funcionalidade para entregar excelência e resultados." />
