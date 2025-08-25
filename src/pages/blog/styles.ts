@@ -12,6 +12,27 @@ export const EntryContent = styled.section`
 
 export const Content = styled.section`
     flex-grow: 1;
+
+    & figure {
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    & figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    & p {
+        margin-bottom: 20px;
+    }
+
+    & time {
+        font-size:14px;
+        color: rgba(255, 255, 255, 1);
+    }
+
 `;
 export const Article = styled.article`
     margin-bottom: 20px;

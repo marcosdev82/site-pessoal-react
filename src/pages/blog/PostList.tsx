@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { BlogContext } from '../../context/BlogContext';
+import { BlogContext } from '../../contexts/BlogContext';
 import Post from './post';
 import EntryTitle from '../../components/entrytitle';
 import Head from '../../components/head';

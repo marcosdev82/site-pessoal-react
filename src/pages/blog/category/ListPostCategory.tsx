@@ -1,66 +1,69 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Sidebar from "../../../components/sidebar";
+import Pagination from "../../../components/pagination";
+import Post from "../post";
 import { Content, EntryContent } from "../styles";
 import EntryTitle from '../../../components/entrytitle';
-import { useContext, useEffect } from "react";
-import { BlogContext } from "../../../context/BlogContext";
-import { BlogContextType } from "../../../types/posts";
-import { useParams } from "react-router-dom";
+import { usePosts } from "../../../hooks/usePosts";
 
 const Category = () => {
-
     const { slug } = useParams<{ slug: string }>();
-
     const {
-        getCategoryBySlug,
+        posts,
+        currentPage,
+        totalPosts,
+        itemsPerPage,
         fetchPosts,
-    } = useContext(BlogContext) as BlogContextType;
+        isLoading,
+        changePage
+    } = usePosts();
 
     useEffect(() => {
         if (slug) {
-            getCategoryBySlug(slug);
+            fetchPosts(1, undefined, slug); // Passando slug como categorySlug
         }
-    }, [slug, getCategoryBySlug]);
+    }, [slug]); // Dependência do slug
 
-    const title = "Categoria"
+    const formattedTitle = slug ? slug.replace(/-/g, " ").toUpperCase() : "Categoria";
 
     return (
         <>
             <section className='entry-title'>
-                <EntryTitle title={title} />
+                <EntryTitle title={formattedTitle} />
             </section>
 
             <EntryContent>
                 <Sidebar />
                 <Content>
-                    teste
+                    {isLoading ? (
+                        <p>Carregando posts...</p>
+                    ) : (
+                        posts.map((post) => (
+                            <Post
+                                key={post.id}
+                                id={post.id}
+                                title={post.title}
+                                date={post.date}
+                                excerpt={post.excerpt}
+                                media_details={post.media_details}
+                                categories_details={post.categories_details}
+                                author_data={post.author_data}
+                                slug={post.slug}
+                            />
+                        ))
+                    )}
                 </Content>
             </EntryContent>
 
-            <title>{`Blog - ${title}`}</title>
-
-            <meta name="description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 
-                Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas que unem design e funcionalidade para entregar excelência e resultados." />
-            <meta name="keywords" content="desenvolvedor full stack, desenvolvimento web, aplicações escaláveis, criação de sites, 
-                sistemas web, design responsivo, programação front-end, programação back-end, React, Node.js, Laravel, desenvolvimento de software, soluções digitais, programador full stack, Marcos Tavares" />
-            <meta name="robots" content="index, follow" />
-            <link rel="canonical" href={`https://marcostavares.dev.br/blog/${title}`} />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content={`Blog - ${title}`} />
-            <meta property="og:description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 
-                Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas 
-                que unem design e funcionalidade para entregar excelência e resultados." />
-            <meta property="og:site_name" content="Marcos Tavares full stack" />
-            <meta property="og:url" content={`https://marcostavares.dev.br/blog/${title}`} />
-            <meta property="og:locale" content="pt_BR" />
-            <meta property="article:author" content="https://www.facebook.com/marcostavares.dev" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={`Blog - ${title}`} />
-            <meta name="twitter:description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 
-                Dê vida às suas ideias com soluções digitais inteligentes. Desenvolvo aplicações robustas, escaláveis e intuitivas 
-                que unem design e funcionalidade para entregar excelência e resultados." />
-
+            <Pagination
+                currentPage={currentPage}
+                totalItems={totalPosts}
+                itemsPorPagina={itemsPerPage}
+                mudarPagina={changePage}
+            />
         </>
     );
-}
+};
 
 export default Category;

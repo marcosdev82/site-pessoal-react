@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
-import { BlogProvider } from "./context/BlogContext"; // Certifique-se de que o caminho está correto
+import { BlogProvider } from "./contexts/BlogContext"; // Certifique-se de que o caminho está correto
 
 import dark from "./styles/themes/dark";
 import Layout from "./components/layout";
