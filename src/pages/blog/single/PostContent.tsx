@@ -1,8 +1,7 @@
 import EntryTitle from '../../../components/entrytitle';
 import Sidebar from '../../../components/sidebar';
-import Head from '../../../components/head';
 import { Content, EntryContent } from '../styles';
-import { BlogContext } from '../../../context/BlogContext';
+import { BlogContext } from '../../../contexts/BlogContext';
 
 import { BlogContextType, PostType } from '../../../types/posts';
 import { useContext, useEffect, useState } from 'react';
@@ -22,7 +21,7 @@ const SinglePost = () => {
 
     const [post, setPost] = useState<PostType | null>(null);
 
-    const thumbnail = useThumbnail(post?.media_details ?? undefined, 'medium_large');
+    const thumbnail = useThumbnail(post?.media_details ?? undefined, 'large');
     const postDate = useFormattedDate(post?.date)
 
     useEffect(() => {
@@ -40,8 +39,6 @@ const SinglePost = () => {
         return <p>Carregando...</p>;
     }
 
-
-
     return (
         <>
             <section className='entry-title'>
@@ -51,6 +48,11 @@ const SinglePost = () => {
             <EntryContent>
                 <Sidebar />
                 <Content>
+
+                    <time dateTime={postDate}>
+                        {postDate}
+                    </time>
+
                     {thumbnail && thumbnail?.url && (
                         <figure>
 
@@ -63,10 +65,6 @@ const SinglePost = () => {
 
                         </figure>
                     )}
-
-
-                    <h1>{post?.title}</h1>
-                    <h3>{postDate}</h3>
                     <div dangerouslySetInnerHTML={{ __html: post?.content ?? '' }} />
                 </Content>
             </EntryContent>

@@ -95,11 +95,15 @@ export interface BlogContextType {
   categories: Category[];
   currentPage: number;
   totalPages: number;
-  totalPosts: number;
   itemsPerPage: number;
   isLoading: boolean;
+  totalPosts: number;
   changePage: (page: number) => void;
-  fetchPosts: (page?: number) => Promise<void>;
+  fetchPosts: (page?: number, category_id?: number, category_slug?: string, slug?: string, id?: number) => Promise<void>;
   getPostBySlug: (slug: string) => Promise<PostType | null>;
-  getCategoryBySlug: (slug: string) => Promise<Category | null>;
+}
+
+export interface CategoryPostsResult {
+  categoryName: string | null;
+  posts: PostType[];
 }

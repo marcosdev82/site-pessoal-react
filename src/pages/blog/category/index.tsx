@@ -1,11 +1,11 @@
-import { BlogProvider } from "../../../context/BlogContext";
+import { PostsProvider } from "../../../contexts/PostsContext";
 import ListPostCategory from "./ListPostCategory";
 
 const Category = () => {
     return (
-        <BlogProvider>
+        <PostsProvider>
             <ListPostCategory />
-        </BlogProvider>
+        </PostsProvider>
 
     );
 }
