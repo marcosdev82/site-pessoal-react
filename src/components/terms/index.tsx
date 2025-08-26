@@ -24,11 +24,20 @@ const Terms = () => {
         <p>Carregando categorias...</p>
       ) : (
         <ListTerms>
-          {Terms.map((term: TermsContent) => (
-            <li key={term.id}>
-              <Link to={`/blog/category/${term.slug}`}>{term.name} <span className="badge">({term.count})</span></Link>
-            </li>
-          ))}
+          {Terms.length > 0 ? (
+            Terms.map((term: TermsContent) =>
+              term.count > 0 && (
+                <li key={term.id}>
+                  <Link to={`/blog/category/${term.slug}`}>
+                    {term.name} <span className="badge">({term.count})</span>
+                  </Link>
+                </li>
+              )
+            )
+          ) : (
+            <p>Nenhuma categoria encontrada.</p>
+          )}
+
         </ListTerms>
       )}
     </TermsContainer>
