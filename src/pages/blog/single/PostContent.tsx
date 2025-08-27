@@ -69,6 +69,8 @@ const SinglePost = () => {
                 </Content>
             </EntryContent>
 
+            {/* {console.log(post?.yoast_head_json)} */}
+
             <title>{`Blog - ${post?.title}`}</title>
 
             <meta name="description" content="Marcos Tavares, desenvolvedor full stack especializado em JavaScript. 

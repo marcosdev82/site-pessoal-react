@@ -54,6 +54,19 @@ export interface AuthorData {
   avatar_urls?: AvatarUrls;
 }
 
+export interface Seo {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  og_locale?: string;
+  og_image?: string;
+  og_type?: string;
+  og_site_name?: string;
+  og_url?: string;
+  article_published_time?: string;
+  article_modified_time?: string;
+}
+
 export interface PostType {
   id: number;
   title: string;
@@ -64,6 +77,7 @@ export interface PostType {
   categories_details?: Category[];
   author_data?: AuthorData;
   slug?: string;
+  yoast_head_json?: Seo[]
 }
 
 export interface EntryMetaContent {
