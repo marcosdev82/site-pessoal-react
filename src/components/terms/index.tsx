@@ -1,5 +1,5 @@
+import { use } from "react";
 import { Link } from "react-router-dom";
-import useTerms from "../../hooks/useTerms";
 import { TermsContainer, ListTerms } from "./styles";
 
 const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/categories";
@@ -11,21 +11,21 @@ interface TermsContent {
   count: number;
 }
 
+// recurso assíncrono definido uma vez só (fora do componente)
+const categoriesResource = fetch(API_URL).then((res) => res.json());
+
 const Terms = () => {
-  const { Terms, loading, error } = useTerms(API_URL);
+  // React 19: suspende até a Promise resolver, cacheando o resultado
+  const categories = use(categoriesResource) as TermsContent[];
 
   return (
     <TermsContainer>
       <h2>Categorias</h2>
 
-      {error && <div className="error-message">{error}</div>}
-
-      {loading ? (
-        <p>Carregando categorias...</p>
-      ) : (
-        <ListTerms>
-          {Terms.length > 0 ? (
-            Terms.map((term: TermsContent) =>
+      <ListTerms>
+        {categories.length > 0 ? (
+          categories.map(
+            (term) =>
               term.count > 0 && (
                 <li key={term.id}>
                   <Link to={`/blog/category/${term.slug}`}>
@@ -33,13 +33,11 @@ const Terms = () => {
                   </Link>
                 </li>
               )
-            )
-          ) : (
-            <p>Nenhuma categoria encontrada.</p>
-          )}
-
-        </ListTerms>
-      )}
+          )
+        ) : (
+          <p>Nenhuma categoria encontrada.</p>
+        )}
+      </ListTerms>
     </TermsContainer>
   );
 };

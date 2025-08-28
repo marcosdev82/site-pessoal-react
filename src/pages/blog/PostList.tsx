@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { Suspense, useContext, useEffect } from 'react';
 import { BlogContext } from '../../contexts/BlogContext';
 import Post from './post';
 import EntryTitle from '../../components/entrytitle';
@@ -17,6 +17,7 @@ const PostList = () => {
         totalPosts,
         changePage,
         fetchPosts,
+        isLoading,
     } = useContext(BlogContext) as BlogContextType;
 
     useEffect(() => {
@@ -48,7 +49,9 @@ const PostList = () => {
             </section>
 
             <EntryContent>
-                <Sidebar />
+                <Suspense fallback={<p>Carregando categorias...</p>}>
+                    <Sidebar />
+                </Suspense>
                 <Content>
                     {posts.length > 0 ? (
                         posts.map((post) => (
@@ -64,7 +67,7 @@ const PostList = () => {
                                 slug={post.slug}
                             />
                         ))
-                    ) : (
+                    ) : !isLoading && (
                         <p>Nenhum post encontrado.</p>
                     )}
                 </Content>

@@ -35,9 +35,9 @@ const SinglePost = () => {
         }
     }, [slug, getPostBySlug]);
 
-    if (!slug || !post) {
-        return <p>Carregando...</p>;
-    }
+    // if (!slug || !post) {
+    //     return <p>Carregando...</p>;
+    // }
 
     return (
         <>
