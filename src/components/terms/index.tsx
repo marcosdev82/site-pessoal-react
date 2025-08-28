@@ -1,27 +1,21 @@
-import { use } from "react";
-import { Link } from "react-router-dom";
+// src/components/terms/Terms.tsx
+import { useContext } from "react";
+import { TermsContext } from "../../contexts/TermsContext"
 import { TermsContainer, ListTerms } from "./styles";
-
-const API_URL = "https://marcostavares.dev.br/wp/wp-json/wp/v2/categories";
-
-interface TermsContent {
-  id: number;
-  name: string;
-  slug: string;
-  count: number;
-}
-
-// recurso assíncrono definido uma vez só (fora do componente)
-const categoriesResource = fetch(API_URL).then((res) => res.json());
+import { Link } from "react-router-dom";
 
 const Terms = () => {
-  // React 19: suspende até a Promise resolver, cacheando o resultado
-  const categories = use(categoriesResource) as TermsContent[];
+  const context = useContext(TermsContext);
+
+  if (!context) {
+    throw new Error("Terms deve estar dentro de <TermsProvider>");
+  }
+
+  const { categories } = context;
 
   return (
     <TermsContainer>
       <h2>Categorias</h2>
-
       <ListTerms>
         {categories.length > 0 ? (
           categories.map(
