@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Aside } from "./styles";
 import Terms from "../terms";
+import { TermsProvider } from "../../contexts/TermsContext";
 
 const Sidebar = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -40,9 +41,11 @@ const Sidebar = () => {
           transition: "0.3s",
         }}
       >
-        <>
-          <Terms />
-        </>
+        <TermsProvider>
+          <Suspense fallback={<p>Carregando categorias...</p>}>
+            <Terms />
+          </Suspense>
+        </TermsProvider>
       </div>
     </Aside>
   );

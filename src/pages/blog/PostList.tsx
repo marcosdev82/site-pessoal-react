@@ -1,4 +1,4 @@
-import React, { Suspense, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BlogContext } from '../../contexts/BlogContext';
 import Post from './post';
 import EntryTitle from '../../components/entrytitle';
@@ -49,9 +49,7 @@ const PostList = () => {
             </section>
 
             <EntryContent>
-                <Suspense fallback={<p>Carregando categorias...</p>}>
-                    <Sidebar />
-                </Suspense>
+                <Sidebar />
                 <Content>
                     {posts.length > 0 ? (
                         posts.map((post) => (
