@@ -5,6 +5,6 @@ export default defineConfig({
   base: '/',
   plugins: [react()],
   server: {
-    historyApiFallback: true, // 🔁 redireciona qualquer rota para index.html
+    historyApiFallback: false, // 🔁 redireciona qualquer rota para index.html
   },
 });

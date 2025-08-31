@@ -32,7 +32,7 @@ const Post = (props: PostType) => {
         )}
 
         <div className="description">
-          <h2>{title}</h2>
+          <h2> <Link to={`/blog/${slug}`}>{title}</Link></h2>
           {excerpt && excerpt}
         </div>
 
