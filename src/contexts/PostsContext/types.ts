@@ -20,7 +20,7 @@ export interface BlogContextType {
     totalPages: number;
     totalPosts: number;
     itemsPerPage: number;
-    isLoading: boolean;
+    // isLoading: boolean;
     getCategoryIdBySlug: (categorySlug: string) => Promise<PostType[]>;
     changePage: (page: number, categoryId?: number) => void;
     getPostBySlug: (slug: string) => Promise<PostType | null>;

@@ -14,7 +14,9 @@ export const PostsProvider = ({ children, itemsPerPage = 3 }: PostsProviderProps
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [totalPosts, setTotalPosts] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
+
+
 
     const fetchPosts = async (
         page?: number,
@@ -23,6 +25,9 @@ export const PostsProvider = ({ children, itemsPerPage = 3 }: PostsProviderProps
         slug?: string,
         id?: number
     ): Promise<void> => {
+
+        console.log(children, itemsPerPage)
+
         const queryParams = new URLSearchParams();
         queryParams.set('page', (page ?? 1).toString());
         queryParams.set('per_page', itemsPerPage.toString());
@@ -32,10 +37,13 @@ export const PostsProvider = ({ children, itemsPerPage = 3 }: PostsProviderProps
         if (slug) queryParams.set('slug', slug);
         if (id) queryParams.set('id', id.toString());
 
+        console.log(queryParams)
+
         try {
-            setIsLoading(true); // Set loading before the fetch
+            // setIsLoading(true);
 
             console.log(queryParams.toString())
+
             const res = await fetch(`${import.meta.env.VITE_API}/posts?${queryParams}`);
             console.log(`${import.meta.env.VITE_API}/posts?${queryParams}`)
             const data = await res.json();
@@ -50,7 +58,7 @@ export const PostsProvider = ({ children, itemsPerPage = 3 }: PostsProviderProps
         } catch (error) {
             console.error('Erro ao buscar posts:', error);
         } finally {
-            setIsLoading(false); // Set loading to false after fetch
+            // setIsLoading(false); // Set loading to false after fetch
         }
     };
 
@@ -77,7 +85,7 @@ export const PostsProvider = ({ children, itemsPerPage = 3 }: PostsProviderProps
                 totalPages,
                 totalPosts,
                 itemsPerPage,
-                isLoading,
+                // isLoading,
                 fetchPosts,
                 changePage,
                 getPostBySlug,

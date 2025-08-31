@@ -16,24 +16,25 @@ const SinglePost = () => {
     const { slug } = useParams<{ slug: string }>();
 
     const {
-        getPostBySlug,
+        posts,
     } = useContext(BlogContext) as BlogContextType;
 
-    const [post, setPost] = useState<PostType | null>(null);
+    const post = posts?.find((p) => p.slug === slug);
+    // console.log(post)
 
     const thumbnail = useThumbnail(post?.media_details ?? undefined, 'large');
     const postDate = useFormattedDate(post?.date)
 
-    useEffect(() => {
-        if (slug) {
-            const fetchPost = async () => {
-                const result = await getPostBySlug(slug as string);
-                const singlePost = Array.isArray(result) ? result[0] : result;
-                setPost(singlePost);
-            };
-            fetchPost();
-        }
-    }, [slug, getPostBySlug]);
+    // useEffect(() => {
+    //     if (slug) {
+    //         const fetchPost = async () => {
+    //             const result = await getPostBySlug(slug as string);
+    //             const singlePost = Array.isArray(result) ? result[0] : result;
+    //             setPost(singlePost);
+    //         };
+    //         fetchPost();
+    //     }
+    // }, [slug, getPostBySlug]);
 
     // if (!slug || !post) {
     //     return <p>Carregando...</p>;
