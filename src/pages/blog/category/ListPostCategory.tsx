@@ -23,7 +23,7 @@ const Category = () => {
         if (slug) {
             fetchPosts(1, undefined, slug); // Passando slug como categorySlug
         }
-    }, [slug]); // Dependência do slug
+    }, [slug, fetchPosts]);
 
     const formattedTitle = slug ? slug.replace(/-/g, " ").toUpperCase() : "Categoria";
 
@@ -38,7 +38,7 @@ const Category = () => {
                 <Content>
                     {isLoading ? (
                         <p>Carregando posts...</p>
-                    ) : (
+                    ) : posts.length > 0 ? (
                         posts.map((post) => (
                             <Post
                                 key={post.id}
@@ -52,6 +52,8 @@ const Category = () => {
                                 slug={post.slug}
                             />
                         ))
+                    ) : (
+                        <p>Nenhum post encontrado nesta categoria.</p>
                     )}
                 </Content>
             </EntryContent>
