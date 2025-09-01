@@ -20,25 +20,9 @@ const SinglePost = () => {
     } = useContext(BlogContext) as BlogContextType;
 
     const post = posts?.find((p) => p.slug === slug);
-    // console.log(post)
 
     const thumbnail = useThumbnail(post?.media_details ?? undefined, 'large');
     const postDate = useFormattedDate(post?.date)
-
-    // useEffect(() => {
-    //     if (slug) {
-    //         const fetchPost = async () => {
-    //             const result = await getPostBySlug(slug as string);
-    //             const singlePost = Array.isArray(result) ? result[0] : result;
-    //             setPost(singlePost);
-    //         };
-    //         fetchPost();
-    //     }
-    // }, [slug, getPostBySlug]);
-
-    // if (!slug || !post) {
-    //     return <p>Carregando...</p>;
-    // }
 
     return (
         <>
