@@ -111,7 +111,8 @@ export interface BlogContextType {
   totalPages: number;
   itemsPerPage: number;
   isLoading: boolean;
-  totalPosts: number;
+  totalPosts:  number;
+  setCurrentPage:  (page: number) => void;
   changePage: (page: number) => void;
   fetchPosts: (page?: number, category_id?: number, category_slug?: string, slug?: string, id?: number) => Promise<void>;
   getPostBySlug: (slug: string) => Promise<PostType | null>;

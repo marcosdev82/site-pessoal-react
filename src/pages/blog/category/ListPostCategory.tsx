@@ -9,24 +9,10 @@ import { usePosts } from "../../../hooks/usePosts";
 
 const Category = () => {
     const { slug } = useParams<{ slug: string }>();
-    const {
-        posts,
-        currentPage,
-        totalPosts,
-        itemsPerPage,
-        fetchPosts,
-        isLoading,
-        changePage
-    } = usePosts();
 
-    useEffect(() => {
-        if (slug) {
-            fetchPosts(1, undefined, slug); // Passando slug como categorySlug
-        }
-    }, [slug, fetchPosts]);
+    const { posts, currentPage, setCurrentPage, totalPages, isLoading } = usePosts();
 
-    const formattedTitle = slug ? slug.replace(/-/g, " ").toUpperCase() : "Categoria";
-
+    const formattedTitle = 'formattedTitle';
     return (
         <>
             <section className='entry-title'>
