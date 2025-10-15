@@ -20,7 +20,7 @@ export const PostsProvider = ({
     children,
     itemsPerPage = 3,
 }: PostsProviderProps) => {
-    const { slug } = useParams<{ slug: string }>(); // ✅ agora correto (react-router-dom)
+    const { slug } = useParams<{ slug: string }>();
 
     const [posts, setPosts] = useState<PostType[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);

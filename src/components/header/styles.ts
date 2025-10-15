@@ -1,20 +1,26 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+interface ContainerProps {
+    isFixed?: boolean;
+}
+
+export const Container = styled.header<ContainerProps>`
     grid-column: span 8;
-    /* background-color: ${props => props.theme.colors.black}; */
     height: 70px;
     border-bottom: 1px solid ${props => props.theme.colors.border100};
-    
     position: relative;
-    -webkit-box-shadow: 0 0 30px rgba(12, 236, 182, 0.29);
-    box-shadow: 0 0 30px rgba(12, 236, 182, 0.29);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 15px;
-    background-color: #00000030;
-
+    position: ${({ isFixed }) => (isFixed ? 'fixed' : 'relative')};
+    z-index: 10;
+    width: 100%;
+    background-color: ${({ isFixed }) => (isFixed ? '#00000090' : '#00000030')}; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* transform: ${({ isFixed }) => (isFixed ? 'translateY(0)' : 'translateY(-10px)')}; */
+    box-shadow: ${({ isFixed }) =>
+        isFixed ? '0 0 30px rgba(12, 236, 182, 0.29)' : 'none'};
     .cicle {
         display: block;
         border: 1px solid;
