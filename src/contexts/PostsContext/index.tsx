@@ -21,7 +21,6 @@ export const PostsProvider = ({
     itemsPerPage = 3,
 }: PostsProviderProps) => {
     const { slug } = useParams<{ slug: string }>();
-
     const [posts, setPosts] = useState<PostType[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -29,7 +28,6 @@ export const PostsProvider = ({
     const [totalPosts, setTotalPosts] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
-    // 🔹 Memoizar fetchPosts
     const fetchPosts = useCallback(
         async (
             page = 1,

@@ -32,7 +32,7 @@ export const Container = styled.header<ContainerProps>`
     backdrop-filter: blur(8px);
     ${({ isFixed }) => isFixed &&
         css`
-            animation: ${slideDown} 0.4s ease forwards;
+            animation: ${slideDown} 1s ease forwards;
         `}
 
     .cicle {
