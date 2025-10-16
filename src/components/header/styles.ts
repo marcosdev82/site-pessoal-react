@@ -1,8 +1,17 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface ContainerProps {
     isFixed?: boolean;
 }
+
+const slideDown = keyframes`
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+`;
 
 export const Container = styled.header<ContainerProps>`
     grid-column: span 8;
@@ -18,9 +27,14 @@ export const Container = styled.header<ContainerProps>`
     width: 100%;
     background-color: ${({ isFixed }) => (isFixed ? '#00000090' : '#00000030')}; 
     transition: background-color 0.3s ease, transform 0.3s ease;
-    /* transform: ${({ isFixed }) => (isFixed ? 'translateY(0)' : 'translateY(-10px)')}; */
     box-shadow: ${({ isFixed }) =>
-        isFixed ? '0 0 30px rgba(12, 236, 182, 0.29)' : 'none'};
+        isFixed ? '0 0 30px rgba(12, 236, 182, 0.29)' : '0 4px 30px rgba(0, 0, 0, 0.1)'};
+    backdrop-filter: blur(8px);
+    ${({ isFixed }) => isFixed &&
+        css`
+            animation: ${slideDown} 1s ease forwards;
+        `}
+
     .cicle {
         display: block;
         border: 1px solid;
