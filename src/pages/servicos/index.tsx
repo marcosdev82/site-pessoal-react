@@ -1,6 +1,6 @@
 import React from 'react';
 import EntryTitle from '../../components/entrytitle';
-import { Content } from '../servicos/styles'
+import { Content } from './styles'
 import ListarSevicos from './listar-servicos';
 
 const Servicos = () => {
