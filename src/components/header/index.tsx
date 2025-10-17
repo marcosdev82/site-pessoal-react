@@ -10,6 +10,7 @@ import {
     Span,
     Text,
 } from './styles';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [isFixed, setIsFixed] = useState(false);
@@ -24,10 +25,13 @@ const Header = () => {
         <Container isFixed={isFixed}>
             <ContentHeader>
                 <LogoWrap>
-                    <LogoImage src={logotipo} alt="Marcos Tavares Desenvolvedor Fullstack" />
+                    <NavLink to="/">
+                        <LogoImage src={logotipo} alt="Marcos Tavares Desenvolvedor Fullstack" />
+                    </NavLink>
                     <Text>
-                        MARCOS<Span> TAVARES</Span>
-                        <div className="cicle">M</div>
+                        <NavLink to="/"> MARCOS<Span> TAVARES</Span>
+                            <div className="cicle">M</div>
+                        </NavLink>
                     </Text>
                 </LogoWrap>
                 <Menu />

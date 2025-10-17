@@ -27,8 +27,7 @@ export const Container = styled.header<ContainerProps>`
     width: 100%;
     background-color: ${({ isFixed }) => (isFixed ? '#00000090' : '#00000030')}; 
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: ${({ isFixed }) =>
-        isFixed ? '0 0 30px rgba(12, 236, 182, 0.29)' : '0 4px 30px rgba(0, 0, 0, 0.1)'};
+    box-shadow: ${({ isFixed }) => isFixed ? '0 0 30px rgba(12, 236, 182, 0.29)' : '0 4px 30px rgba(0, 0, 0, 0.1)'};
     backdrop-filter: blur(8px);
     ${({ isFixed }) => isFixed &&
         css`
@@ -80,17 +79,21 @@ export const LogoImage = styled.img`
     height: 30px;
 `;
 export const Text = styled.h1`
-    color: ${props => props.theme.colors.tertiary};
-    font-size: 22px;
-    font-weight: 900;
-    margin-top: 0;
-    font-family: 'Gugi', sans-serif;
-    position: relative;
-    margin: 0;
-    line-height: 32px;
 
-    @media (max-width: 576px) {
-        font-size: 18px;
+    a {
+        color: ${props => props.theme.colors.tertiary};
+        font-size: 22px;
+        font-weight: 900;
+        margin-top: 0;
+        font-family: 'Gugi', sans-serif;
+        position: relative;
+        margin: 0;
+        line-height: 32px;
+        text-decoration: none;
+
+        @media (max-width: 576px) {
+            font-size: 18px;
+        }
     }
 `;
 export const Span = styled.span`
