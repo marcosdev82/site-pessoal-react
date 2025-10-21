@@ -19,6 +19,9 @@ export default createGlobalStyle`
     }
     body {
         background-image: url(${portraitImg});
+        background-color: #070c15;
+        background-position: 80%;
+        background-size: cover;
     }
     *, button, input {
         border: 0;
