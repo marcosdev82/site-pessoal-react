@@ -14,11 +14,10 @@ export default createGlobalStyle`
     } 
     html, body, #root{
         height: 100vh;
-        background-color:#070c15;
         flex: 1;
     }
     body {
-        background-image: url(${portraitImg});
+        background: url(${portraitImg}); 
         background-color: #070c15;
         background-position: 80%;
         background-size: cover;
