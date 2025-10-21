@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const portraitImg  = '../../assets/images/background-node.svg';
+const portraitImg  = '../../assets/images/background-node.svg'; 
 
 export default createGlobalStyle`
     * {
@@ -10,7 +10,7 @@ export default createGlobalStyle`
     }
     html {
         scrollbar-width: thin; /* Largura fina da scrollbar */
-        scrollbar-color: #072326 ${props => props.theme.colors.tertiary}; /* Polegar (thumb) e fundo (track) */
+        scrollbar-color: #072326 ${props => props.theme.colors.tertiary}; 
     } 
     html, body, #root{
         height: 100vh;
