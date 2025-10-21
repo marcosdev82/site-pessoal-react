@@ -19,7 +19,7 @@ export default createGlobalStyle`
     body {
         background: url(${portraitImg}); 
         background-color: #070c15;
-        background-position: center center;
+        background-position: center right;
         background-size: 60%;
         background-repeat: no-repeat;
     }
