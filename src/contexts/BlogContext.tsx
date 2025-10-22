@@ -4,14 +4,15 @@ import React, {
   useState,
   ReactNode,
   useMemo,
-} from 'react';
-import axios from 'axios';
+} from "react";
+import axios from "axios";
 import {
   PostType,
   Category,
   BlogContextType,
   CategoryPostsResult,
-} from '../types/posts';
+} from "../types/posts";
+import { useParams } from "react-router-dom";
 
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
 
@@ -28,14 +29,14 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   const [isLoading, setIsLoading] = useState(false);
   const [totalPosts, setTotalPosts] = useState(0);
 
+  // 👉 Pega o slug da URL
+  const { category_slug } = useParams();
+
+  // =============================
+  // Função principal de busca
+  // =============================
   const fetchPosts = React.useCallback(
-    async (
-      page?: number,
-      category_id?: number,
-      category_slug?: string,
-      slug?: string,
-      id?: number
-    ) => {
+    async (page?: number, category_id?: number, slug?: string) => {
       setIsLoading(true);
 
       try {
@@ -43,28 +44,28 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
           `${import.meta.env.VITE_API}/posts`,
           {
             params: {
-              page: page ?? 1,
+              page,
               per_page: itemsPerPage,
               categories: category_id,
-              category_slug,
               slug,
-              id,
             },
           }
         );
 
-        const wpTotal = parseInt(response.headers['x-wp-total'] || '0', 10);
-        const wpTotalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
+        const wpTotal = parseInt(response.headers["x-wp-total"] || "0", 10);
+        const wpTotalPages = parseInt(
+          response.headers["x-wp-totalpages"] || "1",
+          10
+        );
 
-        console.log('Params:', { page, category_id, category_slug, slug, id });
-
+        console.log("Params enviados:", { page, category_id, slug });
 
         setPosts(response.data);
         setTotalPosts(wpTotal);
         setTotalPages(wpTotalPages);
-        setCurrentPage(page ?? 1);
+        setCurrentPage(page);
       } catch (error) {
-        console.error('Erro ao carregar os posts:', error);
+        console.error("Erro ao carregar os posts:", error);
       } finally {
         setIsLoading(false);
       }
@@ -72,73 +73,81 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     [itemsPerPage]
   );
 
+  // =============================
+  // Carrega categorias
+  // =============================
   const fetchCategories = async () => {
     try {
-      const response = await axios.get<Category[]>(`${import.meta.env.VITE_API}/categories`);
+      const response = await axios.get<Category[]>(
+        `${import.meta.env.VITE_API}/categories`
+      );
       setCategories(response.data);
     } catch (error) {
-      console.error('Erro ao carregar as categorias:', error);
+      console.error("Erro ao carregar as categorias:", error);
     }
   };
 
-  const getPostBySlug = React.useCallback(
-    async (slug: string): Promise<PostType | null> => {
-      try {
-        const response = await axios.get<PostType[]>(
-          `${import.meta.env.VITE_API}/posts?slug=${slug}`
-        );
-        return response.data[0] || null;
-      } catch (error) {
-        console.error(`Erro ao carregar o post com slug ${slug}:`, error);
-        return null;
-      }
-    },
-    []
-  );
-
+  // =============================
+  // Busca posts por slug da categoria
+  // =============================
   const getPostsByCategorySlug = React.useCallback(
-    async (slug: string): Promise<CategoryPostsResult | null> => {
+    async (slug: string): Promise<void> => {
       try {
         const categoryRes = await axios.get<Category[]>(
           `${import.meta.env.VITE_API}/categories?slug=${slug}`
         );
-        if (categoryRes.data.length === 0) return null;
+
+        if (categoryRes.data.length === 0) {
+          console.warn(`Categoria '${slug}' não encontrada.`);
+          setPosts([]);
+          return;
+        }
 
         const category = categoryRes.data[0];
-
-        const postsRes = await axios.get<PostType[]>(
-          `${import.meta.env.VITE_API}/posts?categories=${category.id}`
-        );
-
-        return {
-          categoryName: category.name,
-          posts: postsRes.data,
-        };
+        await fetchPosts(1, category.id);
       } catch (error) {
         console.error(`Erro ao carregar posts da categoria ${slug}:`, error);
-        return null;
       }
     },
-    []
+    [fetchPosts]
   );
 
+  // =============================
+  // Paginação
+  // =============================
   const changePage = React.useCallback(
     (page: number) => {
       if (page >= 1 && page <= totalPages) {
-        fetchPosts(page);
+        if (category_slug) {
+          getPostsByCategorySlug(category_slug);
+        } else {
+          fetchPosts(page);
+        }
       }
     },
-    [totalPages, fetchPosts]
+    [totalPages, fetchPosts, category_slug, getPostsByCategorySlug]
   );
 
+  // =============================
+  // Carregamento inicial
+  // =============================
   useEffect(() => {
-    const loadInitialData = async () => {
-      await Promise.all([fetchPosts(1), fetchCategories()]);
+    const loadData = async () => {
+      await fetchCategories();
+
+      if (category_slug) {
+        await getPostsByCategorySlug(category_slug);
+      } else {
+        await fetchPosts(1);
+      }
     };
 
-    loadInitialData();
-  }, [fetchPosts]);
+    loadData();
+  }, [fetchPosts, getPostsByCategorySlug, category_slug]);
 
+  // =============================
+  // Contexto
+  // =============================
   const value = useMemo(
     () => ({
       posts,
@@ -150,7 +159,6 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       changePage,
       fetchPosts,
       totalPosts,
-      getPostBySlug,
       getPostsByCategorySlug,
     }),
     [
@@ -163,7 +171,6 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       changePage,
       fetchPosts,
       itemsPerPage,
-      getPostBySlug,
       getPostsByCategorySlug,
     ]
   );
