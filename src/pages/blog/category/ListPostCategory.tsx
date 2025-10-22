@@ -8,11 +8,11 @@ import EntryTitle from '../../../components/entrytitle';
 import { usePosts } from "../../../hooks/usePosts";
 
 const Category = () => {
-    const { slug } = useParams<{ slug: string }>();
 
-    const { posts, currentPage, setCurrentPage, totalPages, isLoading } = usePosts();
+    const { posts, currentPage, changePage, itemsPerPage, totalPages, isLoading } = usePosts();
 
     const formattedTitle = 'formattedTitle';
+
     return (
         <>
             <section className='entry-title'>
@@ -46,7 +46,7 @@ const Category = () => {
 
             <Pagination
                 currentPage={currentPage}
-                totalItems={totalPosts}
+                totalItems={totalPages}
                 itemsPorPagina={itemsPerPage}
                 mudarPagina={changePage}
             />

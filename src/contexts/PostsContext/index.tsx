@@ -37,12 +37,13 @@ export const PostsProvider = ({
             id?: number
         ) => {
             const queryParams = new URLSearchParams();
+
             queryParams.set("page", page.toString());
             queryParams.set("per_page", itemsPerPage.toString());
 
             if (category_id) queryParams.set("categories", category_id.toString());
-            if (category_slug) queryParams.set("categories_slug", category_slug);
-            if (customSlug) queryParams.set("slug", customSlug);
+            if (category_slug) queryParams.set("categories_slug", category_slug.toString());
+            if (customSlug) queryParams.set("categories_slug", customSlug);
             if (id) queryParams.set("id", id.toString());
 
             try {
@@ -51,9 +52,10 @@ export const PostsProvider = ({
                     `${import.meta.env.VITE_API}/posts?${queryParams}`
                 );
                 const data = await res.json();
-
                 const total = res.headers.get("X-WP-Total") ?? "0";
                 const totalPages = res.headers.get("X-WP-TotalPages") ?? "1";
+
+                console.log(`${import.meta.env.VITE_API}/posts?${queryParams}`)
 
                 setPosts(data);
                 setTotalPosts(Number(total));

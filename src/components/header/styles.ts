@@ -16,7 +16,7 @@ const slideDown = keyframes`
 export const Container = styled.header<ContainerProps>`
     grid-column: span 8;
     height: 70px;
-    border-bottom: 1px solid ${props => props.theme.colors.border100};
+    border-bottom: 1px solid ${props => props.theme.colors.border400};
     position: relative;
     display: flex;
     justify-content: center;
