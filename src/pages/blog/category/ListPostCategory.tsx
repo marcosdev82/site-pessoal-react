@@ -1,18 +1,37 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "../../../components/sidebar";
 import Pagination from "../../../components/pagination";
 import Post from "../post";
 import { Content, EntryContent } from "../styles";
 import EntryTitle from '../../../components/entrytitle';
-import { usePosts } from "../../../hooks/usePosts";
+// import { usePosts } from "../../../hooks/usePosts";
+import { BlogContext } from '../../../contexts/BlogContext';
+import { BlogContextType } from "../../../types/posts";
 
 const Category = () => {
 
-    const { posts, currentPage, changePage, itemsPerPage, totalPages, isLoading } = usePosts();
+      const {
+             posts,
+             currentPage,
+             itemsPerPage,
+             totalPosts,
+             changePage,
+             fetchPosts,
+             isLoading,
+         } = useContext(BlogContext) as BlogContextType;
+     
+         useEffect(() => {
+             fetchPosts(currentPage);
+         }, [currentPage, fetchPosts]);
+     
+         if (!posts) {
+             return <p>Carregando...</p>;
+         }
 
     const formattedTitle = 'formattedTitle';
 
+ 
     return (
         <>
             <section className='entry-title'>
@@ -44,12 +63,14 @@ const Category = () => {
                 </Content>
             </EntryContent>
 
-            <Pagination
-                currentPage={currentPage}
-                totalItems={totalPages}
-                itemsPorPagina={itemsPerPage}
-                mudarPagina={changePage}
-            />
+             {posts.length > 0 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalItems={totalPosts}
+                    itemsPorPagina={itemsPerPage}
+                    mudarPagina={changePage}
+                />
+            )}
         </>
     );
 };
