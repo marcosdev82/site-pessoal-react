@@ -5,10 +5,11 @@ const darkTheme = {
         secundary: '#04070d',
         tertiary: '#09f0b4',
         border100: '#09f0b47d',
+        border400: '#0078597d',
 
         white: '#ffffff',
         black: '#000000',
-        grey: '#bfbfbf',
+        grey: '#550b0bff',
 
         success: '#004085',
         info: '#856404',
