@@ -10,6 +10,7 @@ declare module 'styled-components' {
             tertiary: string;
             border100: string;
             border400: string;
+            border500: string;
 
             white: string;
             black: string;

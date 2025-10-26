@@ -6,6 +6,8 @@ const darkTheme = {
         tertiary: '#09f0b4',
         border100: '#09f0b47d',
         border400: '#0078597d',
+        border500: '#417e38',
+
 
         white: '#ffffff',
         black: '#000000',
