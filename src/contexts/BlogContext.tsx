@@ -29,7 +29,6 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   const [isLoading, setIsLoading] = useState(false);
   const [totalPosts, setTotalPosts] = useState(0);
 
-  // 👉 Pega o slug da URL
   const { category_slug } = useParams();
 
   // =============================
@@ -91,7 +90,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   // Busca posts por slug da categoria
   // =============================
   const getPostsByCategorySlug = React.useCallback(
-    async (slug: string): Promise<void> => {
+    async (slug: string, page: number = 1): Promise<void> => {
       try {
         const categoryRes = await axios.get<Category[]>(
           `${import.meta.env.VITE_API}/categories?slug=${slug}`
@@ -104,7 +103,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
         }
 
         const category = categoryRes.data[0];
-        await fetchPosts(1, category.id);
+        await fetchPosts(page, category.id);
       } catch (error) {
         console.error(`Erro ao carregar posts da categoria ${slug}:`, error);
       }
@@ -119,7 +118,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     (page: number) => {
       if (page >= 1 && page <= totalPages) {
         if (category_slug) {
-          getPostsByCategorySlug(category_slug);
+          getPostsByCategorySlug(category_slug, page); // Pass the page
         } else {
           fetchPosts(page);
         }

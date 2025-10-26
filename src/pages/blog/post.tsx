@@ -10,7 +10,7 @@ const Post = (props: PostType) => {
 
   const { id, title, date, excerpt, media_details, author_data, categories_details, slug } = props;
 
-  const thumbnail = useThumbnail(media_details ?? undefined, 'thumbnail')
+  const thumbnail = useThumbnail(media_details ?? undefined, 'medium_large')
 
   const postDate = useFormattedDate(date)
 
