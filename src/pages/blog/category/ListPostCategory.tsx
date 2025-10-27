@@ -25,7 +25,7 @@ const Category = () => {
         <Sidebar />
         <Content>
        
-          {posts.length > 0 ? (
+          {posts.length > 0 && (
             posts.map((post) => (
               <Post
                 key={post.id}
@@ -39,8 +39,6 @@ const Category = () => {
                 slug={post.slug}
               />
             ))
-          ) : (
-            <p>Nenhum post encontrado nesta categoria.</p>
           )}
         </Content>
       </EntryContent>
