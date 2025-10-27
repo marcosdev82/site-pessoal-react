@@ -13,8 +13,8 @@ const Category = () => {
     useContext(BlogContext) as BlogContextType;
 
   const { category_slug } = useParams();
-  const formattedTitle = category_slug || "Categoria"; // Adjust as needed
-
+  const formattedTitle = category_slug || "Categoria";
+  
   return (
     <>
       <section className="entry-title">

@@ -36,7 +36,7 @@ const Sidebar = () => {
         className="sidebar"
         style={{
           position: isAtFooter ? "absolute" : isFixed ? "fixed" : "relative",
-          top: isAtFooter ? "auto" : isFixed ? "20px" : "initial",
+          top: isAtFooter ? "auto" : isFixed ? "100px" : "initial",
           bottom: isAtFooter ? "0" : "auto",
           transition: "0.3s",
         }}
