@@ -24,9 +24,8 @@ const Category = () => {
       <EntryContent>
         <Sidebar />
         <Content>
-          {isLoading ? (
-            <p>Carregando posts...</p>
-          ) : posts.length > 0 ? (
+       
+          {posts.length > 0 ? (
             posts.map((post) => (
               <Post
                 key={post.id}

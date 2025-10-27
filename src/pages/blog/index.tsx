@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import PostList from './PostList';
 import { BlogProvider } from '../../contexts/BlogContext';
 
@@ -6,7 +6,9 @@ const Blog = () => {
     return (
 
         <BlogProvider>
-            <PostList />
+            <Suspense fallback={<p>Carregando posts...</p>}>
+                <PostList />
+            </Suspense>
         </BlogProvider>
 
     );
