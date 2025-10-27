@@ -24,10 +24,6 @@ const PostList = () => {
         fetchPosts(currentPage);
     }, [currentPage, fetchPosts]);
 
-    if (!posts) {
-        return <p>Carregando...</p>;
-    }
-
     const title = 'Blog - Marcos Tavares Fullstack';
 
     return (
@@ -51,7 +47,7 @@ const PostList = () => {
             <EntryContent>
                 <Sidebar />
                 <Content>
-                    {posts.length > 0 ? (
+                    {posts.length > 0 && (
                         posts.map((post) => (
                             <Post
                                 key={post.id}
@@ -65,8 +61,6 @@ const PostList = () => {
                                 slug={post.slug}
                             />
                         ))
-                    ) : !isLoading && (
-                        <p>Nenhum post encontrado.</p>
                     )}
                 </Content>
             </EntryContent>
