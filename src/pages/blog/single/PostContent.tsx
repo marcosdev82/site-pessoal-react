@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import Thumbnail from '../../../components/thumbnails';
 import useThumbnail from '../../../hooks/useThumbnail';
 import useFormattedDate from '../../../hooks/useFormattedDate';
+import Breadcrumb from '../../../components/breadcrumb';
 
 
 const SinglePost = () => {
@@ -28,6 +29,7 @@ const SinglePost = () => {
         <>
             <section className='entry-title'>
                 <EntryTitle title={post?.title} />
+                <Breadcrumb />
             </section>
 
             <EntryContent>

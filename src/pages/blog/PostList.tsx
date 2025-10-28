@@ -7,6 +7,7 @@ import Pagination from '../../components/pagination';
 import { BlogContextType } from '../../types/posts';
 import { Content, EntryContent } from './styles';
 import Sidebar from '../../components/sidebar';
+import Breadcrumb from '../../components/breadcrumb';
 
 const PostList = () => {
 
@@ -42,6 +43,7 @@ const PostList = () => {
 
             <section className="entry-title">
                 <EntryTitle title={title} />
+                <Breadcrumb />
             </section>
 
             <EntryContent>

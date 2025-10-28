@@ -1,11 +1,13 @@
 import React from 'react';
 import EntryTitle from '../../components/entrytitle';
 import { Content } from '../servicos/styles';
+import Breadcrumb from '../../components/breadcrumb';
 
 const Sobre = () => {
     return (
         <>
             <EntryTitle title='Sobre mim' />
+            <Breadcrumb />
 
             <Content>
                 <p>
