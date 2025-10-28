@@ -43,7 +43,7 @@ const PostList = () => {
 
             <section className="entry-title">
                 <EntryTitle title={title} />
-                <Breadcrumb />
+                <Breadcrumb divider="/" />
             </section>
 
             <EntryContent>

@@ -29,7 +29,7 @@ const SinglePost = () => {
         <>
             <section className='entry-title'>
                 <EntryTitle title={post?.title} />
-                <Breadcrumb />
+                <Breadcrumb divider="/" />
             </section>
 
             <EntryContent>
