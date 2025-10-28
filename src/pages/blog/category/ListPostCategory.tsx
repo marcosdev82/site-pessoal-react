@@ -20,7 +20,7 @@ const Category = () => {
     <>
       <section className="entry-title">
         <EntryTitle title={formattedTitle} />
-        <Breadcrumb />
+        <Breadcrumb divider="/" />
       </section>
 
       <EntryContent>

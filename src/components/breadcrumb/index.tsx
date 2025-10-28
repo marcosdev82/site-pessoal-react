@@ -1,10 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import { Nav } from "./styles";
 
-function Breadcrumb() {
+interface BreadCrumbContent{
+  divider?: string;
+}
+
+function Breadcrumb(props: BreadCrumbContent) {
   const location = useLocation();
   
   const pathnames = location.pathname.split("/").filter((x) => x);
+
+  const { divider } = props;
 
   return (
     <Nav aria-label="breadcrumb" style={{ margin: "1rem 0" }}>
@@ -18,10 +24,10 @@ function Breadcrumb() {
           const isLast = index === pathnames.length - 1;
 
           return (
-            <li key={name} style={{ marginLeft: "8px" }}>
-              <span style={{ margin: "0 4px" }}>{">"}</span>
+            <li key={name}>
+              <div>{(divider)? divider : " > "}</div>
               {isLast ? (
-                <span style={{ fontWeight: "bold" }}>{decodeURIComponent(name)}</span>
+                <span>{decodeURIComponent(name)}</span>
               ) : (
                 <Link to={routeTo}>{decodeURIComponent(name)}</Link>
               )}

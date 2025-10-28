@@ -7,7 +7,7 @@ const Sobre = () => {
     return (
         <>
             <EntryTitle title='Sobre mim' />
-            <Breadcrumb />
+            <Breadcrumb divider="/" />
 
             <Content>
                 <p>
