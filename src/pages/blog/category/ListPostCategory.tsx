@@ -7,6 +7,7 @@ import { Content, EntryContent } from "../styles";
 import EntryTitle from "../../../components/entrytitle";
 import { BlogContext } from "../../../contexts/BlogContext";
 import { BlogContextType } from "../../../types/posts";
+import Breadcrumb from "../../../components/breadcrumb";
 
 const Category = () => {
   const { posts, currentPage, itemsPerPage, totalPosts, changePage, isLoading } =
@@ -19,6 +20,7 @@ const Category = () => {
     <>
       <section className="entry-title">
         <EntryTitle title={formattedTitle} />
+        <Breadcrumb />
       </section>
 
       <EntryContent>

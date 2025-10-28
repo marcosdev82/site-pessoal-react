@@ -118,7 +118,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     (page: number) => {
       if (page >= 1 && page <= totalPages) {
         if (category_slug) {
-          getPostsByCategorySlug(category_slug, page); // Pass the page
+          getPostsByCategorySlug(category_slug, page);  
         } else {
           fetchPosts(page);
         }
