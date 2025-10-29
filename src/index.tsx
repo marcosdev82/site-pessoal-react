@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const rootElement = document.getElementById('root');
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+if (rootElement?.hasChildNodes()) {
+  // Se já existe HTML estático (pré-renderizado pelo react-snap)
+  hydrateRoot(
+    rootElement,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  // Caso contrário, renderiza normalmente
+  const root = createRoot(rootElement as HTMLElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
