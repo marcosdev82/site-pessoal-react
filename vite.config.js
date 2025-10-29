@@ -7,18 +7,16 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ['defaults', 'not IE 11'], // Transpila recursos modernos para compatibilidade
+      targets: ['defaults', 'not IE 11'],
     }),
   ],
   server: {
-    // Para SPA com React Router v6, o ideal é redirecionar todas as rotas para index.html
     historyApiFallback: true,
   },
   build: {
-    chunkSizeWarningLimit: 1500, // Evita warnings de chunks grandes
+    chunkSizeWarningLimit: 1500,
     rollupOptions: {
       output: {
-        // Separar React e ReactDOM em outro chunk
         manualChunks: {
           react: ['react', 'react-dom'],
         },
