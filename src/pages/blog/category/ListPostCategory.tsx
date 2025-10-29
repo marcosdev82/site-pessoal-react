@@ -6,20 +6,20 @@ import Post from "../post";
 import { Content, EntryContent } from "../styles";
 import EntryTitle from "../../../components/entrytitle";
 import { BlogContext } from "../../../contexts/BlogContext";
-import { BlogContextType } from "../../../types/posts";
+import { BlogContextType, EntryTitleProps } from "../../../types/posts";
 import Breadcrumb from "../../../components/breadcrumb";
+import { useTermTitle } from "../../../hooks/useTermTitle";
 
 const Category = () => {
   const { posts, currentPage, itemsPerPage, totalPosts, changePage, isLoading } =
-    useContext(BlogContext) as BlogContextType;
+  useContext(BlogContext) as BlogContextType;
 
-  const { category_slug } = useParams();
-  const formattedTitle = category_slug || "Categoria";
+  const categories = useTermTitle(posts) as EntryTitleProps
   
   return (
     <>
       <section className="entry-title">
-        <EntryTitle title={formattedTitle} />
+        <EntryTitle title={categories} />
         <Breadcrumb divider="/" />
       </section>
 

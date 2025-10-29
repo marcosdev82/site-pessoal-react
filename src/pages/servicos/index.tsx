@@ -2,11 +2,13 @@ import React from 'react';
 import EntryTitle from '../../components/entrytitle';
 import { Content } from './styles'
 import ListarSevicos from './listar-servicos';
+import Breadcrumb from '../../components/breadcrumb';
 
 const Servicos = () => {
     return (
         <>
             <EntryTitle title="Serviços" />
+            <Breadcrumb divider='/' />
             {/* Lista dinâmica de serviços */}
             <Content>
                 <h2>Ofereço soluções completas em desenvolvimento web, com foco na criação de interfaces modernas, sistemas eficientes e experiências digitais que conectam marcas ao seu público de forma estratégica.</h2>
