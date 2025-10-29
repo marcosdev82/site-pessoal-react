@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import EntryTitle from '../../components/entrytitle';
 import { ContactForm, Content } from './styles';
+import Breadcrumb from '../../components/breadcrumb';
 
 
 interface FormValues {
@@ -45,6 +46,7 @@ const Contato = () => {
     return (
         <>
             <EntryTitle title='Contato' />
+            <Breadcrumb divider='/' />
 
             <Content>
                 <ContactForm>

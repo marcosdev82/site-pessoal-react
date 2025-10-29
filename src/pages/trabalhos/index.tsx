@@ -1,12 +1,14 @@
 import React from 'react';
 import EntryTitle from '../../components/entrytitle';
 import Content from '../../components/content';
+import Breadcrumb from '../../components/breadcrumb';
 
 const Trabalhos = () => {
     return (
         <>
             <>
                 <EntryTitle title='Trabalhos' />
+                <Breadcrumb divider='/' />
             </>
 
             <title>Trabalhos - Marcos Tavares Desenvolvedor full stack</title>

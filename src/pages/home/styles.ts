@@ -99,9 +99,11 @@ export const Portrait = styled.div`
     }
 `;
 export const Image = styled.img`
-    border-radius: 100%;
-    border: 3px solid #09f0b4; 
+  border-radius: 100%;
+  border: 3px solid #09f0b4; 
+  filter: drop-shadow(0px 0px 15px rgba(12, 236, 182, 0.5));
 `;
+
 export const Skills = styled.section`
 
 `;
