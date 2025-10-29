@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BlogProvider } from '../../../contexts/BlogContext';
 import PostContent from './PostContent'
+import PreloaderContent from '../../../components/preloader';
 
 const Blog = () => {
     return (
 
         <BlogProvider>
-            <PostContent />
+            <Suspense fallback={<PreloaderContent />}>
+                <PostContent />
+            </Suspense>
         </BlogProvider>
 
     );
