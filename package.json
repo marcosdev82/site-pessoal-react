@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && react-snap",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx"
   },
@@ -57,8 +57,11 @@
     ]
   },
   "reactSnap": {
-  "inlineCss": true,
-  "crawl": true,
-  "source": "dist"
-}
-}
+    "inlineCss": true,
+    "crawl": true,
+    "source": "dist",
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "minifyHtml": true,
+    "skipThirdPartyRequests": true
+  }
+  }
