@@ -23,6 +23,7 @@ jobs:
         run: |
           npm install
           npm run build
+          npx react-snap
 
       - name: 🔎 Verificar arquivos gerados
         run: ls -R ./dist
