@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/updateRoutes.js",
-    "build": "vite build && npx react-snap",
+    "build": "vite build && node scripts/snap.js",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx"
   },
