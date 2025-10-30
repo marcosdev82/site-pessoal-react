@@ -1,7 +1,6 @@
 // scripts/snap.js
-// Este script controla a execução do react-snap no build
-
-const isCI = process.env.CI === 'true'; // GitHub Actions define automaticamente CI=true
+// Controla a execução do react-snap no build
+const isCI = process.env.CI === 'true'; // GitHub Actions define CI=true
 
 if (isCI) {
   console.log("⏭️ Pulando react-snap no ambiente CI (GitHub Actions)");
