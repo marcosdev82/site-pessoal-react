@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/updateRoutes.js",
-    "build": "vite build && node scripts/snap.js",
+    "build": "vite build && npx react-snap",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx"
   },
@@ -67,6 +67,14 @@
       "--disable-setuid-sandbox"
     ],
     "minifyHtml": true,
-    "skipThirdPartyRequests": true
+    "skipThirdPartyRequests": true,
+    "include": [
+      "/",
+      "/blog",
+      "/blog/category/node",
+      "/blog/category/react",
+      "/blog/category/javascript",
+      "/blog/category/php"
+    ]
   }
 }
