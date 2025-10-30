@@ -13,6 +13,9 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  preview: {
+    historyApiFallback: true,
+  },
   build: {
     chunkSizeWarningLimit: 1500,
     rollupOptions: {
