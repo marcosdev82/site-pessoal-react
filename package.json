@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/updateRoutes.js",
-    "build": "vite build && node scripts/snap.js",
+    "build": "REACT_SNAP=true vite build && node scripts/snap.js",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx"
   },
@@ -59,15 +59,24 @@
     ]
   },
   "reactSnap": {
-    "inlineCss": true,
-    "crawl": true,
     "source": "dist",
+    "routes": [
+      "/",
+      "/blog",
+      "/blog/category/node",
+      "/404.html"
+    ],
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
     ],
-    "minifyHtml": true,
-    "skipThirdPartyRequests": true,
+    "skipThirdPartyRequests": false,
+    "http2": false,
+    "publicPath": "/",
+    "minifyHtml": {
+      "collapseWhitespace": true,
+      "removeComments": true
+    },
     "include": [
       "/",
       "/blog",
