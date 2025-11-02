@@ -14,7 +14,7 @@ import {
 } from "../types/posts";
 import { useParams } from "react-router-dom";
 
-import { updateRoutes } from "../scripts/updateRoutes"; 
+import { updateRoutes } from "../scripts/updateRoutes"; // ✅ importe aqui
 
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
 
@@ -33,9 +33,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
 
   const { category_slug } = useParams();
 
-  const meta = import.meta;
-
-  const isStaticBuild =  meta.env.VITE_SNAP === true;
+  const isStaticBuild =  import.meta.env.VITE_SNAP === true;
 
 
   // =============================
@@ -43,7 +41,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   // =============================
   const fetchPosts = React.useCallback(
     async (page?: number, category_id?: number, slug?: string) => {
-       if (meta.env.VITE_SNAP) {
+       if (isStaticBuild) {
         console.log("📦 Build estático detectado, usando posts mockados...");
         setPosts([
           {
@@ -82,7 +80,8 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
         setTotalPosts(wpTotal);
         setTotalPages(wpTotalPages);
         setCurrentPage(page || 0);
-        if (meta.env.VITE_SNAP) {
+          // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
+        if (import.meta.env.VITE_SNAP === "true") {
           updateRoutes(response.data);
         }
       } catch (error) {
@@ -100,7 +99,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   // Carrega categorias
   // =============================
   const fetchCategories = async () => {
-    if (meta.env.VITE_SNAP) {
+    if (isStaticBuild) {
       console.log("📦 Build estático detectado, usando categorias mockadas...");
       setCategories([{ id: 1, name: "Categoria Exemplo", slug: "categoria-exemplo" }]);
       return;
@@ -108,10 +107,11 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
 
     try {
       const response = await axios.get<Category[]>(
-        `${meta.env.VITE_API}/categories`
+        `${import.meta.env.VITE_API}/categories`
       );
       setCategories(response.data);
-      if (meta.env.VITE_SNAP) {
+      // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
+      if (import.meta.env.VITE_SNAP === "true") {
         updateRoutes(response.data);
       }
     } catch (error) {
@@ -126,7 +126,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   // =============================
   const getPostsByCategorySlug = React.useCallback(
     async (slug: string, page: number = 1): Promise<void> => {
-      if (meta.env.VITE_SNAP) {
+      if (isStaticBuild) {
         console.log("📦 Build estático detectado, usando posts mockados para categoria...");
         setPosts([
           {
@@ -144,7 +144,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       }
       try {
         const categoryRes = await axios.get<Category[]>(
-          `${meta.env.VITE_API}/categories?slug=${slug}`
+          `${import.meta.env.VITE_API}/categories?slug=${slug}`
         );
 
         if (categoryRes.data.length === 0) {

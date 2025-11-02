@@ -80,10 +80,11 @@
     "include": [
       "/",
       "/blog",
-      "/blog/category/node",
-      "/blog/category/react",
       "/blog/category/javascript",
-      "/blog/category/php"
+      "/blog/category/laravel",
+      "/blog/category/node",
+      "/blog/category/php",
+      "/blog/category/sem-categoria"
     ]
   }
 }
