@@ -12,13 +12,6 @@ export default defineConfig({
   ],
   server: {
     historyApiFallback: true,
-    proxy: {
-            '/wp': {
-                target: 'https://marcostavares.dev.br/wp',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/wp/, '')
-            }
-        }
   },
   preview: {
     historyApiFallback: true,
