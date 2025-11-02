@@ -12,6 +12,7 @@ export default defineConfig({
   ],
   server: {
     historyApiFallback: true,
+    requestTimeout: 10000, // tempo em milissegundos (10 segundos)
   },
   preview: {
     historyApiFallback: true,
