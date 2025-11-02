@@ -14,7 +14,7 @@ export default defineConfig({
     historyApiFallback: true,
     proxy: {
         '/wp': {
-            target: 'https://marcostavares.dev.br/wp',
+            target: '/wp',
             changeOrigin: true,
             secure: false,
             rewrite: (path) => path.replace(/^\/wp/, '')
