@@ -63,7 +63,7 @@
     "routes": [
       "/",
       "/blog",
-      "/blog/category/node",
+      "/blog/category",
       "/404.html"
     ],
     "puppeteerArgs": [

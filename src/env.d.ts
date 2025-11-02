@@ -1,6 +1,8 @@
 interface ImportMetaEnv {
     readonly VITE_API: string;
-    // você pode adicionar mais variáveis aqui, se precisar
+    readonly VITE_API: string;
+    readonly VITE_SITE: string;
+    readonly VITE_SNAP: boolean;
 }
 
 interface ImportMeta {
