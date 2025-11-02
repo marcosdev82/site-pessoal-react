@@ -36,7 +36,7 @@ jobs:
           log-level: verbose
           timeout: 60000
           local-dir: ./dist/
-          server-dir: /public_html/
+          server-dir: /public_html/react/
           port: 21
           protocol: ftp
           exclude: |
