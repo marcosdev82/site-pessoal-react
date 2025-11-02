@@ -12,14 +12,6 @@ export default defineConfig({
   ],
   server: {
     historyApiFallback: true,
-    proxy: {
-        '/wp': {
-            target: '/wp',
-            changeOrigin: true,
-            secure: false,
-            rewrite: (path) => path.replace(/^\/wp/, '')
-        }
-    }
   },
   preview: {
     historyApiFallback: true,
