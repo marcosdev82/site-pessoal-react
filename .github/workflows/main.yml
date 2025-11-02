@@ -36,7 +36,7 @@ jobs:
           log-level: verbose
           timeout: 60000
           local-dir: ./dist/
-          server-dir: /public_html/site/
+          server-dir: /public_html/
           port: 21
           protocol: ftp
           exclude: |
