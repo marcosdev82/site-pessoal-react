@@ -5,7 +5,7 @@ import { BlogProvider } from "./contexts/BlogContext"; // Certifique-se de que o
 
 import dark from "./styles/themes/dark";
 import Layout from "./components/layout";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import Servicos from "./pages/servicos";
@@ -35,8 +35,6 @@ const App = () => {
               <Route path="/trabalhos" element={<Trabalhos />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="*" element={<NotFound />} />
-              {/* Adicionando uma rota para redirecionar ao wp-admin */}
-              <Route path="/wp/*" element={<Navigate to="https://marcostavares.dev.br/wp/wp-admin" replace />} />
             </Routes>
           </Layout>
         </Router>
