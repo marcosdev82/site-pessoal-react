@@ -60,6 +60,7 @@
   },
   "reactSnap": {
     "source": "dist",
+    "waitFor": 2000, 
     "routes": [
       "/",
       "/blog",
