@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }} # Certifique-se de que este valor esteja correto
           password: ${{ secrets.FTP_PASSWORD }} # Certifique-se de que este valor esteja correto
           log-level: verbose
-          timeout: 60000
+          timeout: 1800000
           local-dir: ./dist/
           server-dir: /public_html/
           port: 21
