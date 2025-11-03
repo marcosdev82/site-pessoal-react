@@ -14,7 +14,7 @@ import {
 } from "../types/posts";
 import { useParams } from "react-router-dom";
 
-import { updateRoutes } from "../scripts/updateRoutes"; // ✅ importe aqui
+import { updateRoutes } from "../scripts/updateRoutes"; 
 
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
 
@@ -81,7 +81,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
         setTotalPages(wpTotalPages);
         setCurrentPage(page || 0);
           // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
-        if (import.meta.env.VITE_SNAP === "true") {
+        if (import.meta.env.VITE_SNAP) {
           updateRoutes(response.data);
         }
       } catch (error) {
@@ -111,7 +111,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       );
       setCategories(response.data);
       // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
-      if (import.meta.env.VITE_SNAP === "true") {
+      if (isStaticBuild) {
         updateRoutes(response.data);
       }
     } catch (error) {

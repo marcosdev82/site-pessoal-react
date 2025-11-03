@@ -81,11 +81,11 @@
     "include": [
       "/",
       "/blog",
+      "/blog/category/tecnologia",
       "/blog/category/javascript",
-      "/blog/category/laravel",
-      "/blog/category/node",
-      "/blog/category/php",
-      "/blog/category/sem-categoria"
+      "/blog/category/react",
+      "/blog/category/design",
+      "/blog/category/carreira"
     ]
   }
 }
