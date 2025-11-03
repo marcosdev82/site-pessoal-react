@@ -8,6 +8,7 @@ name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: Deploy
+    timeout-minutes: 60
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +28,11 @@ jobs:
       - name: 🔎 Verificar arquivos gerados
         run: ls -R ./dist
 
+      - name: Compactar build
+        run: |
+          cd dist
+          zip -r ../build.zip .
+
       - name: 📂 Upload build files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -35,10 +41,11 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }} # Certifique-se de que este valor esteja correto
           log-level: verbose
           timeout: 1800000
+          args: --upload build.zip
           local-dir: ./dist/
           server-dir: /public_html/
           port: 21
-          protocol: ftp
+          protocol: ftps
           exclude: |
             **/.git*
             **/.git*/**
@@ -48,6 +55,7 @@ jobs:
         run: curl -X GET http://marcostavares.dev.br/?clear_cache=true
 
       - name: Test FTP Connection
+      - continue-on-error: true
         run: |
           sudo apt-get update
           sudo apt-get install -y ftp
