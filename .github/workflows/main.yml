@@ -42,7 +42,7 @@ jobs:
           local-dir: ./          # ← raiz do repo (onde está build.zip)
           server-dir: /public_html/
           port: 21
-          protocol: ftps        # ou ftp se não tiver SSL
+          protocol: ftp        # ou ftp se não tiver SSL
           timeout: 1800000      # 30 min
           log-level: verbose
           dangerous-clean-slate: false
