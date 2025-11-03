@@ -111,7 +111,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
       );
       setCategories(response.data);
       // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
-      if (isStaticBuild) {
+      if (import.meta.env.VITE_SNAP) {
         updateRoutes(response.data);
       }
     } catch (error) {

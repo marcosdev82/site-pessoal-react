@@ -5,12 +5,9 @@ const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 const USE_MOCK = true; // altere para false para usar a API real
 
 async function fetchCategories() {
-  if (USE_MOCK) {
-    console.log("⚙️ Usando mock de categorias...");
-    return ["tecnologia", "javascript", "react", "design", "carreira"];
-  }
+ 
 
-  const response = await axios.get("https://marcostavares.dev.br/wp/wp-json/wpmt/v2/categories");
+  const response = await axios.get("https://marcostavares.dev.br/wpmt/wp-json/wp/v2/categories");
   return response.data.map(category => category.slug);
 }
 
