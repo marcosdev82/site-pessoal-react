@@ -5,12 +5,10 @@ import React, {
   ReactNode,
   useMemo,
 } from "react";
-import axios from "axios";
 import {
   PostType,
   Category,
   BlogContextType,
-  CategoryPostsResult,
 } from "../types/posts";
 import { useParams } from "react-router-dom";
 
@@ -35,9 +33,8 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   // Função principal de busca
   // =============================
   const fetchPosts = React.useCallback(
-    async (page?: number, category_id?: number, slug?: string) => {
+    async (page: number = 1, category_id?: number, slug?: string) => {
       setIsLoading(true);
-
       try {
         const response = await axios.get<PostType[]>(
           `${import.meta.env.VITE_API}/posts`,
@@ -52,20 +49,15 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
         );
 
         const wpTotal = parseInt(response.headers["x-wp-total"] || "0", 10);
-        const wpTotalPages = parseInt(
-          response.headers["x-wp-totalpages"] || "1",
-          10
-        );
-
-        console.log("Params enviados:", { page, category_id, slug });
+        const wpTotalPages = parseInt(response.headers["x-wp-totalpages"] || "1", 10);
 
         setPosts(response.data);
         setTotalPosts(wpTotal);
         setTotalPages(wpTotalPages);
         setCurrentPage(page);
       } catch (error) {
-          console.warn(`⚠️ API indisponível durante o build, usando mock: ${error}`);
-          setPosts([]);
+        console.error("Erro ao buscar posts:", error);
+        setPosts([]);
       } finally {
         setIsLoading(false);
       }
@@ -76,17 +68,17 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
   // =============================
   // Carrega categorias
   // =============================
-  const fetchCategories = async () => {
+  const fetchCategories = React.useCallback(async () => {
     try {
       const response = await axios.get<Category[]>(
         `${import.meta.env.VITE_API}/categories`
       );
       setCategories(response.data);
     } catch (error) {
-        console.warn(`⚠️ API indisponível durante o build, usando mock: ${error}`);
-        setCategories([]);
+      console.error("Erro ao carregar categorias:", error);
+      setCategories([]);
     }
-  };
+  }, []);
 
   // =============================
   // Busca posts por slug da categoria
@@ -120,7 +112,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     (page: number) => {
       if (page >= 1 && page <= totalPages) {
         if (category_slug) {
-          getPostsByCategorySlug(category_slug, page);  
+          getPostsByCategorySlug(category_slug, page);
         } else {
           fetchPosts(page);
         }
@@ -144,7 +136,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     };
 
     loadData();
-  }, [fetchPosts, getPostsByCategorySlug, category_slug]);
+  }, [fetchPosts, getPostsByCategorySlug, category_slug, fetchCategories]);
 
   // =============================
   // Contexto
