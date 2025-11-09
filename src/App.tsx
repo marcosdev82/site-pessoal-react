@@ -22,7 +22,7 @@ const App = () => {
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />
-      <BlogProvider> {/* Adicione o BlogProvider aqui */}
+      <BlogProvider> 
         <Router>
           <Layout>
             <Routes>

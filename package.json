@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/updateRoutes.js",
-    "build": "REACT_SNAP=true vite build && node scripts/snap.js",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx"
   },
@@ -56,33 +55,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "reactSnap": {
-    "source": "dist",
-    "waitFor": 2000,
-    "routes": [
-      "/",
-      "/blog",
-      "/blog/category",
-      "/404.html"
-    ],
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ],
-    "skipThirdPartyRequests": false,
-    "http2": false,
-    "publicPath": "/",
-    "minifyHtml": {
-      "collapseWhitespace": true,
-      "removeComments": true
-    },
-    "include": [
-      "/",
-      "/blog",
-      "/blog/category/java-script",
-      "/blog/category/uncategorized"
     ]
   }
 }
