@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4  # ← v4, não v2 (v2 está obsoleta)
+        uses: actions/setup-node@v4
         with:
           node-version: "22"
 
@@ -28,29 +28,23 @@ jobs:
       - name: Verificar arquivos gerados
         run: ls -R ./dist
 
-      - name: Compactar build
-        run: |
-          cd dist
-          zip -r ../build.zip .
-
-      - name: Upload build.zip via FTP
+      - name: Upload dist via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./          # ← raiz do repo (onde está build.zip)
+          local-dir: ./dist/        # envia apenas a pasta dist
           server-dir: /public_html/
           port: 21
-          protocol: ftp        # ou ftp se não tiver SSL
-          timeout: 1800000      # 30 min
+          protocol: ftp
+          timeout: 1800000          # 30 minutos
           log-level: verbose
           dangerous-clean-slate: false
           exclude: |
             **/.git*
-            **/.git*/**
             **/node_modules/**
-            **/build.zip        # evita upload duplicado
+            **/*.map
 
       - name: Clear cache (opcional)
         run: curl -X GET "http://marcostavares.dev.br/?clear_cache=true" --max-time 30
