@@ -2,17 +2,42 @@ import React from 'react';
 import EntryTitle from '../../components/entrytitle';
 import { Content } from '../servicos/styles';
 import Breadcrumb from '../../components/breadcrumb';
+import { ImageContainer, Info, Text } from './styles';
+import Thumbnail from '../../components/thumbnails';
+
+import thumbnail from '../../assets/images/thumnail-marcos.jpg';
 
 const Sobre = () => {
     return (
         <>
             <EntryTitle title='Sobre mim' />
             <Breadcrumb divider="/" />
-
             <Content>
-                <p>
-                    Olá! Sou Marcos Tavares, natural de Porto Alegre/RS, formado em Análise e Desenvolvimento de Sistemas e atualmente residente em Fortaleza/CE. Tenho verdadeira paixão por desenvolvimento de software e já atuei com diversas tecnologias em projetos profissionais e pessoais. Sempre que possível, compartilho meu conhecimento com a comunidade e estou em constante busca por evolução e aprendizado contínuo.
-                </p>
+                <Info>
+                    <Text>
+                        Olá! Sou <span>Marcos Tavares</span>, natural de Porto Alegre/RS, formado em{" "}
+                        <span>Análise e Desenvolvimento de Sistemas</span> e atualmente residente em Fortaleza/CE.
+                        Tenho verdadeira paixão por <span>desenvolvimento de software</span> e já atuei com diversas
+                        tecnologias em projetos profissionais e pessoais. Sempre que possível, compartilho meu conhecimento
+                        com a comunidade e estou em constante busca por evolução e aprendizado contínuo.
+                    </Text>
+
+                    <ImageContainer>
+                        {/* <Thumbnail 
+                        url={thumbnail} 
+                        alt='Marcos Tavares, desenvolvedor full stack' 
+                        height={600} 
+                        width={600} 
+                        />  */}
+                    </ImageContainer>
+
+
+                    <div>
+                    {/* <Button href="/curriculo-marcos-tavares.pdf" target="_blank" rel="noopener noreferrer">
+                    📄 Baixar Currículo
+                    </Button> */}
+                    </div>
+                </Info>
             </Content>
 
             <title>Sobre mim - Marcos Tavares Desenvolvedor Full Stack</title>

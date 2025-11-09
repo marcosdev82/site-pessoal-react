@@ -22,6 +22,7 @@ export default createGlobalStyle`
         background-position: center right;
         background-size: 60%;
         background-repeat: no-repeat;
+        color: ${props => props.theme.colors.white}; 
     }
     *, button, input {
         border: 0;
@@ -37,6 +38,7 @@ export default createGlobalStyle`
     }
     p {
         color: ${props => props.theme.colors.white}; 
+        line-height: 18px;
     }
 
 `;
