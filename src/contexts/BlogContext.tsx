@@ -10,11 +10,8 @@ import {
   PostType,
   Category,
   BlogContextType,
-  CategoryPostsResult,
 } from "../types/posts";
 import { useParams } from "react-router-dom";
-
-import { updateRoutes } from "../scripts/updateRoutes"; 
 
 export const BlogContext = createContext<BlogContextType | undefined>(undefined);
 
@@ -33,33 +30,12 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
 
   const { category_slug } = useParams();
 
-  const isStaticBuild =  import.meta.env.VITE_SNAP === true;
-
-
   // =============================
   // Função principal de busca
   // =============================
   const fetchPosts = React.useCallback(
-    async (page?: number, category_id?: number, slug?: string) => {
-       if (isStaticBuild) {
-        console.log("📦 Build estático detectado, usando posts mockados...");
-        setPosts([
-          {
-            id: 1,
-            title: { rendered: "Post de Exemplo" },
-            slug: "post-de-exemplo",
-            excerpt: { rendered: "Prévia do post..." },
-            content: { rendered: "Conteúdo completo..." },
-          } as unknown as PostType,
-        ]);
-        setTotalPages(1);
-        setTotalPosts(1);
-        setCurrentPage(1);
-        return;
-      }
-
+    async (page: number = 1, category_id?: number, slug?: string) => {
       setIsLoading(true);
-
       try {
         const response = await axios.get<PostType[]>(
           `${import.meta.env.VITE_API}/posts`,
@@ -79,13 +55,9 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
         setPosts(response.data);
         setTotalPosts(wpTotal);
         setTotalPages(wpTotalPages);
-        setCurrentPage(page || 0);
-          // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
-        if (import.meta.env.VITE_SNAP) {
-          updateRoutes(response.data);
-        }
+        setCurrentPage(page);
       } catch (error) {
-        console.warn(`⚠️ API indisponível durante o build, usando mock: ${error}`);
+        console.error("Erro ao buscar posts:", error);
         setPosts([]);
       } finally {
         setIsLoading(false);
@@ -94,54 +66,26 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     [itemsPerPage]
   );
 
-
   // =============================
   // Carrega categorias
   // =============================
-  const fetchCategories = async () => {
-    if (isStaticBuild) {
-      console.log("📦 Build estático detectado, usando categorias mockadas...");
-      setCategories([{ id: 1, name: "Categoria Exemplo", slug: "categoria-exemplo" }]);
-      return;
-    }
-
+  const fetchCategories = React.useCallback(async () => {
     try {
       const response = await axios.get<Category[]>(
         `${import.meta.env.VITE_API}/categories`
       );
       setCategories(response.data);
-      // 🔧 Atualiza rotas para o react-snap (apenas em ambiente de build)
-      if (import.meta.env.VITE_SNAP) {
-        updateRoutes(response.data);
-      }
     } catch (error) {
-      console.warn(`⚠️ API indisponível durante o build, usando mock: ${error}`);
+      console.error("Erro ao carregar categorias:", error);
       setCategories([]);
     }
-  };
-
+  }, []);
 
   // =============================
   // Busca posts por slug da categoria
   // =============================
   const getPostsByCategorySlug = React.useCallback(
     async (slug: string, page: number = 1): Promise<void> => {
-      if (isStaticBuild) {
-        console.log("📦 Build estático detectado, usando posts mockados para categoria...");
-        setPosts([
-          {
-            id: 1,
-            title: 'teste',
-            slug: "post-exemplo-categoria",
-            excerpt: "previa",
-            content: "Conteúdo completo...",
-          } as unknown as PostType,
-        ]) ;
-        setTotalPages(1);
-        setTotalPosts(1);
-        setCurrentPage(1);
-        return;
-      }
       try {
         const categoryRes = await axios.get<Category[]>(
           `${import.meta.env.VITE_API}/categories?slug=${slug}`
@@ -169,7 +113,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     (page: number) => {
       if (page >= 1 && page <= totalPages) {
         if (category_slug) {
-          getPostsByCategorySlug(category_slug, page);  
+          getPostsByCategorySlug(category_slug, page);
         } else {
           fetchPosts(page);
         }
@@ -193,7 +137,7 @@ export const BlogProvider = ({ children, itemsPerPage = 3 }: BlogProviderProps) 
     };
 
     loadData();
-  }, [fetchPosts, getPostsByCategorySlug, category_slug]);
+  }, [fetchPosts, getPostsByCategorySlug, category_slug, fetchCategories]);
 
   // =============================
   // Contexto
