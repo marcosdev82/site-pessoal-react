@@ -1,0 +1,602 @@
+[33mcommit 6865509c86357a49a079e29e2be1b5c5a794259c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 8fa7312 42b2050
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 21:48:33 2025 -0300
+
+    Merge branch 'main' of https://github.com/marcosdev82/site-pessoal-react
+
+[33mcommit 8fa7312f86400d0d20c80fa7aafd0f58427dd68b[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 21:48:20 2025 -0300
+
+    correção do .ginore
+
+[33mcommit 42b2050cad27871f7e1b8c0acb396d6995c0f2cd[m
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 21:14:31 2025 -0300
+
+    Change FTP server directory path in workflow
+
+[33mcommit 54b07fec9482d42b21657781e272b8ffb905e1b3[m
+Merge: 41b4cda 9d7f8a8
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 21:05:32 2025 -0300
+
+    xMerge branch 'main' of https://github.com/marcosdev82/site-pessoal-react
+
+[33mcommit 41b4cda2a1169245d4339c813eb587a799984456[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 21:05:18 2025 -0300
+
+    correção do .ginore
+
+[33mcommit 9d7f8a8f3fa2697987bf46c3f0207ee9dfbe2ab1[m
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 15:32:50 2025 -0300
+
+    Update main.yml
+
+[33mcommit c6e236ec016c5893853dcd2ef0257cace974ada8[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 15:05:18 2025 -0300
+
+    correção do .ginore
+
+[33mcommit 5014ba5fe2aacb07a0f503b02dc7613e71ca6fdf[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 13:16:29 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 104e46abcdd7817a69aee023bc6bec5900779aee[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 13:13:23 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 711fcf17d6204679244f798574daff6951164b8b[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 12:26:56 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 9305b51da38152a0584ccedd8c8d4995c3e794ec[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 12:19:34 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit fec366d6cc7436935ac58e490f6bd4107058f837[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 12:01:32 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 8da37b7367740c31cdc3f74fe57948ec4962732b[m
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:57:33 2025 -0300
+
+    Update server directory in FTP configuration
+
+[33mcommit eb213a8c7c1edbe4929cf8d42be16702ec5b92ea[m
+Merge: 63d50bf e4fce2c
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:56:32 2025 -0300
+
+    x
+    Merge branch 'main' of https://github.com/marcosdev82/site-pessoal-react
+
+[33mcommit 63d50bf1a4c8f02d13f40a4050747f5f4349a137[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:54:02 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit e4fce2c789d365bb98e5fec5eee6dc3960cf42fb[m
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:43:00 2025 -0300
+
+    Change FTP server directory to '/public_html/site/'
+
+[33mcommit 4ffe9613baf66f93fb7a81a9a303d185be164d27[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:34:24 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 63d45c6cd1bbe371cdb6c7b1967140f4d53d21fc[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:32:24 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 3be0a5e22a677f6fa7d2642860c698dab64c89e2[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:30:25 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 3458787e9b1e48473658e894dbb7db19a8068578[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:19:45 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit e2856ad5ac47a6e84bcc0a5bfbed9d1f1d9b5d46[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:16:11 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 575f5f4b88f8efef2e6713b78409684680b68a51[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:14:01 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit aa408151377810b850844d2b30f005257e9f65ff[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:12:51 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 19c8af669bf40ee7c2732e8acd93bb94855c3da5[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:07:15 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit a9f800ba9f994edb4f2de0422ddf80426161e3fb[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 11:01:25 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit b3786ccf4ffa679f167f30d28b0c4deff433e4ee[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 10:50:51 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 6f42ad8eb2fe382a725e783fbf6aa52e122e202e[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 10:35:42 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit b14647c8f7111f2bac682a9013cd13b4b671f1f6[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Nov 2 10:19:17 2025 -0300
+
+    Ajuste na tipagem de variáveis de ambiente em env.d.ts.ts
+
+[33mcommit 76869bcde8a7a50d1cadd13de376f2284a80c743[m[33m ([m[1;31morigin/snap[m[33m, [m[1;32msnap[m[33m)[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sat Nov 1 11:05:23 2025 -0300
+
+    criação do mock para blog
+
+[33mcommit 5376ed699dd6a531d10c785f889fc4c0bbdbc9c5[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 13:27:08 2025 -0300
+
+    Remove react-snap from build workflow
+    
+    Removed the 'npx react-snap' command from the build process.
+
+[33mcommit 572fd3a440dd50dd44cc63eed8c00c3f20329223[m
+Merge: 1b46359 00638f8
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 12:45:39 2025 -0300
+
+    Merge pull request #54 from marcosdev82/develop
+    
+    resolve merge conflict after adding react-snap routes
+
+[33mcommit 00638f867a52c553242e978d9f149cfb156c3299[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 12:44:10 2025 -0300
+
+    resolve merge conflict after adding react-snap routes
+
+[33mcommit 1b4635984cd5e7ca3dd249bb626029e375429632[m
+Merge: d0f7166 9750e07
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:46:54 2025 -0300
+
+    Merge pull request #53 from marcosdev82/develop
+    
+    resolve merge conflict after adding react-snap routes
+
+[33mcommit 9750e075aeff6044178e17a74972700753344755[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:45:16 2025 -0300
+
+    resolve merge conflict after adding react-snap routes
+
+[33mcommit d0f71669e772bee9ad290b095ffbd5c21b5053c2[m
+Merge: c2e9672 0161615
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:43:17 2025 -0300
+
+    Merge pull request #52 from marcosdev82/develop
+    
+    resolve merge conflict after adding react-snap routes
+
+[33mcommit 0161615e683673856a4708469170e440cb86946a[m
+Merge: 228f708 52fbc3a
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:38:47 2025 -0300
+
+    resolve merge conflict after adding react-snap routes
+
+[33mcommit 228f7088d52feb77e2bdb90d37980575da2f0e3e[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:36:33 2025 -0300
+
+    fix: adiciona scripts/snap.js para evitar falha no build CI
+
+[33mcommit c2e96725c72526ade35cf304397a55089a38c722[m
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:27:34 2025 -0300
+
+    Add react-snap to build process
+    
+    Foi inserido o comando  npx react-snap
+
+[33mcommit 7669daf0aa31457b30e7a6ef068779435d9e820a[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 30 11:08:19 2025 -0300
+
+    update routes dinamicas
+
+[33mcommit 52fbc3a08a36594f0ef5573372603bbb5338a1a3[m
+Merge: d278c6a fc95c5f
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 17:27:25 2025 -0300
+
+    Merge pull request #51 from marcosdev82/develop
+    
+    fix: adiciona scripts/snap.js para evitar falha no build CI
+
+[33mcommit fc95c5f1311cefcbd8e1846b02288ce4ee7cc187[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 17:25:39 2025 -0300
+
+    fix: adiciona scripts/snap.js para evitar falha no build CI
+
+[33mcommit d278c6a0e31def233158d5ba5983050184da99b3[m
+Merge: dd1ca80 57aab5e
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 17:04:41 2025 -0300
+
+    Merge pull request #50 from marcosdev82/develop
+    
+    scripts snap para resolver bloqueio da api no github
+
+[33mcommit 57aab5ed357a942d161dcdd466bae7407167c2c7[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 17:02:20 2025 -0300
+
+    scripts snap para resolver bloqueio da api no github
+
+[33mcommit dd1ca8055f6555870c467a3f1b54ec38d636a777[m
+Merge: 63d0673 a1d87df
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 16:52:05 2025 -0300
+
+    Merge pull request #49 from marcosdev82/develop
+    
+    criando mock para github
+
+[33mcommit a1d87dfe5de441255f43ab81dd9d3fe02f056f7b[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 16:50:30 2025 -0300
+
+    criando mock para github
+
+[33mcommit 63d067358f247ef580d040a4ec817f6eba555a2e[m
+Merge: 3c49401 eaf49d5
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 16:37:44 2025 -0300
+
+    Merge pull request #48 from marcosdev82/develop
+    
+    chore: atualiza para React 19 e ajusta configurações do Vite para compatibilidade
+
+[33mcommit eaf49d5105306c877cd2cfda2c2ba9118d28c5ce[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 16:32:41 2025 -0300
+
+    Atualização do vite para ficar compatível com react 19
+
+[33mcommit 3c49401ce171e8aef4430a8ed13087eb80ebccd0[m
+Merge: 446584f 5380e35
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 14:48:32 2025 -0300
+
+    Merge pull request #47 from marcosdev82/develop
+    
+    correção do vite config
+
+[33mcommit 5380e3538ac57aebec5eea805914bc2c782220c6[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 14:44:05 2025 -0300
+
+    correção do vite congig
+
+[33mcommit 446584fdb0cd1e119e6d09175747d06f900d31ee[m
+Merge: d7756f5 5254e12
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 14:38:45 2025 -0300
+
+    Merge pull request #46 from marcosdev82/develop
+    
+    feat(seo): implementa react-snap para pré-renderização e melhora inde…
+
+[33mcommit 5254e124465f43cb2d8f7e6c490e9b81c051e6bb[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 14:35:11 2025 -0300
+
+    feat(seo): implementa react-snap para pré-renderização e melhora indexação no Google
+
+[33mcommit d7756f5b5b07bb1b937000f9a3428a3be185fb40[m
+Merge: d6fe6e1 b1ad312
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 14:25:02 2025 -0300
+
+    Merge pull request #45 from marcosdev82/develop
+    
+    feat(seo): implementa react-snap para pré-renderização e melhora inde…
+
+[33mcommit b1ad3126542ddf04dc92418e646a63e20f8be7f0[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 14:21:45 2025 -0300
+
+    feat(seo): implementa react-snap para pré-renderização e melhora indexação no Google
+
+[33mcommit d6fe6e12859522072954defb06c5f2a79a56d007[m
+Merge: 24bc257 b1e8a17
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 13:02:12 2025 -0300
+
+    Merge pull request #44 from marcosdev82/develop
+    
+    feat: adiciona componente Breadcrumb às páginas Contato, Serviços e Trabalhos
+
+[33mcommit b1e8a179a0d8a5cf08229505953e92a9377f1a51[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 29 12:56:58 2025 -0300
+
+    Adicionar a breadcrumb em todas as páginas
+
+[33mcommit 24bc257a4367928c0b38711263df771f4c2b8b4e[m
+Merge: 75c4e7e 56ae4ff
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 28 13:33:40 2025 -0300
+
+    Merge pull request #43 from marcosdev82/develop
+    
+    formação do breadcrumb
+
+[33mcommit 333c0a21834139290524d50d1aaf492ab6c09cdf[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 28 13:32:52 2025 -0300
+
+    feat: adiciona hook useTermTitle para extrair nome da categoria
+
+[33mcommit 56ae4ffce1121a0231af11a29beb85c70dadb3cc[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 28 12:58:39 2025 -0300
+
+    formação do breadcrumb
+
+[33mcommit 75c4e7e6ec59cf6ada86ff7a969f45b03d13de7f[m
+Merge: 699bb11 8a2f302
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 28 11:08:33 2025 -0300
+
+    Merge pull request #42 from marcosdev82/develop
+    
+    feat: adiciona componente de breadcrumb dinâmico
+
+[33mcommit 8a2f302fd650deb6dd0b441d27c8577312daac8d[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 28 11:00:25 2025 -0300
+
+    feat: adiciona componente de breadcrumb dinâmico
+
+[33mcommit 699bb1154d785f7b7d3aac79054392e898bd02be[m
+Merge: 05d0d44 652f123
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Mon Oct 27 20:40:25 2025 -0300
+
+    Merge pull request #41 from marcosdev82/develop
+    
+    Melhoria: ajustes de responsividade e refinamentos visuais no layout
+
+[33mcommit 652f123ba6487030d56a087a05f9db810573afdd[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Mon Oct 27 20:37:53 2025 -0300
+
+    Melhoria: ajustes de responsividade e refinamentos visuais no layout
+
+[33mcommit 05d0d4426fdcedfea196539c807460af7f2c1b90[m
+Merge: 5a9e57c 2534c0f
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Mon Oct 27 14:15:45 2025 -0300
+
+    Merge pull request #40 from marcosdev82/develop
+    
+    Melhoria de renderização condicional em posts da página Category
+
+[33mcommit 2534c0f5f16439307f68da054e156e925e3b9329[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Mon Oct 27 14:11:52 2025 -0300
+
+    corrindo o Melhoria de renderização condicional em posts da página Category
+
+[33mcommit 5a9e57c6054323ab21dcf95578155398a707dd34[m
+Merge: e4463ad 0ab0aaa
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Mon Oct 27 14:00:17 2025 -0300
+
+    Merge pull request #39 from marcosdev82/develop
+    
+    feat: implementa React.Suspense em Blog.jsx e Category.jsx para carregamento assíncrono de posts
+
+[33mcommit 0ab0aaa63764312ceca47093b1f2d68cccbccdce[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Mon Oct 27 13:48:54 2025 -0300
+
+    implementação do Suspense nas index providers
+
+[33mcommit e4463adbcecdbe3f02b1d08489f0a0ba87dbcb6b[m
+Merge: 7659727 5387551
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Sun Oct 26 10:38:36 2025 -0300
+
+    Merge pull request #38 from marcosdev82/develop
+    
+    Correção de Paginação no BlogContext
+
+[33mcommit 5387551bf0f8e802c37d360d04b9d941c589609c[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Sun Oct 26 10:34:56 2025 -0300
+
+    correção da paginação category
+
+[33mcommit 765972736251864a6689596b042c543ab9ab94b7[m
+Merge: 0a486fb e755bdf
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 22 12:55:47 2025 -0300
+
+    Merge pull request #37 from marcosdev82/develop
+    
+     Implementação de parâmetro category_slug via useParams()
+
+[33mcommit e755bdf0e21954f08040d381e9e25a40c6aa8848[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 22 12:52:15 2025 -0300
+
+    paramter category_slug
+
+[33mcommit 0a486fbd4151ea757ee4a07e65c27277f69da765[m
+Merge: 4214af3 c01bac6
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 21:10:18 2025 -0300
+
+    Merge pull request #36 from marcosdev82/develop
+    
+    Correção — Query Params da category_slug
+
+[33mcommit c01bac69495ce0f15afdf53aef40ad755a0e4879[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 21:07:08 2025 -0300
+
+    correção da query param
+
+[33mcommit 4aa9547f717422a950d3f8409704eef6642ec8e8[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 17:38:56 2025 -0300
+
+    posição da imagem'
+
+[33mcommit 4214af3d6d74fe433c2ecd64b7a4db94ae6b34e1[m
+Merge: e17e7fa e349145
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 17:24:40 2025 -0300
+
+    Merge pull request #35 from marcosdev82/develop
+    
+    Correção e ajustes no background do body
+
+[33mcommit e349145a1abf5e37cb8bcb0275ff9b6638b1489f[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 17:21:07 2025 -0300
+
+    background size
+
+[33mcommit c849d73d9eebf5292d2a50cea17fc23a6c617fe5[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 17:18:55 2025 -0300
+
+    background image svg
+
+[33mcommit b3900c7d5b5fd0fea375dbe9e2613458013c567d[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 17:11:04 2025 -0300
+
+    background image svg
+
+[33mcommit d1cc118b64253ebb98747692e1e439588593fd5a[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 17:04:20 2025 -0300
+
+    remover cometário css
+
+[33mcommit e17e7faaef716d316d300f723081044395489caa[m
+Merge: 001ae4b ecd7e54
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 08:36:28 2025 -0300
+
+    Merge pull request #34 from marcosdev82/develop
+    
+    Adiciona imagem de fundo global (background-node.svg) ao layout principal
+
+[33mcommit ecd7e54e565e5befd22ed754b9bae781c9f56df5[m
+Author: marcosdev82 <marcostavares.dev@hotmail.com>
+Date:   Tue Oct 21 08:34:12 2025 -0300
+
+    background svg
+
+[33mcommit 001ae4b864a0663a0051f8a9e0c518c1030da638[m
+Merge: 8833c46 2d9342e
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Fri Oct 17 12:58:42 2025 -0300
+
+    Merge pull request #33 from marcosdev82/develop
+    
+    Adiciona link de navegação no logotipo (linkNav)
+
+[33mcommit 2d9342e3872c52ffc7bde3de9970ddf29904c190[m
+Author: mikek182 <marcosvinicius@geekwork.com.br>
+Date:   Fri Oct 17 12:54:09 2025 -0300
+
+    Link da logo
+
+[33mcommit 8833c46903fc825a31ab039b6ec0224bc3ec36e1[m
+Merge: efeabc0 66092f3
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Thu Oct 16 17:41:47 2025 -0300
+
+    Merge pull request #32 from marcosdev82/develop
+    
+    Refactor: ajuste na velocidade da animação de transição global do site
+
+[33mcommit 66092f39d76f246c7140d913252679538d0b2b7c[m
+Author: mikek182 <marcosvinicius@geekwork.com.br>
+Date:   Thu Oct 16 17:39:54 2025 -0300
+
+    Mudanaça de velocidade do slideDown da Header
+
+[33mcommit e5d8b95fcc0c50a6d53e21a5043212de8e101d69[m
+Author: mikek182 <marcosvinicius@geekwork.com.br>
+Date:   Wed Oct 15 18:03:31 2025 -0300
+
+    Animação para o topo fixo
+
+[33mcommit efeabc0ff36ddd1889cf96d632ed1051e9f4c336[m
+Merge: a9fa2ba 27187e9
+Author: Marcos Vinicius Souza Tavares <marcostavares.dev@hotmail.com>
+Date:   Wed Oct 15 14:32:39 2025 -0300
+
+    Merge pull request #31 from marcosdev82/develop
+    
+    Melhoria: Header fixo com animação e transição suave usando styled-components
+
+[33mcommit 27187e932bbb570ee6a0a7b1362d5821995d598c[m
+Author: mikek182 <marcosvinicius@geekwork.com.br>
+Date:   Wed Oct 15 14:28:21 2025 -0300
+
+    topo fixo ao dar o scroll
